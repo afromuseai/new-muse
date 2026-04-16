@@ -15,7 +15,7 @@ interface AudioPlayerProps {
   audioUrl: string | null;
   duration: string;
   title: string;
-  audioType: "Instrumental Preview" | "Vocal Demo";
+  audioType: "Project Result" | "Vocal Demo";
   onRegenerate?: () => void;
   onDownload?: () => void;
   isLive?: boolean;

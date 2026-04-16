@@ -3667,7 +3667,7 @@ const AudioStudioV2 = forwardRef<AudioStudioV2Handle, Props>(function AudioStudi
               <Layers className="w-3 h-3 text-orange-400" />
             </div>
             <div>
-              <h3 className="text-[11px] font-bold tracking-widest uppercase text-white/55">Stem Extraction</h3>
+              <h3 className="text-[11px] font-bold tracking-widest uppercase text-white/55">Project Result</h3>
               <p className="text-[10px] text-white/25 mt-0.5">Generate phase-aligned stem guidance for DAW-ready import.</p>
             </div>
           </div>
@@ -4099,9 +4099,9 @@ const AudioStudioV2 = forwardRef<AudioStudioV2Handle, Props>(function AudioStudi
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
 
-            {/* Instrumental Preview */}
+            {/* Project Result */}
             <ResultCard
-              title={isProducer ? "Beat Structure" : "Instrumental Preview"}
+              title={isProducer ? "Beat Structure" : "Project Result"}
               subtitle="Your current beat direction and playback preview."
               icon={<Music2 className="w-3.5 h-3.5" />}
               status={instrumentalStatus}
@@ -4117,7 +4117,7 @@ const AudioStudioV2 = forwardRef<AudioStudioV2Handle, Props>(function AudioStudi
                     audioUrl={instrumentalAudioUrl}
                     duration="3:20"
                     title={`${audioGenre} Instrumental`}
-                    audioType="Instrumental Preview"
+                    audioType="Project Result"
                     isLive={instrumentalIsLive}
                     onRegenerate={handleGenerateInstrumental}
                     onDownload={async () => {
@@ -5061,212 +5061,6 @@ const AudioStudioV2 = forwardRef<AudioStudioV2Handle, Props>(function AudioStudi
           )}
         </AnimatePresence>
 
-        {/* ── Mix & Master Result Panel ── */}
-        <AnimatePresence>
-          {(mixMasterStatus === "loading" || mixMasterStatus === "success" || mixMasterStatus === "error") && (
-            <motion.div
-              initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-              className="rounded-2xl border overflow-hidden"
-              style={{ borderColor: mixMasterStatus === "success" ? "rgba(16,185,129,0.22)" : mixMasterStatus === "loading" ? "rgba(16,185,129,0.15)" : "rgba(239,68,68,0.15)" }}
-            >
-              {/* header bar */}
-              <div className={`px-5 py-3.5 flex items-center justify-between border-b ${
-                mixMasterStatus === "success" ? "bg-emerald-500/[0.07] border-emerald-500/18"
-                : mixMasterStatus === "loading" ? "bg-emerald-500/[0.04] border-emerald-500/10"
-                : "bg-red-500/[0.04] border-red-500/10"
-              }`}>
-                <div className="flex items-center gap-2.5">
-                  <div className={`w-6 h-6 rounded-lg flex items-center justify-center ${
-                    mixMasterStatus === "success" ? "bg-emerald-500/18 border border-emerald-500/30 text-emerald-400"
-                    : mixMasterStatus === "loading" ? "bg-emerald-500/10 border border-emerald-500/18 text-emerald-400/50"
-                    : "bg-red-500/10 border border-red-500/20 text-red-400"
-                  }`}>
-                    <Headphones className="w-3.5 h-3.5" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-white/75">Mix &amp; Master Brief</div>
-                    <div className="text-[9px] text-white/30 mt-0.5">
-                      {mixMasterStatus === "loading" ? "AfroMuse Mix Intelligence is analysing your session…"
-                      : mixMasterStatus === "success" ? "Commercial-ready mix and mastering guide"
-                      : "Mix brief generation encountered an error"}
-                    </div>
-                  </div>
-                </div>
-                {mixMasterStatus === "success" && <span className="text-[9px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full bg-emerald-500/12 border border-emerald-500/25 text-emerald-400/80">Ready</span>}
-                {mixMasterStatus === "loading" && <Loader2 className="w-4 h-4 animate-spin text-emerald-400/50" />}
-              </div>
-
-              {/* loading shimmer */}
-              {mixMasterStatus === "loading" && (
-                <div className="px-5 py-6 space-y-3 bg-emerald-500/[0.015]">
-                  {["w-4/5", "w-3/4", "w-5/6", "w-2/3"].map((w, i) => (
-                    <div key={i} className={`h-2.5 ${w} rounded-full bg-emerald-500/10 animate-pulse`} style={{ animationDelay: `${i * 0.12}s` }} />
-                  ))}
-                </div>
-              )}
-
-              {/* error */}
-              {mixMasterStatus === "error" && (
-                <div className="px-5 py-5 flex items-start gap-3 bg-red-500/[0.03]">
-                  <AlertCircle className="w-4 h-4 text-red-400/70 shrink-0 mt-0.5" />
-                  <p className="text-[11px] text-red-300/60 leading-relaxed">Mix brief generation failed. Check your track URL and try again.</p>
-                </div>
-              )}
-
-              {/* result body */}
-              {mixMasterStatus === "success" && mixMasterData && (
-                <div className="px-5 py-5 space-y-4 bg-emerald-500/[0.018]">
-                  {/* Mix Brief headline */}
-                  <div className="rounded-xl bg-emerald-500/[0.06] border border-emerald-500/15 px-4 py-3.5">
-                    <div className="text-[9px] font-bold tracking-[0.14em] uppercase text-emerald-400/55 mb-2">Mix Vision</div>
-                    <p className="text-sm font-semibold text-white/75 leading-relaxed">{mixMasterData.mixBrief}</p>
-                  </div>
-
-                  {/* Detail rows */}
-                  {([
-                    { label: "Level Balancing", value: mixMasterData.levelBalancing,   bg: "bg-emerald-500/[0.03] border-emerald-500/10", hd: "text-emerald-400/55", tx: "text-emerald-300/60" },
-                    { label: "EQ Notes",         value: mixMasterData.eqNotes,          bg: "bg-teal-500/[0.03] border-teal-500/10",     hd: "text-teal-400/55",    tx: "text-teal-300/60"    },
-                    { label: "Compression",      value: mixMasterData.compressionNotes, bg: "bg-cyan-500/[0.03] border-cyan-500/10",     hd: "text-cyan-400/55",    tx: "text-cyan-300/60"    },
-                    { label: "Spatial & FX",     value: mixMasterData.spatialEffects,   bg: "bg-sky-500/[0.03] border-sky-500/10",       hd: "text-sky-400/55",     tx: "text-sky-300/60"     },
-                    { label: "Mastering Chain",  value: mixMasterData.masteringChain,   bg: "bg-violet-500/[0.03] border-violet-500/10", hd: "text-violet-400/55",  tx: "text-violet-300/60"  },
-                    { label: "Output Specs",     value: mixMasterData.outputNotes,      bg: "bg-amber-500/[0.03] border-amber-500/10",   hd: "text-amber-400/55",   tx: "text-amber-300/60"   },
-                    ...(mixMasterData.stemsNotes ? [{ label: "Stems Export", value: mixMasterData.stemsNotes, bg: "bg-pink-500/[0.03] border-pink-500/10", hd: "text-pink-400/55", tx: "text-pink-300/60" }] : []),
-                  ] as { label: string; value: string; bg: string; hd: string; tx: string }[]).map(({ label, value, bg, hd, tx }) => (
-                    <div key={label} className={`rounded-xl border px-4 py-3.5 ${bg}`}>
-                      <div className={`text-[9px] font-bold tracking-[0.14em] uppercase mb-1.5 ${hd}`}>{label}</div>
-                      <p className={`text-[10.5px] leading-relaxed ${tx}`}>{value}</p>
-                    </div>
-                  ))}
-
-                  {/* Download buttons + Copy */}
-                  <div className="pt-2 border-t border-emerald-500/10 flex flex-wrap items-center gap-2 justify-between">
-                    <div className="flex items-center gap-2">
-                      <button
-                        type="button"
-                        onClick={() => toast({ title: "MP3 Preview Available", description: "Mastered MP3 export is in development. Use the instrumental player to download your preview." })}
-                        className="h-8 px-4 rounded-xl bg-emerald-500/8 border border-emerald-500/18 text-[10px] font-semibold text-emerald-400/70 hover:bg-emerald-500/14 hover:text-emerald-300 transition-all flex items-center gap-1.5"
-                      >
-                        <Download className="w-3 h-3" /> MP3
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => toast({ title: "WAV Export Preparing", description: "WAV export is being prepared. Your session is master-ready — the export engine is next." })}
-                        className="h-8 px-4 rounded-xl bg-emerald-500/8 border border-emerald-500/18 text-[10px] font-semibold text-emerald-400/40 hover:bg-emerald-500/10 hover:text-emerald-400/70 transition-all flex items-center gap-1.5"
-                      >
-                        <Clock className="w-3 h-3" /> WAV
-                      </button>
-                      {mixMasterData.stemsNotes && (
-                        <button
-                          type="button"
-                          onClick={() => toast({ title: "Stems Export — In Development", description: "Stems export is being built. Your session brief is structured and ready." })}
-                          className="h-8 px-4 rounded-xl bg-white/4 border border-white/8 text-[10px] font-semibold text-white/30 hover:text-white/50 hover:border-white/14 transition-all flex items-center gap-1.5"
-                        >
-                          <Clock className="w-3 h-3" /> Stems
-                        </button>
-                      )}
-                    </div>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        if (!mixMasterData) return;
-                        const text = [
-                          `MIX & MASTER BRIEF`,
-                          ``,
-                          `Mix Vision: ${mixMasterData.mixBrief}`,
-                          ``,
-                          `Level Balancing:\n${mixMasterData.levelBalancing}`,
-                          ``,
-                          `EQ Notes:\n${mixMasterData.eqNotes}`,
-                          ``,
-                          `Compression:\n${mixMasterData.compressionNotes}`,
-                          ``,
-                          `Spatial & FX:\n${mixMasterData.spatialEffects}`,
-                          ``,
-                          `Mastering Chain:\n${mixMasterData.masteringChain}`,
-                          ``,
-                          `Output Specs:\n${mixMasterData.outputNotes}`,
-                          ...(mixMasterData.stemsNotes ? [``, `Stems Export:\n${mixMasterData.stemsNotes}`] : []),
-                        ].join("\n");
-                        navigator.clipboard.writeText(text).then(
-                          () => toast({ title: "Mix brief copied", description: "Ready to paste into your session notes or engineer's inbox." }),
-                          () => toast({ title: "Copy failed", variant: "destructive" }),
-                        );
-                      }}
-                      className="h-8 px-4 rounded-xl bg-emerald-500/10 border border-emerald-500/22 text-[10px] font-semibold text-emerald-400/80 hover:bg-emerald-500/16 hover:text-emerald-300 transition-all flex items-center gap-1.5"
-                    >
-                      <Copy className="w-3 h-3" /> Copy Full Brief
-                    </button>
-                  </div>
-                </div>
-              )}
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* ── Stem Extraction Result Panel ── */}
-        <AnimatePresence>
-          {(stemStatus === "loading" || stemStatus === "success" || stemStatus === "error") && (
-            <motion.div
-              initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-              className="rounded-2xl border overflow-hidden"
-              style={{ borderColor: stemStatus === "success" ? "rgba(249,115,22,0.22)" : stemStatus === "loading" ? "rgba(249,115,22,0.15)" : "rgba(239,68,68,0.15)" }}
-            >
-              {/* header */}
-              <div className={`px-5 py-3.5 flex items-center justify-between border-b ${
-                stemStatus === "success" ? "bg-orange-500/[0.07] border-orange-500/18"
-                : stemStatus === "loading" ? "bg-orange-500/[0.04] border-orange-500/10"
-                : "bg-red-500/[0.04] border-red-500/10"
-              }`}>
-                <div className="flex items-center gap-2.5">
-                  <div className={`w-6 h-6 rounded-lg flex items-center justify-center ${
-                    stemStatus === "success" ? "bg-orange-500/18 border border-orange-500/30 text-orange-400"
-                    : stemStatus === "loading" ? "bg-orange-500/10 border border-orange-500/18 text-orange-400/50"
-                    : "bg-red-500/10 border border-red-500/20 text-red-400"
-                  }`}>
-                    <Layers className="w-3.5 h-3.5" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-white/75">Stem Extraction Brief</div>
-                    <div className="text-[9px] text-white/30 mt-0.5">
-                      {stemStatus === "loading" ? "AfroMuse Stem Intelligence is preparing your extraction guide…"
-                      : stemStatus === "success" ? "Phase-aligned, DAW-ready stem guidance"
-                      : "Stem extraction brief encountered an error"}
-                    </div>
-                  </div>
-                </div>
-                {stemStatus === "success" && <span className="text-[9px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full bg-orange-500/12 border border-orange-500/25 text-orange-400/80">Ready</span>}
-                {stemStatus === "loading" && <Loader2 className="w-4 h-4 animate-spin text-orange-400/50" />}
-              </div>
-
-              {/* loading shimmer */}
-              {stemStatus === "loading" && (
-                <div className="px-5 py-6 space-y-3 bg-orange-500/[0.01]">
-                  {["w-4/5", "w-3/4", "w-5/6", "w-2/3"].map((w, i) => (
-                    <div key={i} className={`h-2.5 ${w} rounded-full bg-orange-500/10 animate-pulse`} style={{ animationDelay: `${i * 0.12}s` }} />
-                  ))}
-                </div>
-              )}
-
-              {/* error */}
-              {stemStatus === "error" && (
-                <div className="px-5 py-5 flex items-start gap-3 bg-red-500/[0.03]">
-                  <AlertCircle className="w-4 h-4 text-red-400/70 shrink-0 mt-0.5" />
-                  <p className="text-[11px] text-red-300/60 leading-relaxed">Stem extraction brief failed. Check your track URL and try again.</p>
-                </div>
-              )}
-
-              {/* result body */}
-              {stemStatus === "success" && stemData && (
-                <div className="px-5 py-5 space-y-4 bg-orange-500/[0.012]">
-                  {/* Brief headline */}
-                  <div className="rounded-xl bg-orange-500/[0.06] border border-orange-500/15 px-4 py-3.5">
-                    <div className="text-[9px] font-bold tracking-[0.14em] uppercase text-orange-400/55 mb-2">Extraction Vision</div>
-                    <p className="text-sm font-semibold text-white/75 leading-relaxed">{stemData.extractionBrief}</p>
-                  </div>
-
-                  {/* Tool recommendation */}
-                  <div className="rounded-xl bg-white/[0.02] border border-white/6 px-4 py-3 flex items-start gap-2.5">
-                    <Radio className="w-3.5 h-3.5 text-white/30 shrink-0 mt-0.5" />
                     <div>
                       <div className="text-[9px] font-bold tracking-widest uppercase text-white/28 mb-1">Recommended Tool</div>
                       <p className="text-[10.5px] text-white/50 leading-relaxed">{stemData.recommendedTool}</p>
