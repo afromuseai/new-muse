@@ -28,11 +28,6 @@ router.post("/generate", async (req, res) => {
       req.user.plan
     );
 
-    import { getAllowedModels } from "../lib/planGuard";
-    import { enhancePrompt } from "../lib/enhancePrompt"; // we create next step
-
-    const allowedModels = getAllowedModels(req.user.plan);
-
     const allowedModels = getAllowedModels(req.user.plan);
 
     const safeModel =

@@ -1,4 +1,4 @@
-import { PLAN_FEATURES, Plan } from "./plans";
+import { PLAN_FEATURES, Plan } from "./plan";
 
 export function getAllowedModels(plan: Plan) {
   return PLAN_FEATURES[plan].models;
