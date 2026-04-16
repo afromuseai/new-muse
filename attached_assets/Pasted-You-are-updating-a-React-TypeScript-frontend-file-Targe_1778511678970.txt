@@ -1,0 +1,186 @@
+You are updating a React + TypeScript frontend file.
+
+Target file:
+artifacts/afromuse-ai/src/components/audio/BringToLifeCard.tsx
+
+Apply the following changes carefully without breaking existing logic.
+
+---
+
+## 1. HIDE UNUSED PANELS
+
+Inside this file, locate and completely remove any UI sections related to:
+
+* Mix & Master
+* Stem Extraction
+
+Hide the full JSX blocks (including headers, controls, and containers). Do not leave empty wrappers.
+
+---
+
+## 2. RENAME SECTION
+
+Find any UI text that says:
+
+"Instrumental Preview"
+
+Replace it with:
+
+"Project Result"
+
+Do not change styling, only the text.
+
+---
+
+## 3. REPLACE SINGLE AUDIO STATE WITH MULTI-TRACK
+
+Find:
+
+const [audioUrl, setAudioUrl] = useState(...)
+
+Replace it with:
+
+const [tracks, setTracks] = useState<any[]>([]);
+
+---
+
+## 4. ADD GENERATION STATE
+
+At the top of the component, add:
+
+const [workId, setWorkId] = useState<string | null>(null);
+const [isGenerating, setIsGenerating] = useState(false);
+
+---
+
+## 5. UPDATE GENERATE FUNCTION
+
+Locate the function that sends the request to:
+
+/api/music/generate
+
+Modify it so that after receiving response:
+
+const data = await res.json();
+
+It sets:
+
+setWorkId(data.workId);
+setIsGenerating(true);
+
+Do NOT set audioUrl anymore.
+
+---
+
+## 6. ADD POLLING FUNCTION
+
+Inside the component, add this function:
+
+const pollStatus = async (id: string) => {
+try {
+const res = await fetch(`/api/music/status/${id}`);
+const data = await res.json();
+
+```
+if (data.status === "complete") {
+  setTracks(data.tracks || []);
+  setIsGenerating(false);
+  return;
+}
+
+if (isGenerating) {
+  setTimeout(() => pollStatus(id), 3000);
+}
+```
+
+} catch (err) {
+console.error("Polling error:", err);
+setIsGenerating(false);
+}
+};
+
+---
+
+## 7. TRIGGER POLLING
+
+Add this useEffect inside the component:
+
+useEffect(() => {
+if (workId && isGenerating) {
+pollStatus(workId);
+}
+}, [workId, isGenerating]);
+
+---
+
+## 8. UPDATE AUDIO DISPLAY (MULTI-TRACK)
+
+Find where audio is currently rendered using audioUrl.
+
+Replace that section with:
+
+<div className="space-y-6 mt-4">
+  {tracks.map((track, index) => (
+    <div key={track.id || index} className="p-4 rounded-xl bg-neutral-900">
+
+```
+  <p className="text-sm text-gray-400 mb-2">
+    {index === 0 ? "Primary Version" : "Alternate Version"}
+  </p>
+
+  <audio controls src={track.audioUrl} className="w-full" />
+
+</div>
+```
+
+))}
+
+</div>
+
+---
+
+## 9. ADD LOADING STATE UI
+
+Above the Project Result section, add:
+
+{isGenerating && (
+
+  <p className="text-sm text-yellow-400">
+    Generating your track... please wait 🎵
+  </p>
+)}
+
+---
+
+## 10. UPDATE API RESPONSE HANDLING
+
+Wherever the code previously used:
+
+setAudioUrl(data.audioUrl)
+
+Replace it with:
+
+setTracks(data.tracks || [])
+
+---
+
+## IMPORTANT RULES
+
+* Do not break existing imports or component structure
+* Do not remove unrelated logic
+* Ensure TypeScript compiles
+* Keep styling consistent with current UI
+* Do not introduce new dependencies
+
+---
+
+After completing, ensure:
+
+* No references to audioUrl remain
+* tracks state is used for rendering
+* polling works without infinite loops
+* UI displays 2 tracks when available
+
+---
+
+Return only the updated file.

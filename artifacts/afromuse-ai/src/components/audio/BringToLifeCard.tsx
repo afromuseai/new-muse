@@ -643,6 +643,10 @@ export default function BringToLifeCard({
 }: BringToLifeCardProps) {
   const { toast } = useToast();
 
+  const [tracks, setTracks] = useState<any[]>([]);
+  const [workId, setWorkId] = useState<string | null>(null);
+  const [isGenerating, setIsGenerating] = useState(false);
+
   const [instrumentalStatus, setInstrumentalStatus] = useState<AudioStatus>("idle");
   const [instrumentalStep, setInstrumentalStep] = useState(0);
   const [instrumentalMeta, setInstrumentalMeta] = useState<InstrumentalMetadata | null>(null);
@@ -736,8 +740,37 @@ export default function BringToLifeCard({
 
   // ── Instrumental generation ────────────────────────────────────────────────
 
+  const pollStatus = async (id: string) => {
+    try {
+      const res = await fetch(`/api/music/status/${id}`);
+      const data = await res.json();
+
+      if (data.status === "complete") {
+        setTracks(data.tracks || []);
+        setIsGenerating(false);
+        setInstrumentalStatus("ready");
+        toast({ title: "Project Result Ready", description: `${(data.tracks || []).length} track(s) generated` });
+        return;
+      }
+
+      if (isGenerating) {
+        setTimeout(() => pollStatus(id), 3000);
+      }
+    } catch (err) {
+      console.error("Polling error:", err);
+      setIsGenerating(false);
+      setInstrumentalStatus("error");
+    }
+  };
+
+  useEffect(() => {
+    if (workId && isGenerating) {
+      pollStatus(workId);
+    }
+  }, [workId, isGenerating]);
+
   const generateInstrumental = useCallback(async () => {
-    if (instrumentalStatus === "loading") return;
+    if (instrumentalStatus === "loading" || isGenerating) return;
 
     instrAbortRef.current?.abort();
     instrPoller.stopPolling();
@@ -753,49 +786,33 @@ export default function BringToLifeCard({
     setInstrumentalIsFallback(false);
     setInstrumentalJobId(null);
     setInstrumentalProvider(undefined);
+    setTracks([]);
+    setWorkId(null);
 
     try {
-      const res = await fetch("/api/generate-instrumental-preview", {
+      const payload = buildPayload();
+      const res = await fetch("/api/music/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(buildPayload()),
+        body: JSON.stringify({
+          prompt: payload.title,
+          style: payload.genre,
+          title: payload.title,
+          model: "chirp-v4-5",
+        }),
         signal: controller.signal,
       });
       if (!res.ok) throw new Error("Failed to start generation");
 
-      const { jobId } = (await res.json()) as { jobId: string; status: string };
-
-      instrPoller.startPolling(
-        jobId,
-        (data) => {
-          const meta = data.metadata as InstrumentalMetadata;
-          const live = data.isLive ?? false;
-          const fallback = data.isFallback ?? false;
-          setInstrumentalMeta(meta);
-          setInstrumentalAudioUrl(data.audioUrl);
-          setInstrumentalIsLive(live);
-          setInstrumentalIsFallback(fallback);
-          setInstrumentalJobId(data.jobId);
-          setInstrumentalProvider(data.provider);
-          setInstrumentalStatus("ready");
-          const toastTitle = live
-            ? "Instrumental Generated — Live Audio Ready"
-            : fallback
-            ? "Session Preview Ready"
-            : "Instrumental Preview Ready";
-          toast({ title: toastTitle, description: `${meta.bpm} BPM · ${meta.key}` });
-        },
-        (error) => {
-          setInstrumentalStatus("error");
-          toast({ title: "Instrumental generation failed", description: error, variant: "destructive" });
-        },
-      );
+      const data = await res.json();
+      setWorkId(data.workId);
+      setIsGenerating(true);
     } catch (err) {
       if ((err as Error).name === "AbortError") return;
       setInstrumentalStatus("error");
       toast({ title: "Could not start generation", description: "Please try again.", variant: "destructive" });
     }
-  }, [instrumentalStatus, buildPayload, instrPoller, toast]);
+  }, [instrumentalStatus, isGenerating, buildPayload, instrPoller, toast]);
 
   // ── Vocal generation ───────────────────────────────────────────────────────
 
@@ -886,10 +903,10 @@ export default function BringToLifeCard({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <TriggerButton
             onClick={generateInstrumental}
-            disabled={instrumentalStatus === "loading"}
+            disabled={instrumentalStatus === "loading" || isGenerating}
             status={instrumentalStatus}
             icon={<Music2 className="w-4 h-4" />}
-            label="Instrumental Preview"
+            label="Project Result"
             sublabel="Beat · Rhythm · Arrangement"
             accent="amber"
           />
@@ -923,43 +940,53 @@ export default function BringToLifeCard({
             </motion.div>
           )}
 
-          {instrumentalStatus === "ready" && instrumentalMeta && (
+          {isGenerating && (
             <motion.div
-              key="instr-ready"
+              key="instr-polling"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <p className="text-sm text-yellow-400">
+                Generating your track... please wait 🎵
+              </p>
+            </motion.div>
+          )}
+
+          {instrumentalStatus === "ready" && tracks.length > 0 && (
+            <motion.div
+              key="instr-ready-tracks"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
             >
-              <AudioResultCard
-                label="Project Result Ready"
-                dotColor="bg-primary"
-                borderColor={instrumentalIsLive ? "border-primary/20" : "border-primary/15"}
-                gradientFrom="from-primary/5"
-                headerBorder="border-primary/8"
-                metadata={instrumentalMeta}
-                audioUrl={instrumentalAudioUrl}
-                draft={draft}
-                onRegenerate={generateInstrumental}
-                onDownload={() => {
-                  if (
-                    instrumentalIsLive &&
-                    typeof instrumentalAudioUrl === "string" &&
-                    instrumentalAudioUrl.startsWith("data:audio/")
-                  ) {
-                    const a = document.createElement("a");
-                    a.href = instrumentalAudioUrl;
-                    a.download = `${draft.title.toLowerCase().replace(/\s+/g, "_")}_instrumental_preview.mp3`;
-                    a.click();
-                    toast({ title: "Downloading Project Result", description: `${draft.title} · MP3` });
-                  } else {
-                    toast({ title: "Project Result", description: "A real audio file will be downloadable once live generation is active." });
-                  }
-                }}
-                isLive={instrumentalIsLive}
-                isFallback={instrumentalIsFallback}
-                jobId={instrumentalJobId}
-                provider={instrumentalProvider}
-              />
+              <div className="rounded-2xl border border-primary/15 overflow-hidden bg-gradient-to-b from-primary/5 to-transparent">
+                <div className="px-5 pt-4 pb-3 flex items-center justify-between border-b border-primary/8">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary" />
+                    <span className="text-xs font-bold text-white/70">Project Result</span>
+                  </div>
+                  <button
+                    onClick={generateInstrumental}
+                    className="flex items-center gap-1.5 text-[10px] text-white/30 hover:text-white/60 transition-colors"
+                  >
+                    <RefreshCw className="w-3 h-3" />
+                    Regenerate
+                  </button>
+                </div>
+                <div className="p-4">
+                  <div className="space-y-6 mt-4">
+                    {tracks.map((track, index) => (
+                      <div key={track.id || index} className="p-4 rounded-xl bg-neutral-900">
+                        <p className="text-sm text-gray-400 mb-2">
+                          {index === 0 ? "Primary Version" : "Alternate Version"}
+                        </p>
+                        <audio controls src={track.audioUrl} className="w-full" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </motion.div>
           )}
 
