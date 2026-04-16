@@ -4970,7 +4970,7 @@ const AudioStudioV2 = forwardRef<AudioStudioV2Handle, Props>(function AudioStudi
                           <Download className="w-3 h-3" /> Download MP3
                         </a>
                       </div>
-                      <AudioPlayer audioUrl={voiceCloneAudioUrl} />
+                      <AudioPlayer audioUrl={voiceCloneAudioUrl} duration="3:20" title="Vocal Demo" audioType="Vocal Demo" />
                     </div>
                   ) : (
                     <div className="rounded-2xl border border-dashed border-fuchsia-500/22 bg-fuchsia-500/[0.025] px-5 py-4 flex items-center justify-between gap-4">
@@ -5055,86 +5055,6 @@ const AudioStudioV2 = forwardRef<AudioStudioV2Handle, Props>(function AudioStudi
                     </div>
                   </div>
 
-                </div>
-              )}
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-                    <div>
-                      <div className="text-[9px] font-bold tracking-widest uppercase text-white/28 mb-1">Recommended Tool</div>
-                      <p className="text-[10.5px] text-white/50 leading-relaxed">{stemData.recommendedTool}</p>
-                    </div>
-                  </div>
-
-                  {/* Individual stems */}
-                  <div className="space-y-3">
-                    {stemData.stems.map((stem) => {
-                      const c = STEM_COLORS[stem.name] ?? STEM_COLORS["Effects"];
-                      return (
-                        <div key={stem.name} className={`rounded-xl border px-4 py-3.5 ${c.bg} ${c.border}`}>
-                          <div className="flex items-center justify-between mb-2.5">
-                            <div className={`text-[10px] font-bold tracking-[0.12em] uppercase ${c.text}`}>{stem.name}</div>
-                            <span className={`h-6 px-2.5 rounded-lg text-[9px] font-semibold flex items-center gap-1 border select-none opacity-40 ${c.bg} ${c.border} ${c.text}`}>
-                              <Clock className="w-2.5 h-2.5" /> WAV · Coming Soon
-                            </span>
-                          </div>
-                          <p className={`text-[10px] leading-relaxed mb-1.5 ${c.sub}`}>{stem.extractionNotes}</p>
-                          <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2">
-                            <span className="text-[9px] text-white/25"><span className="text-white/40 font-semibold">Gain:</span> {stem.gainLevel}</span>
-                            <span className="text-[9px] text-white/25"><span className="text-white/40 font-semibold">File:</span> {stem.fileSpec}</span>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-
-                  {/* Phase alignment + DAW import */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div className="rounded-xl bg-white/[0.02] border border-white/6 px-4 py-3.5">
-                      <div className="text-[9px] font-bold tracking-widest uppercase text-white/28 mb-1.5">Phase Alignment</div>
-                      <p className="text-[10px] text-white/45 leading-relaxed">{stemData.phaseAlignmentNotes}</p>
-                    </div>
-                    <div className="rounded-xl bg-white/[0.02] border border-white/6 px-4 py-3.5">
-                      <div className="text-[9px] font-bold tracking-widest uppercase text-white/28 mb-1.5">DAW Import Guide</div>
-                      <p className="text-[10px] text-white/45 leading-relaxed">{stemData.dawImportGuide}</p>
-                    </div>
-                  </div>
-
-                  {/* Copy full brief */}
-                  <div className="pt-2 border-t border-orange-500/10 flex justify-end">
-                    <button
-                      type="button"
-                      onClick={() => {
-                        if (!stemData) return;
-                        const lines = [
-                          "STEM EXTRACTION BRIEF",
-                          "",
-                          `Extraction Vision: ${stemData.extractionBrief}`,
-                          "",
-                          `Recommended Tool: ${stemData.recommendedTool}`,
-                          "",
-                          ...stemData.stems.flatMap((s) => [
-                            `── ${s.name} ──`,
-                            `Extraction Notes: ${s.extractionNotes}`,
-                            `Gain Level: ${s.gainLevel}`,
-                            `File Spec: ${s.fileSpec}`,
-                            "",
-                          ]),
-                          `Phase Alignment:\n${stemData.phaseAlignmentNotes}`,
-                          "",
-                          `DAW Import Guide:\n${stemData.dawImportGuide}`,
-                        ].join("\n");
-                        navigator.clipboard.writeText(lines).then(
-                          () => toast({ title: "Stem brief copied", description: "Ready to paste into your engineer notes or DAW session." }),
-                          () => toast({ title: "Copy failed", variant: "destructive" }),
-                        );
-                      }}
-                      className="h-8 px-4 rounded-xl bg-orange-500/10 border border-orange-500/22 text-[10px] font-semibold text-orange-400/80 hover:bg-orange-500/16 hover:text-orange-300 transition-all flex items-center gap-1.5"
-                    >
-                      <Copy className="w-3 h-3" /> Copy Full Brief
-                    </button>
-                  </div>
                 </div>
               )}
             </motion.div>
