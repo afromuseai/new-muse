@@ -1,11 +1,24 @@
 import { Router } from "express";
+import crypto from "crypto";
 import { buildPrompt } from "../lib/promptEngine";
 import { getAllowedModels } from "../lib/planGuard";
+
 const router = Router();
 
-/**
- * 1. GENERATE MUSIC
- */
+// ======================
+// JOB STORAGE (SIMPLE + SAFE)
+// ======================
+const jobStore = new Map<
+  string,
+  {
+    status: "processing" | "complete" | "failed";
+    tracks: { audioUrl: string }[];
+  }
+>();
+
+// ======================
+// 1. GENERATE MUSIC
+// ======================
 router.post("/generate", async (req, res) => {
   try {
     const {
@@ -17,6 +30,14 @@ router.post("/generate", async (req, res) => {
       sectionIdentity,
       vocalIdentity,
     } = req.body;
+
+    const jobId = crypto.randomUUID();
+
+    // create empty job first
+    jobStore.set(jobId, {
+      status: "processing",
+      tracks: [],
+    });
 
     const finalPrompt = buildPrompt(
       {
@@ -34,88 +55,106 @@ router.post("/generate", async (req, res) => {
       ? model
       : allowedModels[allowedModels.length - 1];
 
-    const response = await fetch("https://aimusicapi.org/api/v2/generate", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.AI_MUSIC_API_KEY}`,
-      },
-      body: JSON.stringify({
-        prompt: finalPrompt,
-        style,
-        title,
-        model: safeModel,
+    const response = await fetch(
+      "https://aimusicapi.org/api/v2/generate",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.AI_MUSIC_API_KEY}`,
+        },
+        body: JSON.stringify({
+          gpt_description_prompt: finalPrompt,
+          style,
+          title: title || "Untitled Track",
+          model: safeModel,
 
-        make_instrumental: false,
-        gender: vocalIdentity === "female" ? "female" : "male",
+          // IMPORTANT: attach jobId for callback mapping
+          callback_url: `https://new-muse--reposit.replit.app/api/music/callback?jobId=${jobId}`,
 
-        style_weight: beatDNA ? 0.8 : 0.5,
-        weirdness_constraint: 0.6,
-        audio_weight: 0.7,
-      }),
-    });
+          make_instrumental: false,
+          gender: vocalIdentity === "female" ? "female" : "male",
+
+          style_weight: beatDNA ? 0.8 : 0.5,
+          weirdness_constraint: 0.6,
+          audio_weight: 0.7,
+        }),
+      }
+    );
 
     const data = await response.json();
 
     if (!response.ok) {
+      jobStore.set(jobId, {
+        status: "failed",
+        tracks: [],
+      });
+
       return res.status(response.status).json(data);
     }
 
     return res.json({
-      workId: data.data.task_id, // ✅ FIXED
+      workId: jobId,
       status: "processing",
     });
-
   } catch (err) {
     console.error(err);
+
     return res.status(500).json({
       error: "Failed to generate music",
     });
   }
 });
 
-/**
- * 2. GET STATUS (REAL FEED)
- */
-router.get("/status/:jobId", async (req, res) => {
-  const { jobId } = req.params;
-
+// ======================
+// 2. CALLBACK (AI RESULT)
+// ======================
+router.post("/callback", (req, res) => {
   try {
-    const response = await fetch(
-      `https://aimusicapi.org/api/v2/feed?workId=${jobId}`,
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.AI_MUSIC_API_KEY}`,
-        },
-      }
-    );
+    const jobId = req.query.jobId as string;
+    const payload = req.body;
 
-    const data = await response.json();
+    const results = payload?.data || payload || [];
 
-    if (data.data?.type !== "SUCCESS") {
-      return res.json({
-        status: "processing",
+    const tracks = results.map((t: any) => ({
+      audioUrl: t.audio_url,
+    }));
+
+    if (!jobId) {
+      return res.status(400).json({
+        error: "Missing jobId",
       });
     }
 
-    // 🔥 THIS IS THE KEY PART
-    const tracks = data.data.response_data.map((track: any) => ({
-      audioUrl: track.audio_url,
-    }));
-
-    res.json({
+    jobStore.set(jobId, {
       status: "complete",
       tracks,
     });
 
-  } catch (error) {
-    console.error(error);
+    return res.json({ ok: true });
+  } catch (err) {
+    console.error("Callback error:", err);
 
-    res.status(500).json({
-      status: "failed",
-      error: "Failed to fetch music",
+    return res.status(500).json({
+      error: "callback failed",
     });
   }
+});
+
+// ======================
+// 3. GET RESULT (FRONTEND USES THIS)
+// ======================
+router.get("/result/:workId", (req, res) => {
+  const job = jobStore.get(req.params.workId);
+
+  if (!job) {
+    return res.json({
+      status: "processing",
+      tracks: [],
+    });
+  }
+
+  return res.json(job);
 });
 
 export default router;

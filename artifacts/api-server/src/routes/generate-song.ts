@@ -744,7 +744,7 @@ NOTE: Section line counts are set by the DIVERSITY ENGINE directive — follow t
 Sections not in the arrangement must be empty arrays []. The example below shows JSON shape only:
 {
   "title": "song title (1-5 words)",
-  "intro": [],
+  "intro": ["line1", "line2"],
   "hook": ["line1", "line2", "..."],
   "verse1": ["line1", "line2", "..."],
   "verse2": ["line1", "line2", "..."],
