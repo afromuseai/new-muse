@@ -2824,16 +2824,25 @@ router.post("/rewrite-lyrics", requireAuth, attachPlanFromDb, requireFeature("ca
   try {
     logger.info({ genre, mood, languageFlavor }, "Starting lyrics humanization (rewrite)");
 
-    const response = await ai.chat.completions.create({
-      model: NEMOTRON_LYRICS_MODEL.id,
-      messages: [
-        { role: "system", content: REWRITER_SYSTEM_PROMPT },
-        { role: "user", content: userPrompt },
-      ],
-      temperature: 0.85,
-      top_p: 0.95,
-      max_tokens: 3000,
-    });
+    const tryRewrite = async (modelId: string) =>
+      ai.chat.completions.create({
+        model: modelId,
+        messages: [
+          { role: "system", content: REWRITER_SYSTEM_PROMPT },
+          { role: "user", content: userPrompt },
+        ],
+        temperature: 0.85,
+        top_p: 0.95,
+        max_tokens: 3000,
+      });
+
+    let response;
+    try {
+      response = await tryRewrite(NEMOTRON_LYRICS_MODEL.id);
+    } catch (primaryErr) {
+      logger.warn({ err: primaryErr, model: NEMOTRON_LYRICS_MODEL.name }, "Primary rewrite model failed — falling back to Maverick");
+      response = await tryRewrite(MAVERICK_LYRICS_BACKUP.id);
+    }
 
     const raw = response.choices[0]?.message?.content ?? "";
     const rewritten = parseRewriteJson(raw);

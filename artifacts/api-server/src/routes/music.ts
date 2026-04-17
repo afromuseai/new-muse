@@ -69,12 +69,12 @@ router.post("/generate", async (req, res) => {
 /**
  * 2. GET STATUS (REAL FEED)
  */
-router.get("/status/:workId", async (req, res) => {
-  try {
-    const { workId } = req.params;
+router.get("/status/:jobId", async (req, res) => {
+  const { jobId } = req.params;
 
+  try {
     const response = await fetch(
-      `https://aimusicapi.org/api/v2/feed?workId=${workId}`,
+      `https://aimusicapi.org/api/v2/feed?workId=${jobId}`,
       {
         headers: {
           Authorization: `Bearer ${process.env.AI_MUSIC_API_KEY}`,
@@ -84,27 +84,28 @@ router.get("/status/:workId", async (req, res) => {
 
     const data = await response.json();
 
-    if (!response.ok) {
-      return res.status(response.status).json(data);
+    if (data.data?.type !== "SUCCESS") {
+      return res.json({
+        status: "processing",
+      });
     }
 
-    const tracks =
-      data?.response_data?.map((item: any) => ({
-        id: item.id,
-        audioUrl: item.audio_url,
-        imageUrl: item.image_url,
-        title: item.title,
-        duration: item.duration,
-        status: item.status,
-      })) || [];
+    // 🔥 THIS IS THE KEY PART
+    const tracks = data.data.response_data.map((track: any) => ({
+      audioUrl: track.audio_url,
+    }));
 
-    return res.json({
-      status: data.type === "SUCCESS" ? "complete" : "processing",
+    res.json({
+      status: "complete",
       tracks,
     });
-  } catch (err) {
-    return res.status(500).json({
-      error: "Failed to fetch status",
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      status: "failed",
+      error: "Failed to fetch music",
     });
   }
 });
