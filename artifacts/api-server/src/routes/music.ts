@@ -56,7 +56,7 @@ router.post("/generate", async (req, res) => {
       : allowedModels[allowedModels.length - 1];
 
     const response = await fetch(
-      "https://aimusicapi.org/api/v2/generate",
+      "https://aimusicapi.org/api/generate",
       {
         method: "POST",
         headers: {
@@ -69,8 +69,7 @@ router.post("/generate", async (req, res) => {
           title: title || "Untitled Track",
           model: safeModel,
 
-          // IMPORTANT: attach jobId for callback mapping
-          callback_url: `https://new-muse--reposit.replit.app/api/music/callback?jobId=${jobId}`,
+          callback_url: "https://new-muse--reposit.replit.app/api/music/callback",
 
           make_instrumental: false,
           gender: vocalIdentity === "female" ? "female" : "male",

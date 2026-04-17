@@ -763,201 +763,170 @@ function buildCallbackUrl(): string | null {
   return null;
 }
 
-async function callLiveInstrumentalProvider(
-  p: InstrumentalPayload,
-  jobId: string,
-): Promise<LiveInstrumentalProviderResponse> {
-  const apiKey = process.env.AI_MUSIC_API_KEY ?? process.env.INSTRUMENTAL_API_KEY;
-  if (!apiKey) {
-    throw new Error(
-      "AI_MUSIC_API_KEY is not configured. Set the secret to enable live music generation.",
-    );
-  }
+  async function callLiveInstrumentalProvider(
+    p: InstrumentalPayload,
+    jobId: string,
+  ): Promise<LiveInstrumentalProviderResponse> {
 
-  const model = p.aiMusicModel ?? process.env.AI_MUSIC_MODEL ?? "chirp-v4-5";
-  const secs  = p.lyricsSections ?? {};
-  const hasLyrics =
-    (secs.hook?.length   ?? 0) > 0 ||
-    (secs.verse1?.length ?? 0) > 0;
+    const apiKey = process.env.AI_MUSIC_API_KEY ?? process.env.INSTRUMENTAL_API_KEY;
 
-  const { prompt: descPrompt, styleString, brief } = buildInstrumentalDescription(p);
-
-  const base = process.env.CALLBACK_BASE_URL?.replace(/\/$/, "");
-
-  const callbackUrl = base
-    ? `${base}/api/instrumental/callback`
-    : null;
-
-  console.log("CALLBACK BASE:", process.env.CALLBACK_BASE_URL);
-  console.log("FINAL CALLBACK URL:", callbackUrl);
-  let requestBody: Record<string, unknown>;
-
-  let lyricsText: string | null = null;
-
-  if (hasLyrics) {
-    lyricsText = buildLyricsText(secs);
-
-    // ✅ Custom Mode (WITH lyrics)
-    requestBody = {
-      model,
-      prompt: lyricsText,
-      style: styleString,
-      title: p.title ?? `${p.genre ?? "Afrobeats"} — ${p.mood ?? "Uplifting"}`,
-      make_instrumental: false,
-      gender: p.gender ?? "male",
-
-      ...(callbackUrl && { callback_url: callbackUrl }),
-
-      ...(p.styleWeight != null && { style_weight: p.styleWeight }),
-      ...(p.weirdnessConstraint != null && { weirdness_constraint: p.weirdnessConstraint }),
-      ...(p.audioWeight != null && { audio_weight: p.audioWeight }),
-      ...(p.negativeTags?.trim() && { tags: p.negativeTags.trim() }),
-    };
-
-    logger.info({
-      jobId,
-      model,
-      style: styleString.slice(0, 80),
-      lyricsChars: lyricsText?.length ?? 0,
-      callbackUrl
-    }, "AI Music API — Custom Mode");
-
-  } else {
-    // ✅ Inspiration Mode (NO lyrics)
-    requestBody = {
-      model,
-      gpt_description_prompt: descPrompt,
-      make_instrumental: true,
-
-      ...(callbackUrl && { callback_url: callbackUrl }),
-
-      ...(p.styleWeight != null && { style_weight: p.styleWeight }),
-      ...(p.weirdnessConstraint != null && { weirdness_constraint: p.weirdnessConstraint }),
-      ...(p.audioWeight != null && { audio_weight: p.audioWeight }),
-      ...(p.negativeTags?.trim() && { tags: p.negativeTags.trim() }),
-    };
-
-    logger.info({
-      jobId,
-      model,
-      prompt: descPrompt.slice(0, 100),
-      callbackUrl
-    }, "AI Music API — Inspiration Mode");
-  }
-
-  // ── Step 1: Submit generation job ─────────────────────────────────────────
-  const genRes = await fetch(`${AI_MUSIC_API_BASE}/api/v2/generate`, {
-    method:  "POST",
-    headers: {
-      "Authorization": `Bearer ${apiKey}`,
-      "Content-Type":  "application/json",
-    },
-    body:   JSON.stringify(requestBody),
-    signal: AbortSignal.timeout(30_000),
-  });
-
-  if (!genRes.ok) {
-    const errText = await genRes.text().catch(() => genRes.statusText);
-    throw new Error(`AI Music API generate failed: ${genRes.status} — ${errText.slice(0, 300)}`);
-  }
-
-  const genData = (await genRes.json()) as { workId?: string; data?: { task_id?: string } };
-  const taskId  = genData.data?.task_id ?? genData.workId;
-  if (!taskId) throw new Error("AI Music API: no task_id in generate response");
-
-  // Register task in callback store so the webhook handler can deliver results early.
-  registerTask(taskId);
-
-  logger.info({ jobId, taskId, callbackUrl },
-    "AI Music API — generation submitted, polling for result (callback also active)");
-
-  // ── Step 2: Poll /api/v2/query?task_id= until completed ───────────────────
-  // The callback endpoint delivers results faster when callback_url is set.
-  // We check the callback store on each iteration to short-circuit polling.
-  const POLL_URL           = `${AI_MUSIC_API_BASE}/api/v2/query?task_id=${taskId}`;
-  const POLL_INTERVAL_MS   = 6_000;   // 6 s between polls
-  const MAX_POLLS          = 20;      // up to 5 minutes total (aimusicapi.org can take 3–4 min)
-
-  let audioUrl: string | null = null;
-  let generationTitle: string | null = null;
-  let coverArtUrl:     string | null = null;
-
-  for (let attempt = 0; attempt < MAX_POLLS; attempt++) {
-    logger.info({ jobId, attempt }, "Polling AI Music API...");
-
-    const cbResult = getCallbackResult(taskId);
-    if (cbResult) {
-      audioUrl        = cbResult.audioUrl;
-      generationTitle = cbResult.title ?? null;
-      coverArtUrl     = cbResult.imageUrl ?? null;
-
-      logger.info({ jobId, taskId, attempt, audioUrl: (audioUrl ?? "").slice(0, 60) },
-        "AI Music API — result delivered via callback");
-      break;
+    if (!apiKey) {
+      throw new Error("AI_MUSIC_API_KEY is not configured.");
     }
 
-    const pollRes = await fetch(POLL_URL, {
-      headers: { "Authorization": `Bearer ${apiKey}` },
-      signal:  AbortSignal.timeout(15_000),
-    }).catch((err) => {
-      logger.warn({ jobId, attempt, err }, "AI Music API poll request error — retrying");
-      return null;
+    const model = p.aiMusicModel ?? process.env.AI_MUSIC_MODEL ?? "chirp-v4-5";
+
+    const secs = p.lyricsSections ?? {};
+    const hasLyrics =
+      (secs.hook?.length ?? 0) > 0 ||
+      (secs.verse1?.length ?? 0) > 0;
+
+    const { prompt: descPrompt, styleString, brief } =
+      buildInstrumentalDescription(p);
+
+    const base = process.env.CALLBACK_BASE_URL?.replace(/\/$/, "");
+    const callbackUrl = base ? `${base}/api/instrumental/callback` : null;
+
+    let requestBody: Record<string, unknown>;
+
+    // ── MODE: WITH LYRICS ─────────────────────────────────────────────
+    if (hasLyrics) {
+      const lyricsText = buildLyricsText(secs);
+
+      requestBody = {
+        model,
+        prompt: lyricsText,
+        style: styleString,
+        title: p.title ?? `${p.genre ?? "Afrobeats"} Track`,
+        make_instrumental: false,
+        gender: p.gender ?? "male",
+        ...(callbackUrl && { callback_url: callbackUrl }),
+      };
+
+    } else {
+      // ── MODE: INSTRUMENTAL ONLY ─────────────────────────────────────
+      requestBody = {
+        model,
+        gpt_description_prompt: descPrompt,
+        make_instrumental: true,
+        ...(callbackUrl && { callback_url: callbackUrl }),
+      };
+    }
+
+    // ── STEP 1: GENERATE ─────────────────────────────────────────────
+    const genRes = await fetch(`https://aimusicapi.org/api/v2/generate`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(requestBody),
+      signal: AbortSignal.timeout(30000),
     });
 
-    if (pollRes?.ok) {
-      const pollData = (await pollRes.json()) as { code?: number; data?: unknown };
-      const data = pollData.data;
-      const tracks: Array<Record<string, unknown>> = Array.isArray(data)
-        ? data as Array<Record<string, unknown>>
-        : data && typeof data === "object"
-          ? [data as Record<string, unknown>]
-          : [];
-
-      const failed = tracks.find((t) =>
-        t.status === "failed" || t.status === "error" || Boolean(t.error),
-      );
-      if (failed) {
-        clearTask(taskId);
-        logger.error({ jobId, taskId, failed }, "AI Music API generation failed");
-        throw new Error(`AI Music API generation failed (task_id: ${taskId})`);
-      }
-
-      const done = tracks.find((t) =>
-        t.status === "completed" || t.status === "succeed" || Boolean(t.audio_url),
-      );
-      if (done) {
-        audioUrl        = typeof done.audio_url === "string" ? done.audio_url : typeof done.stream_audio_url === "string" ? done.stream_audio_url : null;
-        generationTitle = typeof done.title === "string" ? done.title : null;
-        coverArtUrl     = typeof done.image_url === "string" ? done.image_url : typeof done.cover_url === "string" ? done.cover_url : null;
-        logger.info({ jobId, taskId, attempt, audioUrl: audioUrl?.slice(0, 60) },
-          "AI Music API — generation complete (poll)");
-        break;
-      }
+    if (!genRes.ok) {
+      const errText = await genRes.text().catch(() => "");
+      throw new Error(`Generate failed: ${errText}`);
     }
 
-    logger.info({ jobId, taskId, attempt }, "AI Music API — still processing, polling again");
-    await new Promise(resolve => setTimeout(resolve, POLL_INTERVAL_MS));
+    const genData = await genRes.json();
+
+    const taskId =
+      genData?.data?.task_id ||
+      genData?.workId;
+
+    if (!taskId) {
+      throw new Error("No task_id returned");
+    }
+
+    registerTask(taskId);
+
+    // ── STEP 2: POLLING ──────────────────────────────────────────────
+    const POLL_URL = `https://aimusicapi.org/api/v2/query?task_id=${taskId}`;
+    const MAX_ATTEMPTS = 40; // ~4 minutes
+    const INTERVAL = 6000;
+
+    let audioUrl: string | null = null;
+    let generationTitle: string | null = null;
+    let coverArtUrl: string | null = null;
+
+    for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
+
+      // ✅ CHECK CALLBACK FIRST
+      const cb = getCallbackResult(taskId);
+      if (cb) {
+        audioUrl = cb.audioUrl;
+        generationTitle = cb.title ?? null;
+        coverArtUrl = cb.imageUrl ?? null;
+        break;
+      }
+
+      // ✅ POLL API
+      try {
+        const pollRes = await fetch(POLL_URL, {
+          headers: { Authorization: `Bearer ${apiKey}` },
+          signal: AbortSignal.timeout(15000),
+        });
+
+        if (pollRes.ok) {
+          const data = await pollRes.json();
+
+          const tracks = Array.isArray(data?.data)
+            ? data.data
+            : [data?.data];
+
+          const done = tracks.find((t: any) =>
+            t?.status === "completed" ||
+            t?.audio_url
+          );
+
+          if (done) {
+            audioUrl =
+              done.audio_url ||
+              done.stream_audio_url ||
+              null;
+
+            generationTitle = done.title ?? null;
+            coverArtUrl = done.image_url ?? null;
+            break;
+          }
+
+          const failed = tracks.find((t: any) =>
+            t?.status === "failed" || t?.error
+          );
+
+          if (failed) {
+            throw new Error("Generation failed from provider");
+          }
+        }
+
+      } catch (err) {
+        logger.warn({ err, attempt }, "Polling error");
+      }
+
+      await new Promise(r => setTimeout(r, INTERVAL));
+    }
+
+    clearTask(taskId);
+
+    // ── FINAL VALIDATION ─────────────────────────────────────────────
+    if (!audioUrl) {
+      throw new Error("Audio generation timeout");
+    }
+
+    return {
+      previewUrl: audioUrl,
+      wavUrl: null,
+      externalJobId: taskId,
+      generationTitle:
+        generationTitle ??
+        `${p.genre ?? "Afrobeats"} Instrumental`,
+      sonicNotes: `[AfroMuse] ${brief}`,
+      duration: null,
+      coverArtUrl,
+      waveformMeta: null,
+    };
   }
-
-  clearTask(taskId);
-
-  if (!audioUrl) {
-    throw new Error(`AI Music API: timed out after ${MAX_POLLS} polls (task_id: ${taskId})`);
-  }
-
-  const sonicNotes = `[AfroMuse Brief] ${brief}`;
-
-  return {
-    previewUrl:      audioUrl,
-    wavUrl:          null,
-    externalJobId:   taskId,
-    generationTitle: generationTitle ?? `${p.genre ?? "Afrobeats"} ${hasLyrics ? "Full Song" : "Instrumental"}`,
-    sonicNotes,
-    duration:        null,
-    coverArtUrl,
-    waveformMeta:    null,
-  };
-}
 
 // ─── Live Execution Path ──────────────────────────────────────────────────────
 // Calls the real provider, enriches the response with the AI session brief,
