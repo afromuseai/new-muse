@@ -2308,18 +2308,27 @@ router.post("/harden-lyrics", requireAuth, attachPlanFromDb, requireFeature("can
   try {
     logger.info({ genre, mood, languageFlavor }, "Starting Make It Harder rewrite");
 
-    const response = await ai.chat.completions.create({
-      model: NEMOTRON_LYRICS_MODEL.id,
-      messages: [
-        { role: "system", content: HARDER_REWRITER_SYSTEM_PROMPT },
-        { role: "user", content: userPrompt },
-      ],
-      temperature: 0.9,
-      top_p: 0.95,
-      max_tokens: 3000,
-    });
+    const tryHarden = async (modelId: string) =>
+      ai.chat.completions.create({
+        model: modelId,
+        messages: [
+          { role: "system", content: HARDER_REWRITER_SYSTEM_PROMPT },
+          { role: "user", content: userPrompt },
+        ],
+        temperature: 0.9,
+        top_p: 0.95,
+        max_tokens: 3000,
+      });
 
-    const raw = response.choices[0]?.message?.content ?? "";
+    let hardenResponse;
+    try {
+      hardenResponse = await tryHarden(NEMOTRON_LYRICS_MODEL.id);
+    } catch (primaryErr) {
+      logger.warn({ err: primaryErr, model: NEMOTRON_LYRICS_MODEL.name }, "Harden primary model failed — falling back to Maverick");
+      hardenResponse = await tryHarden(MAVERICK_LYRICS_BACKUP.id);
+    }
+
+    const raw = hardenResponse.choices[0]?.message?.content ?? "";
     const hardened = parseHardenJson(raw);
 
     if (!hardened) {
@@ -2580,18 +2589,27 @@ router.post("/catchier-lyrics", requireAuth, attachPlanFromDb, requireFeature("c
   try {
     logger.info({ genre, mood, languageFlavor }, "Starting Make It Catchier rewrite");
 
-    const response = await ai.chat.completions.create({
-      model: NEMOTRON_LYRICS_MODEL.id,
-      messages: [
-        { role: "system", content: CATCHIER_REWRITER_SYSTEM_PROMPT },
-        { role: "user", content: userPrompt },
-      ],
-      temperature: 0.88,
-      top_p: 0.95,
-      max_tokens: 3000,
-    });
+    const tryCatchier = async (modelId: string) =>
+      ai.chat.completions.create({
+        model: modelId,
+        messages: [
+          { role: "system", content: CATCHIER_REWRITER_SYSTEM_PROMPT },
+          { role: "user", content: userPrompt },
+        ],
+        temperature: 0.88,
+        top_p: 0.95,
+        max_tokens: 3000,
+      });
 
-    const raw = response.choices[0]?.message?.content ?? "";
+    let catchierResponse;
+    try {
+      catchierResponse = await tryCatchier(NEMOTRON_LYRICS_MODEL.id);
+    } catch (primaryErr) {
+      logger.warn({ err: primaryErr, model: NEMOTRON_LYRICS_MODEL.name }, "Catchier primary model failed — falling back to Maverick");
+      catchierResponse = await tryCatchier(MAVERICK_LYRICS_BACKUP.id);
+    }
+
+    const raw = catchierResponse.choices[0]?.message?.content ?? "";
     const catchier = parseCatchierjson(raw);
 
     if (!catchier) {
