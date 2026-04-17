@@ -319,14 +319,9 @@ function buildDiversityDirective(profile: DiversityProfile): string[] {
 const SYSTEM_PROMPT = `AFROMUSE_ENGINE
 
 STRUCTURE:
-INTRO: 2 lines
-CHORUS: 8 lines
-VERSE1: 8 lines
-CHORUS: 8 lines
-VERSE2: 8 lines
-CHORUS: 8 lines
-BRIDGE: 4-6 lines
-OUTRO: 2-4 lines
+Structure is determined by the DIVERSITY ENGINE directive in the user message.
+Follow the SECTION TARGETS and STRUCTURE TYPE listed there exactly.
+Do NOT default to a fixed section order — use only the arrangement provided.
 
 RULES:
 - chorus = catchy, contains main hook (repeat max 2-3 times)
@@ -1641,20 +1636,28 @@ function getDialectBlock(effectiveFlavor: string, dialectStyle?: string): string
   return [];
 }
 
-const STRICT_RETRY_ADDENDUM = [
-  "────────────────────────────────────────",
-  "STRICT RETRY MODE — STRUCTURE FAILURE DETECTED",
-  "────────────────────────────────────────",
-  "Your previous output failed structure validation. This is your final attempt.",
-  "You MUST follow these rules exactly or the song will be rejected:",
-  "  • verse1 and verse2 MUST have the same line count — exactly 8, 12, or 16 lines each",
-  "  • hook MUST be exactly 8 lines (2 hook repeat + 2 expansion + 2 bounce + 2 impact)",
-  "  • intro and outro: 2–4 lines each",
-  "  • bridge: 4–8 lines",
-  "  • Output ONLY a single valid JSON object — no markdown, no code fences, no text outside the JSON",
-  "  • All required fields MUST be present: title, keeperLine, keeperLineBackups, intro, verse1, hook, verse2, bridge, outro, hookVariants, songQualityReport, globalReleaseReport, hitPrediction",
-  "Count every line carefully before submitting. Failure to comply means the generation fails entirely.",
-].join("\n");
+function buildStrictRetryAddendum(profile: DiversityProfile): string {
+  const targetLines = (["intro", "hook", "verse1", "verse2", "bridge", "outro"] as SectionKey[])
+    .map((s) => {
+      const t = profile.sectionLineTargets[s];
+      if (!t || t.length === 0) return `  • ${s}: empty array []`;
+      return `  • ${s}: exactly ${t.join(" or ")} lines`;
+    })
+    .join("\n");
+
+  return [
+    "────────────────────────────────────────",
+    "STRICT RETRY MODE — STRUCTURE FAILURE DETECTED",
+    "────────────────────────────────────────",
+    "Your previous output failed structure validation. This is your final attempt.",
+    "You MUST match the Diversity Engine section targets EXACTLY or the song will be rejected:",
+    targetLines,
+    `  • Arrangement order: ${profile.arrangementOrder.join(" → ")}`,
+    "  • Output ONLY a single valid JSON object — no markdown, no code fences, no text outside the JSON",
+    "  • All required fields MUST be present: title, keeperLine, keeperLineBackups, intro, verse1, hook, verse2, bridge, outro, hookVariants, songQualityReport, globalReleaseReport, hitPrediction",
+    "Count every line carefully before submitting. Failure to comply means the generation fails entirely.",
+  ].join("\n");
+}
 
 function buildUserPrompt(
   params: {
@@ -1760,6 +1763,8 @@ function buildUserPrompt(
     ...getLyricalDepthBlock(params.lyricalDepth ?? "Balanced"),
     ...getPerformanceFeelBlock(params.performanceFeel ?? "Smooth"),
     ...getVoiceTextureBlock(params.voiceTexture ?? "Balanced"),
+    ...buildDiversityDirective(diversityProfile),
+    ...(strictMode ? [buildStrictRetryAddendum(diversityProfile)] : []),
   ];
 
   return lines.join("\n");
