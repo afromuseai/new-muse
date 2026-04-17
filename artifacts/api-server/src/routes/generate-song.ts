@@ -1836,7 +1836,8 @@ function draftToLyricsText(draft: SongDraft): string {
   };
   const keys = order?.length ? order : ["intro", "verse1", "hook", "verse2", "bridge", "outro"] as SectionKey[];
   for (const key of keys) {
-    const section = sectionMap[key];
+    const section = sectionMap[key as SectionKey];
+    if (!section) continue;
     if (Array.isArray(section.lines) && section.lines.length > 0) {
       sections.push(`[${section.label}]\n${(section.lines as string[]).join("\n")}`);
     }
@@ -2022,38 +2023,29 @@ router.post("/generate-song", async (req, res) => {
   try {
     const userPrompt = buildUserPrompt(promptParams, false);
 
-    // ── Round 1 — Nemotron-70B primary lyrics generation ──────────────────
-    logger.info("Starting Nemotron-70B lyrics generation (round 1)");
-    const result1 = await callLyricsModel(NEMOTRON_LYRICS_MODEL, userPrompt);
+    // ── Round 1 — Maverick primary lyrics generation ───────────────────
+    logger.info("Starting Llama-4-Maverick lyrics generation (round 1)");
+    const result1 = await callLyricsModel(MAVERICK_LYRICS_BACKUP, userPrompt);
 
     let finalLyricsDraft: SongDraft | null = null;
 
     if (result1.validation.valid) {
-      logger.info({ model: result1.model }, "Nemotron-70B passed structure validation (round 1)");
+      logger.info({ model: result1.model }, "Maverick passed structure validation (round 1)");
       finalLyricsDraft = result1.draft;
     } else {
-      logger.warn({ model: result1.model, failures: result1.validation.failures }, "Nemotron-70B failed structure validation — triggering strict retry");
+      logger.warn({ model: result1.model, failures: result1.validation.failures }, "Maverick failed structure validation — triggering strict retry");
 
-      // ── Round 2 — strict retry with Nemotron ──────────────────────────
+      // ── Round 2 — strict retry with Maverick ──────────────────────────
       const strictPrompt = buildUserPrompt(promptParams, true);
-      const result2 = await callLyricsModel(NEMOTRON_LYRICS_MODEL, strictPrompt);
+      const result2 = await callLyricsModel(MAVERICK_LYRICS_BACKUP, strictPrompt);
 
       if (result2.validation.valid) {
-        logger.info({ model: result2.model }, "Nemotron-70B passed structure validation (round 2)");
+        logger.info({ model: result2.model }, "Maverick passed structure validation (round 2)");
         finalLyricsDraft = result2.draft;
       } else {
-        logger.warn({ model: result2.model, failures: result2.validation.failures }, "Nemotron-70B failed both rounds — falling back to Llama-4-Maverick");
-
-        // ── Round 3 — Maverick fallback ──────────────────────────────────
-        const result3 = await callLyricsModel(MAVERICK_LYRICS_BACKUP, strictPrompt);
-        if (result3.validation.valid) {
-          logger.info({ model: result3.model }, "Maverick fallback passed structure validation");
-          finalLyricsDraft = result3.draft;
-        } else {
-          logger.warn({ model: result3.model, failures: result3.validation.failures }, "All models failed validation — using best available draft");
-          const allResults = [result1, result2, result3].filter(r => r.draft !== null);
-          finalLyricsDraft = allResults.sort((a, b) => a.validation.failures.length - b.validation.failures.length)[0]?.draft ?? null;
-        }
+        logger.warn({ model: result2.model, failures: result2.validation.failures }, "Maverick failed both rounds — using best available draft");
+        const allResults = [result1, result2].filter(r => r.draft !== null);
+        finalLyricsDraft = allResults.sort((a, b) => a.validation.failures.length - b.validation.failures.length)[0]?.draft ?? null;
       }
     }
 

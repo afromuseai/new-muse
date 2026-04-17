@@ -30,10 +30,9 @@ router.post("/generate", async (req, res) => {
 
     const allowedModels = getAllowedModels(req.user.plan);
 
-    const safeModel =
-      allowedModels.includes(model)
-        ? model
-        : allowedModels[allowedModels.length - 1];
+    const safeModel = allowedModels.includes(model)
+      ? model
+      : allowedModels[allowedModels.length - 1];
 
     const response = await fetch("https://aimusicapi.org/api/v2/generate", {
       method: "POST",
@@ -46,7 +45,14 @@ router.post("/generate", async (req, res) => {
         style,
         title,
         model: safeModel,
-      })
+
+        make_instrumental: false,
+        gender: vocalIdentity === "female" ? "female" : "male",
+
+        style_weight: beatDNA ? 0.8 : 0.5,
+        weirdness_constraint: 0.6,
+        audio_weight: 0.7,
+      }),
     });
 
     const data = await response.json();
@@ -56,10 +62,12 @@ router.post("/generate", async (req, res) => {
     }
 
     return res.json({
-      workId: data.workId,
+      workId: data.data.task_id, // ✅ FIXED
       status: "processing",
     });
+
   } catch (err) {
+    console.error(err);
     return res.status(500).json({
       error: "Failed to generate music",
     });
