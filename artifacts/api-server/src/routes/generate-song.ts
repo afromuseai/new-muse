@@ -2308,25 +2308,16 @@ router.post("/harden-lyrics", requireAuth, attachPlanFromDb, requireFeature("can
   try {
     logger.info({ genre, mood, languageFlavor }, "Starting Make It Harder rewrite");
 
-    const tryHarden = async (modelId: string) =>
-      ai.chat.completions.create({
-        model: modelId,
-        messages: [
-          { role: "system", content: HARDER_REWRITER_SYSTEM_PROMPT },
-          { role: "user", content: userPrompt },
-        ],
-        temperature: 0.9,
-        top_p: 0.95,
-        max_tokens: 3000,
-      });
-
-    let hardenResponse;
-    try {
-      hardenResponse = await tryHarden(NEMOTRON_LYRICS_MODEL.id);
-    } catch (primaryErr) {
-      logger.warn({ err: primaryErr, model: NEMOTRON_LYRICS_MODEL.name }, "Harden primary model failed — falling back to Maverick");
-      hardenResponse = await tryHarden(MAVERICK_LYRICS_BACKUP.id);
-    }
+    const hardenResponse = await ai.chat.completions.create({
+      model: MAVERICK_LYRICS_BACKUP.id,
+      messages: [
+        { role: "system", content: HARDER_REWRITER_SYSTEM_PROMPT },
+        { role: "user", content: userPrompt },
+      ],
+      temperature: 0.9,
+      top_p: 0.95,
+      max_tokens: 3000,
+    });
 
     const raw = hardenResponse.choices[0]?.message?.content ?? "";
     const hardened = parseHardenJson(raw);
@@ -2589,25 +2580,16 @@ router.post("/catchier-lyrics", requireAuth, attachPlanFromDb, requireFeature("c
   try {
     logger.info({ genre, mood, languageFlavor }, "Starting Make It Catchier rewrite");
 
-    const tryCatchier = async (modelId: string) =>
-      ai.chat.completions.create({
-        model: modelId,
-        messages: [
-          { role: "system", content: CATCHIER_REWRITER_SYSTEM_PROMPT },
-          { role: "user", content: userPrompt },
-        ],
-        temperature: 0.88,
-        top_p: 0.95,
-        max_tokens: 3000,
-      });
-
-    let catchierResponse;
-    try {
-      catchierResponse = await tryCatchier(NEMOTRON_LYRICS_MODEL.id);
-    } catch (primaryErr) {
-      logger.warn({ err: primaryErr, model: NEMOTRON_LYRICS_MODEL.name }, "Catchier primary model failed — falling back to Maverick");
-      catchierResponse = await tryCatchier(MAVERICK_LYRICS_BACKUP.id);
-    }
+    const catchierResponse = await ai.chat.completions.create({
+      model: MAVERICK_LYRICS_BACKUP.id,
+      messages: [
+        { role: "system", content: CATCHIER_REWRITER_SYSTEM_PROMPT },
+        { role: "user", content: userPrompt },
+      ],
+      temperature: 0.88,
+      top_p: 0.95,
+      max_tokens: 3000,
+    });
 
     const raw = catchierResponse.choices[0]?.message?.content ?? "";
     const catchier = parseCatchierjson(raw);
@@ -2842,27 +2824,18 @@ router.post("/rewrite-lyrics", requireAuth, attachPlanFromDb, requireFeature("ca
   try {
     logger.info({ genre, mood, languageFlavor }, "Starting lyrics humanization (rewrite)");
 
-    const tryRewrite = async (modelId: string) =>
-      ai.chat.completions.create({
-        model: modelId,
-        messages: [
-          { role: "system", content: REWRITER_SYSTEM_PROMPT },
-          { role: "user", content: userPrompt },
-        ],
-        temperature: 0.85,
-        top_p: 0.95,
-        max_tokens: 3000,
-      });
+    const rewriteResponse = await ai.chat.completions.create({
+      model: MAVERICK_LYRICS_BACKUP.id,
+      messages: [
+        { role: "system", content: REWRITER_SYSTEM_PROMPT },
+        { role: "user", content: userPrompt },
+      ],
+      temperature: 0.85,
+      top_p: 0.95,
+      max_tokens: 3000,
+    });
 
-    let response;
-    try {
-      response = await tryRewrite(NEMOTRON_LYRICS_MODEL.id);
-    } catch (primaryErr) {
-      logger.warn({ err: primaryErr, model: NEMOTRON_LYRICS_MODEL.name }, "Primary rewrite model failed — falling back to Maverick");
-      response = await tryRewrite(MAVERICK_LYRICS_BACKUP.id);
-    }
-
-    const raw = response.choices[0]?.message?.content ?? "";
+    const raw = rewriteResponse.choices[0]?.message?.content ?? "";
     const rewritten = parseRewriteJson(raw);
 
     if (!rewritten) {
