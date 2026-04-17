@@ -306,12 +306,10 @@ function buildDiversityDirective(profile: DiversityProfile): string[] {
     "SECTION TARGETS:",
     formatSectionTargets(profile),
     "",
-    "— STEP 7: OUTPUT REQUIREMENTS —",
-    "Return all section keys: intro, hook, verse1, verse2, bridge, outro.",
-    "If a section is not used by this arrangement, return it as an empty array [].",
-    "Include diversityReport with ALL fields: dnaMode, emotionalLens, energyLevel, arrangementOrder,",
-    "hookStructure, chorusLengthPattern, energyCurve, urgencyLevel, artistMindset, productionVariation, performanceType.",
-    "Include trueVariationCheck with 1–2 lines explaining what makes THIS song DIFFERENT from the previous one.",
+    "— STEP 7: SECTION OUTPUT —",
+    "Sections NOT in this arrangement MUST be returned as empty arrays [].",
+    "All other required output fields (songQualityReport, hookVariants, hitPrediction, globalReleaseReport, etc.)",
+    "must still be included exactly as specified in the system output format — do NOT skip them.",
     "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
   ];
 }
@@ -742,14 +740,16 @@ If the verse sounds native and the chorus drifts → the chorus failed. Rewrite 
 ALL SEVEN CHECKS MUST PASS. Only after they pass → produce the JSON output.
 
 OUTPUT FORMAT: Return valid JSON only. No text outside the JSON.
+NOTE: Section line counts are set by the DIVERSITY ENGINE directive — follow those targets exactly.
+Sections not in the arrangement must be empty arrays []. The example below shows JSON shape only:
 {
   "title": "song title (1-5 words)",
-  "intro": ["line1", "line2"],
-  "hook": ["line1", "line2", "line3", "line4", "line5", "line6", "line7", "line8"],
-  "verse1": ["line1", "line2", "line3", "line4", "line5", "line6", "line7", "line8"],
-  "verse2": ["line1", "line2", "line3", "line4", "line5", "line6", "line7", "line8"],
-  "bridge": ["line1", "line2", "line3", "line4"],
-  "outro": ["line1", "line2", "line3", "line4"],
+  "intro": [],
+  "hook": ["line1", "line2", "..."],
+  "verse1": ["line1", "line2", "..."],
+  "verse2": ["line1", "line2", "..."],
+  "bridge": ["line1", "line2", "..."],
+  "outro": ["line1", "line2", "..."],
   "diversityReport": { "dnaMode": "STORY MODE" },
   "songQualityReport": { "viralScore": 0, "replayPotential": "High", "arVerdict": "SIGNED — READY HIT", "fixNeeded": false, "hookTypeUsed": "A", "viralFactors": { "chantability": 16, "tiktokFit": 15, "repetitionPower": 16, "emotionalPunch": 17, "beatSync": 16 }, "signatureSoundIdentity": { "emotionalTone": "", "rhythmFingerprint": "", "languageStyle": "", "hookPersonality": "" } },
   "globalReleaseReport": { "globalScore": 0, "ukFit": "Medium", "usFit": "Medium", "afroFit": "High", "tiktokFit": "Medium", "platformScores": { "spotify": 0, "tiktok": 0, "youtube": 0, "radio": 0 }, "hitPositioning": "NICHE HIT", "hookHitsAt": "0:28", "hookTimingPass": true, "commercialVersion": { "hook": "", "intro": [] }, "marketNotes": { "uk": "", "us": "", "afro": "", "tiktok": "" } },
