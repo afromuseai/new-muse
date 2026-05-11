@@ -1,0 +1,104 @@
+AfroMuse V2 now has real instrumental generation, stronger prompt intelligence, and improved playback feel.
+
+Do NOT redesign the app.
+Do NOT break any current workflows.
+Do NOT touch vocals, mastering, stems, or unrelated provider logic.
+
+GOAL:
+Make AfroMuse’s instrumental generation smarter by allowing custom lyrics and generated lyrics to meaningfully influence the beat direction, arrangement, and emotional shape of the instrumental prompt.
+
+This should make the app feel like the beat is being shaped for the song — not generated separately from it.
+
+BUILD THE FOLLOWING:
+
+1. LYRICS-AWARE INSTRUMENTAL INTELLIGENCE
+   Upgrade the live instrumental prompt-building system so it can intelligently use lyrics content when available.
+
+This should work for BOTH:
+
+* lyrics generated inside the Lyrics Studio
+* user-pasted custom lyrics
+
+If lyrics are present, AfroMuse should use them to influence the beat direction in a musically intelligent way.
+
+2. EXTRACT MUSICAL SIGNALS FROM LYRICS
+   Build a lightweight lyrics analysis layer that derives useful musical direction from the lyrics without changing the UI.
+
+Analyze lyrics for signals such as:
+
+* emotional tone
+* romantic / street / spiritual / celebratory / reflective lane
+* energy level
+* melodic softness vs intensity
+* repetition / hook potential
+* chorus lift potential
+* pacing feel
+* intimacy vs performance scale
+* storytelling vs vibe-led writing
+
+This should produce a compact internal “Lyrics Signal” summary, not a giant blob of text.
+
+3. FEED LYRICS SIGNAL INTO THE ELEVENLABS PROMPT
+   When lyrics are present, use the Lyrics Signal to shape the real beat generation prompt in meaningful ways.
+
+Examples:
+
+* romantic / intimate lyrics → softer melodic textures, warmer space, more vocal breathing room
+* street / confident lyrics → stronger percussion attitude, firmer low end, more swagger
+* spiritual / reflective lyrics → more restraint, openness, emotional lift, ambient support
+* highly repetitive / hook-heavy lyrics → more chorus payoff and replay energy
+* storytelling-heavy lyrics → smoother arrangement support and less chaotic movement
+
+This should affect the actual musical brief sent to ElevenLabs.
+
+4. CUSTOM LYRICS SHOULD FEEL RESPECTED
+   If a user pastes their own lyrics, AfroMuse should treat that as serious creative input.
+
+The beat generation system should feel like it is building around the song, not ignoring it.
+
+5. GENERATED LYRICS SHOULD ALSO FEED FORWARD
+   If the user creates lyrics in Lyrics Studio and then sends them into Audio Studio, AfroMuse should use that generated lyrical content to influence the beat direction automatically.
+
+This should strengthen the existing “lyrics → audio” bridge without changing the clean V2 workflow.
+
+6. KEEP THE UX CLEAN
+   Do NOT add a giant new lyrics analysis panel.
+   Do NOT clutter the UI with too many new controls.
+   If any microcopy or subtle status text is added, keep it premium and minimal.
+
+Examples of acceptable subtle signals:
+
+* “Beat shaped from lyrics”
+* “Using lyrical mood and structure”
+* “Lyrics-aware generation”
+
+But only if it fits cleanly and does not create clutter.
+
+7. SAVE / RESUME COMPATIBILITY
+   Ensure the lyrics-aware session intelligence remains compatible with:
+
+* Project Library save / resume
+* session duplication
+* existing session restore logic
+* current Audio Studio generation flow
+
+8. DIAGNOSTIC SUPPORT
+   Store a compact internal summary of the lyrics-derived musical signals for debugging / tuning purposes.
+
+Do NOT expose raw debug text in the main user-facing UI unless there is already a safe metadata surface.
+
+9. KEEP EVERYTHING ELSE STABLE
+   Do NOT break:
+
+* live ElevenLabs generation
+* playback
+* project library
+* fallback safety
+* current result cards
+* V2 layout
+* generation flow
+
+IMPORTANT:
+This is a premium intelligence upgrade.
+AfroMuse should feel like it understands the song and builds the beat around it.
+The result should feel more like a real creative assistant and less like separate disconnected tools.

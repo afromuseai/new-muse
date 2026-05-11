@@ -1,0 +1,140 @@
+AfroMuse V2 is now functionally working again and the preview flow has been verified.
+
+Do NOT redesign the app.
+Do NOT touch V3 features yet.
+Do NOT activate voice cloning, persona systems, or vocal control yet.
+Do NOT break any current working flows.
+
+GOAL:
+Complete one of the final major V2 studio intelligence systems by implementing the premium Beat DNA layer inside the Audio Studio.
+
+This should make AfroMuse feel more intentional, producer-aware, and musically controllable before we move into real paid engine activation and then V3.
+
+BUILD THE FOLLOWING:
+
+1. ADD A NEW MICRO-SECTION INSIDE AUDIO STUDIO
+   Create a clean, premium, compact control section called:
+
+Beat DNA
+
+This should live naturally inside the Audio Studio workflow and feel fully native to V2.
+It must NOT feel like V1.
+It must NOT feel bulky or overbuilt.
+
+Keep it visually tight, premium, and elegant.
+
+2. ADD 4 HIGH-IMPACT MUSICAL CONTROLS
+   Add these four user-facing Beat DNA controls:
+
+A) Bounce Style
+Purpose: controls the groove motion / rhythmic feel
+
+Suggested options:
+
+* Smooth Glide
+* Club Bounce
+* Street Bounce
+* Late Night Swing
+* Festival Lift
+* Slow Wine
+* Log Drum Drive
+
+B) Melody Density
+Purpose: controls how sparse or rich the melodic layer feels
+
+Suggested options:
+
+* Minimal
+* Balanced
+* Rich
+* Lush
+* Cinematic
+
+C) Drum Character
+Purpose: controls the feel of the percussion and rhythm section
+
+Suggested options:
+
+* Clean
+* Punchy
+* Raw
+* Dusty
+* Percussive
+* Heavy Groove
+
+D) Hook Lift
+Purpose: controls how much chorus / drop / replay energy the beat should have
+
+Suggested options:
+
+* Subtle
+* Balanced
+* Big
+* Anthemic
+* Explosive
+
+3. KEEP THE UX PREMIUM
+   These controls should feel like AfroMuse V2:
+
+* tasteful chip selectors or premium segmented controls
+* clean spacing
+* elegant micro-labeling
+* no ugly dropdown overload
+* no generic form styling
+* no clutter
+
+4. WIRE THEM INTO SESSION STATE
+   These 4 Beat DNA fields must:
+
+* save in current session state
+* reset properly
+* be included in Project Library save / resume behavior
+* survive session duplication
+* work with existing session restore logic
+
+5. FEED THEM INTO THE LIVE / MOCK INSTRUMENTAL PROMPT BUILDER
+   This is the main point.
+
+Update the AfroMuse instrumental prompt intelligence so these Beat DNA controls actually influence generation quality in meaningful ways.
+
+Examples:
+
+* Club Bounce → more kinetic movement, stronger groove language
+* Late Night Swing → more relaxed pocket and sensual rhythm language
+* Minimal melody density → more space and restraint
+* Cinematic melody density → wider melodic language, emotional sweep
+* Raw drum character → grittier, rougher rhythm description
+* Clean drum character → tighter transient, cleaner pocket
+* Anthemic / Explosive hook lift → more payoff, bigger chorus/drop energy
+* Subtle hook lift → less aggressive arrangement arc
+
+These must affect the actual generation brief and session intelligence, not just sit in the UI doing nothing.
+
+6. KEEP IT COMPATIBLE WITH THE VERIFIED PREVIEW FLOW
+   Do NOT break:
+
+* preview generation
+* session preview rendering
+* instrumental preview card
+* fallback logic
+* project library
+* generation button flow
+* current V2 result cards
+
+7. AFROMUSE HITMAKER FEEL
+   The Beat DNA system should make AfroMuse feel like:
+
+* a beat shaping tool
+* a producer-aware creative engine
+* a serious session-building assistant
+* not a toy
+* not a generic AI form app
+
+8. DO NOT OVERBUILD
+   Do NOT create a new page.
+   Do NOT add unnecessary explanation panels.
+   Do NOT clutter the Audio Studio.
+
+IMPORTANT:
+This is a V2 completion feature.
+It should improve beat intentionality and musical control while keeping the product clean, premium, and focused.

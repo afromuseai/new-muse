@@ -1,0 +1,455 @@
+HIDDEN AI INSTRUCTION FOUNDATION
+
+You are now the lead product engineer for AfroMuse AI.
+
+Your task is to UPGRADE the current AfroMuse app from a songwriting-only product into a V2 PRO AUDIO MVP experience.
+
+This is NOT a redesign from scratch.
+This is a structured product upgrade on top of the existing AfroMuse app.
+
+The current AfroMuse app already has:
+- Song generation form
+- 9 visible creative controls
+- AfroMuse AI V5/V5.1 Hitmaker songwriting backend
+- Song output card
+- Hitmaker Mode / Commercial Mode
+- Production Notes output
+- Better title + hook + structure engine
+
+Your job is to ADD the V2 PRO AUDIO MVP layer cleanly and professionally.
+
+====================================================
+PRIMARY PRODUCT GOAL
+====================================================
+
+Turn AfroMuse from:
+
+"AI songwriting tool"
+
+into:
+
+"AI songwriting + playable demo creation studio"
+
+The user journey should now become:
+
+IDEA → LYRICS → AUDIO PREVIEW → DOWNLOAD
+
+====================================================
+NON-NEGOTIABLE BUILD RULES
+====================================================
+
+1. DO NOT break or remove any existing V5/V5.1 songwriting logic.
+2. DO NOT remove any current creative controls.
+3. DO NOT redesign the app into a different product.
+4. DO NOT overcomplicate the UI.
+5. DO NOT build fake clutter or unnecessary advanced studio panels.
+6. Keep the product clean, premium, and artist-friendly.
+7. Build this as a serious commercial creator tool, not a toy.
+8. Every new UI block must feel intentional, polished, and production-ready.
+
+====================================================
+V2 PRO AUDIO MVP — WHAT MUST BE ADDED
+====================================================
+
+You must add the following major product layer:
+
+AUDIO PREVIEW SYSTEM
+
+This should appear BELOW every successfully generated song output.
+
+====================================================
+SECTION 1 — "BRING IT TO LIFE" CARD
+====================================================
+
+Add a new premium-looking UI card directly below the AfroMuse output card.
+
+Card title:
+Bring It To Life
+
+Subtitle:
+Turn this draft into a playable demo.
+
+This section should contain 2 main action buttons:
+
+1. Generate Instrumental Preview
+2. Generate Vocal Demo
+
+These are the two core V2 MVP features.
+
+====================================================
+SECTION 2 — INSTRUMENTAL PREVIEW FLOW
+====================================================
+
+When the user clicks:
+
+Generate Instrumental Preview
+
+The app should simulate a music generation workflow using the song metadata already available from the generation form and song output.
+
+The generated instrumental preview should be based on:
+
+- Genre
+- Mood
+- Theme / Idea
+- Sound Reference
+- Song Length
+- Language / Flavor
+- Hitmaker Mode
+- Lyrical Depth
+- Hook Repeat Level
+- Production Notes
+- Chord / Vibe
+- BPM
+- Key
+- Arrangement notes
+
+====================================================
+IMPORTANT IMPLEMENTATION NOTE
+====================================================
+
+At this stage, do NOT pretend we have a real audio generation API unless one is already connected.
+
+So build this feature in a realistic MVP-ready architecture:
+
+- Add frontend and backend support for "instrumental preview generation"
+- Add state, loading states, result card, audio placeholders, and playback UI
+- Build the system in a way that is READY for future real audio API connection
+- If needed, use placeholder/mock audio files or temporary preview logic
+- The user experience must feel complete even if the actual audio engine is mocked for now
+
+====================================================
+INSTRUMENTAL RESULT UI
+====================================================
+
+After generation, show a result card under Bring It To Life with:
+
+Title:
+Instrumental Preview Ready
+
+Include:
+- Audio player UI
+- Play / Pause button
+- Progress bar
+- Duration display
+- Regenerate button
+- Download MP3 button
+
+Also show a clean metadata section with:
+
+- Genre
+- Mood
+- BPM
+- Key
+- Energy
+- Audio Type: Instrumental Preview
+
+====================================================
+SECTION 3 — VOCAL DEMO FLOW
+====================================================
+
+When the user clicks:
+
+Generate Vocal Demo
+
+The app should simulate or structure a future-ready vocal demo generation flow using:
+
+- Song lyrics
+- Title
+- Genre
+- Mood
+- Hook shape
+- Keeper line strength
+- Production notes
+- Language / Flavor
+- Song structure
+
+This should feel like:
+"Generate a rough AI vocal demo of this song"
+
+====================================================
+VOCAL DEMO RESULT UI
+====================================================
+
+After generation, show:
+
+Title:
+Vocal Demo Ready
+
+Include:
+- Audio player UI
+- Play / Pause button
+- Progress bar
+- Duration
+- Regenerate button
+- Download MP3 button
+
+Also show metadata:
+
+- Vocal Style (auto for now unless control is added later)
+- BPM
+- Key
+- Audio Type: Vocal Demo
+
+====================================================
+SECTION 4 — AUDIO PLAYER UI
+====================================================
+
+Build a reusable, polished audio player component for AfroMuse.
+
+This player should support:
+
+- Play / Pause
+- Seek bar / progress bar
+- Current time
+- Total duration
+- Replay
+- Download button
+- Regenerate button
+
+The UI should feel modern and premium.
+
+Design direction:
+- clean dark music-tech aesthetic
+- subtle glow accents
+- premium card styling
+- rounded corners
+- not cluttered
+- should look like a creator tool, not a default browser player
+
+DO NOT use ugly default raw browser audio controls as the main experience.
+You may use the underlying HTML audio element behind the scenes, but build a custom-looking player UI.
+
+====================================================
+SECTION 5 — LOADING EXPERIENCE
+====================================================
+
+When the user triggers audio generation, show polished loading states.
+
+For Instrumental Preview:
+- "Building your groove..."
+- "Shaping the rhythm..."
+- "Arranging your vibe..."
+- "Rendering preview..."
+
+For Vocal Demo:
+- "Finding the melody pocket..."
+- "Laying the vocal guide..."
+- "Shaping the chorus lift..."
+- "Rendering vocal preview..."
+
+Use animated loading indicators and premium feedback.
+
+====================================================
+SECTION 6 — SONG AUDIO METADATA PANEL
+====================================================
+
+Whenever audio is generated, show a small metadata card under the player.
+
+For example:
+
+Song Audio Specs
+- Key: F# Minor
+- BPM: 102
+- Genre: Afrobeats
+- Mood: Sad
+- Energy: Mid
+- Hook Repeat Level: High
+- Hitmaker Mode: On
+
+This should automatically pull from existing song generation data where possible.
+
+====================================================
+SECTION 7 — EXPORT CARD
+====================================================
+
+Add another clean section below the audio player(s) called:
+
+Export
+
+Include buttons for:
+
+- Download Lyrics
+- Download Production Notes
+- Download MP3 Preview
+
+If both instrumental and vocal demo exist, the UI should clearly show which MP3 is being downloaded.
+
+For now, do not overbuild stems export.
+Just architect the export area cleanly so stems can be added later.
+
+====================================================
+SECTION 8 — STATE MANAGEMENT
+====================================================
+
+You must properly add state for:
+
+- instrumentalPreviewLoading
+- vocalDemoLoading
+- instrumentalPreviewReady
+- vocalDemoReady
+- instrumentalAudioUrl
+- vocalAudioUrl
+- instrumentalMetadata
+- vocalMetadata
+- audioError
+- activeAudioType
+- download states if needed
+
+Do NOT hardcode everything directly into one component.
+Keep the logic clean and scalable.
+
+====================================================
+SECTION 9 — COMPONENT STRUCTURE
+====================================================
+
+Refactor cleanly if needed.
+
+Recommended components:
+
+- BringToLifeCard
+- AudioActionButtons
+- AudioPreviewCard
+- AudioPlayer
+- AudioMetadataPanel
+- ExportCard
+
+Keep the code organized and production-ready.
+
+====================================================
+SECTION 10 — BACKEND / API STRUCTURE
+====================================================
+
+Add future-ready backend routes or handlers for:
+
+- generateInstrumentalPreview
+- generateVocalDemo
+
+These can be mocked if necessary for now, but they must be structured as real future feature endpoints.
+
+Each should accept payload fields like:
+
+- genre
+- mood
+- theme
+- soundReference
+- songLength
+- languageFlavor
+- hitmakerMode
+- lyricalDepth
+- hookRepeatLevel
+- title
+- lyrics
+- productionNotes
+- bpm
+- key
+- arrangement
+
+If BPM / key are currently embedded in production notes text, intelligently parse or derive them where possible.
+
+====================================================
+SECTION 11 — AUDIO CONTROLS PREP (FOUNDATION ONLY)
+====================================================
+
+Do NOT fully build advanced audio controls yet unless they fit naturally.
+
+But architect the system so future controls can be added cleanly, such as:
+
+- BPM selector
+- Key selector
+- Vocal Style selector
+- Beat Energy selector
+- Hook Lift selector
+
+For now, just make sure the code is ready for these future upgrades.
+
+====================================================
+SECTION 12 — VISUAL / BRANDING UPGRADE
+====================================================
+
+When Commercial / Hitmaker Mode is ON:
+
+The Bring It To Life card should show a subtle badge:
+
+HITMAKER AUDIO
+
+This badge should visually match the premium tone of the current Hitmaker Mode system.
+
+Also:
+- Keep the app visually cohesive
+- Do not make the audio area look like a separate random product
+- It should feel like a natural AfroMuse V2 evolution
+
+====================================================
+SECTION 13 — UX COPY / BUTTON TEXT
+====================================================
+
+Use polished product language.
+
+Preferred wording:
+
+Card title:
+Bring It To Life
+
+Buttons:
+- Generate Instrumental Preview
+- Generate Vocal Demo
+- Regenerate Audio
+- Download MP3
+- Download Lyrics
+- Download Production Notes
+
+Loading:
+- Engineering your sound...
+- Building your groove...
+- Finding the melody pocket...
+
+Success:
+- Instrumental Preview Ready
+- Vocal Demo Ready
+
+====================================================
+SECTION 14 — FREE VS PRO VISUAL POSITIONING
+====================================================
+
+Even if no billing system exists yet, lightly structure this feature like a premium capability.
+
+Examples:
+- small "Pro Feature" styling cues
+- premium badge on audio section
+- clean future-ready monetization posture
+
+But do NOT block the feature behind auth/paywall unless the current app already supports that.
+
+====================================================
+SECTION 15 — FINAL QUALITY STANDARD
+====================================================
+
+This must feel like:
+
+- a real creator product
+- premium
+- polished
+- useful
+- clean
+- expandable
+
+It must NOT feel like:
+- a school project
+- a random audio widget
+- a fake AI gimmick
+- a cluttered dashboard
+
+====================================================
+FINAL DELIVERY REQUIREMENT
+====================================================
+
+Implement the V2 PRO AUDIO MVP directly into the existing AfroMuse app.
+
+Then show me:
+1. What files were added or changed
+2. What components were created
+3. What backend routes or handlers were added
+4. What mock audio logic or placeholder architecture was used
+5. What future API connection points are ready
+
+Build now.

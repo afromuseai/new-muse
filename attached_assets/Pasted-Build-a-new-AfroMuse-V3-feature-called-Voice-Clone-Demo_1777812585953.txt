@@ -1,0 +1,107 @@
+Build a new AfroMuse V3 feature called **Voice Clone Demo** inside the Studio / Audio workflow.
+
+GOAL:
+Allow the user to record **30 seconds of their own voice** and let AfroMuse generate a **singing demo in the user’s own voice**.
+
+IMPORTANT RULE:
+Do **NOT** build this around artist imitation, celebrity reference, or copying another singer’s style.
+The AI must use **only the user’s recorded voice** as the voice identity.
+
+FEATURE REQUIREMENTS:
+
+1. ADD NEW UI SECTION
+Create a new section/button called:
+**Voice Clone Demo**
+Place it near:
+- Generate Melody
+- Generate Voice Demo
+- Audio Studio / Render flow
+
+2. VOICE RECORDING
+Allow the user to:
+- Record up to **30 seconds**
+- Stop / replay / delete / re-record
+- See a simple waveform or recording indicator
+- Upload audio as fallback (optional)
+
+3. USER INSTRUCTION TEXT
+Show helper text like:
+**"Record 30 seconds of your voice. AfroMuse will use your own voice to sing your generated song."**
+
+4. SETTINGS TO APPLY
+The generated singing should respect these user controls:
+- **Performance Feel**  
+  Smooth / Melodic / Gritty / Emotional / Soulful / Intimate / Confident / Airy / Prayerful / Street
+
+- **Dialect Depth**  
+  Light / Medium / Deep
+
+- **Voice Texture**  
+  Warm / Bright / Breathier / Raspy / Powerful
+
+- **Hitmaker Mode**  
+  On / Off
+
+5. CORE AI BEHAVIOR
+When generating the vocal:
+- Use the **user’s voice recording as the sole voice identity**
+- Do NOT imitate any artist
+- Do NOT reference any public singer
+- Keep the **exact lyrics**
+- Preserve:
+  - song structure
+  - keeper lines
+  - BPM
+  - key
+  - emotional tone
+  - melody direction if available
+
+6. OUTPUT
+After generation, return:
+- A **playable vocal demo**
+- A **voice stem** that can be layered into Audio Studio
+- Preview controls:
+  - Play / Pause
+  - Replay
+  - Regenerate
+  - Save to Project
+
+7. AUDIO STUDIO INTEGRATION
+Make sure the output plugs into:
+- Audio Studio V2 / V3
+- Stem stack
+- Playback card
+- Final render flow
+
+8. UX / STATES
+Add proper states:
+- Ready
+- Recording...
+- Processing voice...
+- Generating vocal demo...
+- Demo ready
+- Error state if recording fails
+
+9. BACKEND / LOGIC
+Create the backend flow needed for this feature.
+Use a dedicated prompt / system instruction for the voice generation engine.
+
+USE THIS CORE PROMPT LOGIC:
+
+"You are an AI singing engine.
+Use only the user’s recorded 30-second voice sample as the voice identity.
+Do not imitate, reference, or resemble any existing artist.
+Generate a sung vocal performance of the provided lyrics using the user’s own voice.
+Keep the exact lyrics, song structure, key, BPM, melody direction, and emotional tone intact.
+Apply the selected settings for Performance Feel, Dialect Depth, Voice Texture, and Hitmaker Mode.
+The result must sound like the user is naturally singing the song — expressive, human, emotional, and musically on-pocket.
+Keep pronunciation authentic to the selected dialect and preserve keeper lines exactly.
+Output a clean vocal demo stem ready for preview, layering, and export."
+
+10. IMPORTANT PRODUCT RULE
+This feature is for **personalized user voice singing**.
+It is NOT an artist-style cloning feature.
+Design the UX and backend around **"Sing in My Own Voice"** — not "sound like another artist."
+
+FINAL GOAL:
+When a user generates a song in AfroMuse, they should be able to click **Voice Clone Demo**, record their own voice, and hear the song sung back in their own vocal identity inside Audio Studio.

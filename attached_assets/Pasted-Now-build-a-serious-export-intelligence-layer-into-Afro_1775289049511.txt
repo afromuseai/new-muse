@@ -1,0 +1,98 @@
+Now build a serious export intelligence layer into AfroMuse V2.1.
+
+GOAL:
+Make the V2 Audio Studio feel much more useful to real artists, producers, and collaborators by generating professional production notes.
+
+==================================================
+1. ADD A NEW RESULT / EXPORT AREA
+==================================================
+
+Inside the V2 Audio Studio results section, add a new premium card called:
+
+### "Studio Export Notes"
+
+This should be a serious, polished AfroMuse feature.
+
+==================================================
+2. THIS CARD SHOULD GENERATE STRUCTURED NOTES
+==================================================
+
+Generate studio-useful notes based on:
+- lyrics
+- genre
+- mode (Artist / Producer)
+- energy
+- BPM
+- key
+- style reference
+- generation mode
+- arrangement note preferences
+
+==================================================
+3. INCLUDE THESE NOTE BLOCKS
+==================================================
+
+The Studio Export Notes card should include sections like:
+
+A. Artist Notes
+- emotional direction
+- vocal delivery summary
+- hook focus
+- ad-lib behavior
+
+B. Producer Notes
+- groove pocket
+- drum behavior
+- bass movement
+- texture suggestions
+- arrangement build notes
+
+C. Recording Notes
+- verse delivery suggestions
+- chorus stack suggestions
+- harmony / double ideas
+- vocal tone recommendations
+
+D. Session Notes
+- ideal session goal
+- strongest section
+- replay section
+- what should be protected creatively
+
+==================================================
+4. PRODUCER MODE SHOULD GO DEEPER
+==================================================
+
+If Producer Mode is selected, include more detail like:
+- intro bar feel
+- drop behavior
+- bridge strip-down notes
+- outro landing suggestion
+- stereo width suggestions
+- tension / release points
+
+==================================================
+5. ARTIST MODE SHOULD STAY CLEANER
+==================================================
+
+If Artist Mode is selected, keep it more digestible and emotionally useful.
+
+==================================================
+6. ADD EXPORT BUTTONS
+==================================================
+
+Inside or under this card, add polished export buttons like:
+
+- Copy Studio Notes
+- Copy Producer Notes
+- Copy Recording Notes
+
+If there is already a copy utility in the app, reuse it.
+
+==================================================
+7. IMPORTANT
+==================================================
+
+This should feel like a premium AfroMuse feature — not just another text dump.
+
+Now implement this fully.

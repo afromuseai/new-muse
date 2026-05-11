@@ -1,0 +1,58 @@
+Build AfroMuse V3+ with Monetization and Personalization
+
+You are a full-stack developer. Implement AfroMuse V3 Studio with the following requirements:
+
+1️⃣ User Plans
+
+Free: Basic lyric generation, limited rewrites, instrumental preview only
+Creator Pro: Full lyric controls (Lyrical Depth, Hook Repeat, Gender/Voice, Performance Feel), full rewrite stack, full Audio Studio V2, full save/export
+Artist Pro: Creator Pro features + Artist DNA (personalized style), voice clone, persistent memory, advanced demos
+
+2️⃣ Backend
+
+Add plan-aware middleware to enforce feature access
+Routes:
+/api/rewrite-lyrics → Creator Pro
+/api/voice-clone → Artist Pro
+/api/artist-dna/generate → Artist Pro
+Update user schema to store plan, expiry, Artist DNA, voice clone, usage stats
+
+3️⃣ Frontend
+
+Lock unavailable features with icons/tooltips
+Upgrade modal with plan info, CTA, and Stripe integration
+Feature buttons: check user plan before performing action; if blocked, show upgrade modal
+Keep “coming soon” placeholders for under-development features
+
+4️⃣ Feature Gating
+
+Free: simple lyric controls, limited rewrites, instrumental preview
+Creator Pro: full lyric controls, rewrite stack, Audio Studio
+Artist Pro: voice clone, Artist DNA, persistent memory, advanced demo
+
+5️⃣ Subscription Flow
+
+Stripe monthly/yearly
+Update DB via webhook on successful payment
+Optional trial period for Creator Pro
+
+6️⃣ Tracking & Analytics
+
+Track conversions: Free → Creator Pro → Artist Pro
+Track usage per feature and per plan
+Track active projects and generations
+
+7️⃣ Personalization Features
+
+Artist DNA and voice clone only available to Artist Pro
+Persist preferences for future generations
+
+Deliverables
+
+Plan-aware backend routes
+Gated frontend UI
+Upgrade modal with Stripe flow
+DB schema updates
+Usage tracking system
+
+Output: Provide a full implementation plan with backend routes, middleware, frontend component structure, and plan enforcement logic. Include placeholders for V3+ features like voice clone and Artist DNA.

@@ -1,0 +1,104 @@
+Upgrade AfroMuse V2 by adding a Project Library / Saved Sessions Layer behind the current V2 session architecture.
+
+IMPORTANT:
+Do NOT redesign the current V2 UI.
+Do NOT remove or replace any current working sections.
+Do NOT break the current Audio Studio, generation flow, output cards, engine layer, provider layer, or monetization/access logic.
+This is a product workflow upgrade.
+
+GOAL:
+Make AfroMuse V2 behave like a real music workspace by allowing sessions to be saved, listed, resumed, duplicated, and managed cleanly.
+
+BUILD THE FOLLOWING:
+
+1. SAVED SESSION MODEL
+Create a clean internal saved-session model that stores the important parts of a completed or in-progress build.
+
+Each saved session should support fields such as:
+- sessionId
+- sessionTitle
+- buildMode
+- lyricsSource
+- lyricsText
+- genre
+- bpm
+- key
+- energy
+- atmosphere
+- leadVoice
+- performanceFeel
+- mixFeel
+- createdAt
+- updatedAt
+- currentStage
+- exportStatus
+- outputRegistry
+
+Keep this lightweight but realistic.
+
+2. SAVE CURRENT SESSION
+Add internal logic so the current session can be saved into a session library structure.
+
+Do NOT require a real database yet.
+Use clean local state and/or local persistence if appropriate.
+Keep the architecture future-friendly for a real backend later.
+
+3. RECENT SESSION LIBRARY
+Add a compact premium "Recent Sessions" / "Project Library" panel to the V2 experience.
+
+This should display recent saved builds with lightweight metadata such as:
+- title
+- mode
+- last updated
+- stage/status
+- export readiness
+
+Keep the UI polished and minimal.
+
+4. RESUME SESSION LOGIC
+Allow a saved session to be reopened and reloaded into the current V2 studio state.
+
+This should restore:
+- lyrics / source
+- session identity
+- vocal identity
+- build mode
+- mix feel
+- outputs where appropriate
+
+The goal is for users to continue working on previous ideas.
+
+5. DUPLICATE SESSION
+Allow a saved session to be cloned into a new working session.
+
+This should:
+- create a new sessionId
+- preserve the original data
+- allow variation builds without overwriting the original
+
+6. DELETE / REMOVE SESSION
+Allow lightweight deletion or removal of saved sessions.
+
+Keep this safe and clean.
+
+7. SESSION STATUS INTELLIGENCE
+Saved sessions should intelligently reflect useful labels such as:
+- Draft
+- Instrumental Ready
+- Vocal Ready
+- Export Ready
+- In Progress
+
+Use current internal session/output state to derive this cleanly.
+
+8. PRODUCT / UX RULES
+- Preserve the premium AfroMuse V2 visual language
+- Do not clutter the interface
+- Keep this feeling like a serious studio workspace, not a file manager
+- Make the feature useful immediately even without a real user account system
+- Keep architecture easy to connect to a real backend later
+
+IMPORTANT:
+This is NOT a full cloud storage system.
+This is NOT a redesign.
+This is a serious product upgrade that makes AfroMuse V2 feel like a real creative platform with memory and continuity.

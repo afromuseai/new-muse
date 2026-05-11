@@ -1,0 +1,127 @@
+AfroMuse V1/V2 lyrics generation needs a structure discipline upgrade.
+
+IMPORTANT:
+Do NOT redesign the UI.
+Do NOT break the current working V1 or V2 flow.
+Do NOT touch audio generation, project library, session output cards, or unrelated systems.
+
+GOAL:
+Improve the lyrics generation system so it follows stronger commercial songwriting structure rules consistently — especially section length discipline — without losing the emotional and creative quality already working well.
+
+PROBLEM TO FIX:
+The lyrics quality is often emotionally strong, but the structure can drift.
+Examples of current issues:
+
+* Intro sections becoming too long
+* Intros feeling like mini-choruses
+* Verse / chorus / bridge line counts not staying disciplined
+* Section roles becoming slightly blurred
+* Final chorus / outro labeling becoming too loose
+
+BUILD THE FOLLOWING:
+
+1. ADD A LYRICS STRUCTURE GUARDRAIL LAYER
+   Introduce a dedicated internal structure control layer for lyrics generation.
+
+This layer should help enforce:
+
+* section order
+* section purpose
+* line count discipline
+* commercial songwriting balance
+
+It must improve structure without making the lyrics robotic.
+
+2. DEFINE CLEAR SECTION RULES
+   Create clean internal structural rules for common AfroMuse song forms.
+
+Use strong default discipline such as:
+
+* Intro: 2–4 lines max
+* Verse: fixed or tightly controlled line count (e.g. 8, 10, or 12 depending on chosen structure)
+* Chorus: fixed or tightly controlled line count (e.g. 4, 6, or 8 depending on chosen structure)
+* Bridge: short and purposeful (e.g. 4 lines)
+* Outro: short and clean unless intentionally final-chorus-based
+
+Most importantly:
+The intro must NOT feel like a full chorus replacement.
+The chorus must remain the main emotional / replay payoff.
+
+3. STRENGTHEN THE GENERATION PROMPT DISCIPLINE
+   Upgrade the lyrics generation prompt so the model receives much clearer instructions about:
+
+* how many lines each section should contain
+* what emotional role each section should play
+* what each section should avoid
+
+Examples:
+
+* Intro should set atmosphere, not fully unload the hook
+* Verse should develop story / imagery / emotion
+* Chorus should carry the strongest replay and sing-along energy
+* Bridge should create lift, tension, or emotional turn
+* Outro should close, not wander
+
+4. ADD POST-GENERATION STRUCTURE VALIDATION
+   After the lyrics are generated, run a clean internal structure validation pass that checks:
+
+* section order
+* section presence
+* line counts
+* intro size
+* chorus discipline
+* bridge discipline
+* overly long section drift
+
+If the output breaks the expected structure too much, do one of the following safely:
+
+* lightly auto-correct if possible
+  OR
+* trigger a controlled regeneration with stricter structure instructions
+
+Do NOT make this feel slow or unstable.
+
+5. KEEP THE WRITING QUALITY INTACT
+   Do NOT flatten the lyrics into generic writing.
+   Do NOT remove the strong parts already working well:
+
+* vivid imagery
+* emotional storytelling
+* hook potential
+* production intelligence
+* Afro-inspired writing flavor
+
+The goal is:
+better structure discipline without losing creative quality.
+
+6. IMPROVE SECTION LABEL CLEANLINESS
+   Tighten section labeling consistency where needed.
+
+Avoid overly loose labels like:
+
+* “Outro / Final Chorus” unless truly intended
+
+Use cleaner structure naming so the song feels more intentional and professional.
+
+7. KEEP IT SAFE FOR V1
+   This is extremely important:
+   Do NOT break the existing V1 lyrics generation workflow.
+   Do NOT require UI redesign.
+   Do NOT force a new frontend structure.
+
+This should be an internal intelligence / formatting upgrade, not a visible rebuild.
+
+8. KEEP COMPATIBILITY WITH V2
+   Ensure the upgraded lyrics structure remains compatible with:
+
+* send to Audio Studio
+* lyrics-aware beat shaping
+* session intelligence
+* future real engine activation
+
+9. FINAL GOAL
+   AfroMuse lyrics should still feel emotional, musical, and commercially strong — but now also more disciplined, structured, and studio-ready.
+
+IMPORTANT:
+This is a lyrics quality control pass, not a full rewrite of the product.
+The result should be tighter songs, cleaner intros, stronger chorus impact, and more trustworthy songwriting structure.

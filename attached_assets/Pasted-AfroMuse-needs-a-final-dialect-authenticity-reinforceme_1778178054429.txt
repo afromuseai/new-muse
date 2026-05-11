@@ -1,0 +1,168 @@
+AfroMuse needs a final dialect authenticity reinforcement pass for Jamaican Patois and West African Pidgin.
+
+IMPORTANT:
+Do NOT redesign the UI.
+Do NOT break the current V1 or V2 workflow.
+Do NOT touch audio generation, project library, output cards, or unrelated systems.
+
+GOAL:
+Fix the remaining issue where some lines now sound better, but the full songs still drift between:
+
+* believable native phrasing
+* and AI-ish English-first phrasing with dialect styling
+
+This pass should make the writing more consistently authentic from line to line and section to section.
+
+CURRENT PROBLEM:
+The latest outputs are improved, but still inconsistent.
+
+What is happening:
+
+* some lines feel native and usable
+* then other lines suddenly sound too English underneath
+* some phrases still feel like “AI poetry in dialect costume”
+* hooks can still drift into generic or translated-feeling language
+* emotional abstraction sometimes replaces natural local expression
+
+This is especially visible in:
+
+* Jamaican Patois
+* West African Pidgin
+
+BUILD THE FOLLOWING:
+
+1. ADD INTERNAL DIALECT ANCHORING
+   Strengthen the prompt logic with internal dialect anchoring guidance.
+
+This should help the model write with more consistency by reinforcing:
+
+* how authentic native phrasing tends to sound
+* how natural hook language tends to feel
+* how emotional expression is usually phrased in a believable local way
+
+This must remain internal only.
+Do NOT expose this to the user interface.
+
+2. ADD “GOOD VS BAD” STYLE GUIDANCE INTERNALLY
+   Inside the generation logic, help the model avoid fake or translated-sounding phrasing by implicitly steering away from patterns like:
+
+* standard English thought structure with dialect words inserted
+* overly abstract or generic “motivational AI” lines
+* awkward hybrid constructions
+* lines that are grammatically understandable but not naturally native
+
+At the same time, steer it toward:
+
+* simpler, stronger, more lived-in local expression
+* more believable emotional phrasing
+* more natural hook language
+* cleaner chant-ready lines
+
+3. REDUCE AI-ISH POETIC ABSTRACTION
+   Very important:
+   Some current lines still sound like abstract AI poetry instead of real artist writing.
+
+Reduce patterns like:
+
+* vague metaphor that doesn’t feel culturally grounded
+* unnatural spiritual abstraction
+* lines that sound “deep” but not naturally said
+* emotionally broad statements with weak local realism
+
+Push the writing toward:
+
+* grounded
+* human
+* direct when needed
+* emotionally sharp
+* culturally believable
+
+4. IMPROVE JAMAICAN PATOIS LINE REALISM
+   Strengthen Jamaican Patois outputs specifically so they better avoid:
+
+* internet-English phrases in Patois clothing
+* overly clean English syntax
+* generic uplift language
+* weak local phrasing
+
+The writing should feel more naturally Jamaican in:
+
+* struggle songs
+* faith songs
+* love songs
+* confidence / street songs
+
+5. IMPROVE PIDGIN LINE REALISM
+   Strengthen West African Pidgin outputs specifically so they better avoid:
+
+* “dey / na / no go” pasted onto English structure
+* awkward hybrid sentence logic
+* unnatural chorus lines
+* translated-feeling emotional phrasing
+
+The writing should feel more naturally usable for:
+
+* Afrobeats
+* Afro-fusion
+* street pop
+* heartbreak
+* hustle songs
+* prayer / testimony songs
+
+6. MAKE HOOKS MORE NATIVE AND SIMPLE
+   This is a major priority.
+
+Hooks and chorus lines should become:
+
+* simpler
+* more chantable
+* more believable
+* more locally natural
+
+Avoid over-writing the chorus.
+Avoid trying to sound “deep” in every hook line.
+
+The best hooks should often feel:
+
+* clean
+* sticky
+* emotionally direct
+* naturally repeatable
+
+7. KEEP THE SONG SINGABLE
+   Do NOT overcorrect into heavy unreadable slang.
+
+Maintain:
+
+* clarity
+* musicality
+* commercial usability
+* singability
+
+This is still for real songs, not pure linguistic performance.
+
+8. KEEP ALL STRUCTURE DISCIPLINE INTACT
+   Do NOT weaken:
+
+* section roles
+* intro anti-drift laws
+* verse / chorus line counts
+* bridge rules
+* structure validation
+* controlled retry behavior
+
+This pass is purely about stronger and more consistent authenticity.
+
+9. FINAL GOAL
+   AfroMuse should now produce Jamaican Patois and West African Pidgin lyrics that feel:
+
+* more consistently native
+* less translated
+* less AI-ish
+* more believable line by line
+* more artist-usable
+* more hook-credible
+
+IMPORTANT:
+This is the reinforcement pass.
+The result should feel less like “some good lines mixed with some fake lines” and more like one consistent real voice.

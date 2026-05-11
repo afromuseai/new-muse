@@ -1,0 +1,160 @@
+Add a new post-generation rewrite tool called **"Make It Harder"** to AfroMuse Studio.
+
+This should work exactly like the existing **Humanize Lyrics** button, but with a different rewrite behavior.
+
+## UI / Placement
+
+Add a new button called:
+**Make It Harder**
+
+Place it in the same results action bar as:
+
+* Regenerate
+* Humanize Lyrics
+* Copy
+* Save
+
+It should only appear after a song has been successfully generated, just like Humanize.
+
+Use a bold/street-feeling visual style (for example darker red, black, deep orange, or dark gold accent).
+
+---
+
+## Purpose
+
+This tool should rewrite the **existing generated lyrics** to sound:
+
+* harder
+* more emotionally powerful
+* more quotable
+* more street-believable
+* more artist-performable
+* less soft / less generic / less polite
+
+It should NOT generate a new song from scratch.
+
+It should act like a **session songwriter / punch-up rewriter**.
+
+---
+
+## Rewrite Rules
+
+The "Make It Harder" AI pass should:
+
+1. Keep the **same song structure**
+
+   * Intro
+   * Verse(s)
+   * Chorus
+   * Bridge
+   * Outro
+
+2. Preserve the **main idea and core theme** of the original song
+
+3. Keep the **hook / keeper line** if it is already strong
+
+   * If the hook is weak, sharpen it into something more memorable and performance-ready
+
+4. Rewrite weak lines to sound:
+
+   * more confident
+   * more emotionally direct
+   * more raw
+   * more believable
+   * more musically performable
+
+5. Remove or rewrite lines that feel:
+
+   * too safe
+   * too AI-generic
+   * too motivational in a fake way
+   * too over-explained
+   * too “spoken essay” instead of song
+   * too soft when the song should hit harder
+
+6. Increase:
+
+   * pressure
+   * edge
+   * emotional tension
+   * quotable lines
+   * artist energy
+   * crowd-chant potential in the hook
+
+7. Respect the selected dialect / language mode
+
+   * Ghana Urban Pidgin must still feel Ghanaian
+   * Naija Pidgin must still feel Nigerian
+   * Jamaican Patois must still feel Jamaican
+   * Do NOT flatten everything into generic English
+
+8. Keep it singable
+
+   * short, punchy, emotionally loaded lines are better than long poetic lines
+
+9. Keep all:
+
+   * production notes
+   * arrangement notes
+   * keeper line section
+   * export notes
+     intact unless a keeper line itself is improved
+
+---
+
+## Example rewrite direction
+
+If a line says:
+“I am trying my best in this life”
+
+Harder version should feel more like:
+“Pressure heavy but I still no bend”
+
+If a line says:
+“You left me and I feel sad”
+
+Harder version should feel more like:
+“You comot, leave my chest in pieces”
+
+If a line says:
+“They didn’t believe in me but I made it”
+
+Harder version should feel more like:
+“Dem laugh first — now dem dey quote me”
+
+The exact wording should vary naturally by dialect and genre.
+
+---
+
+## UX Behavior
+
+When clicked:
+
+* show a loading state such as:
+  **"Making lyrics harder..."**
+* rewrite the current song in place
+* replace the visible lyrics with the harder version
+* show a toast when complete:
+  **"Lyrics hit harder now."**
+
+---
+
+## Technical behavior
+
+Implement it the same way Humanize Lyrics is implemented:
+
+* same architecture
+* same post-generation rewrite flow
+* different system prompt / rewrite instructions
+
+Please also ensure:
+
+* it uses the same currently selected song/draft
+* it does not wipe or regenerate unrelated metadata
+* it is safe to click multiple times, but each pass should still keep the song coherent
+
+After implementing, tell me:
+
+1. what frontend file was updated
+2. what backend route/function was added
+3. what exact prompt behavior was used

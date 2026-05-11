@@ -1,0 +1,86 @@
+The V3 Studio right-side panel is not looking good on mobile.
+
+I want a proper responsive mobile UX fix — not just shrinking desktop layout.
+
+GOAL:
+Make the right-side panel feel clean, intentional, and premium on mobile screens.
+
+IMPORTANT:
+Do NOT redesign desktop.
+Keep desktop layout as-is.
+Only improve tablet/mobile responsiveness.
+
+PROBLEM:
+The current right panel (stems / output / render area) feels cramped and visually messy on mobile.
+
+REQUIRED FIX:
+
+1. DESKTOP BEHAVIOR
+Keep the current 3-column layout on desktop:
+- Left = Create Panel
+- Center = Song Workspace
+- Right = Audio / Stems / Output
+
+2. MOBILE / TABLET BEHAVIOR
+Do NOT keep the right panel as a fixed sidebar.
+
+Instead:
+Convert the right-side panel into a mobile-friendly section that appears BELOW the main workspace.
+
+Best acceptable options:
+- accordion section
+- collapsible card stack
+- tabbed block
+- bottom-sheet style section
+
+Preferred behavior:
+A clean collapsible section titled something like:
+- Audio Mix
+- Voice Engine
+- Stems & Output
+
+3. MOBILE UX REQUIREMENTS
+On mobile, the panel should:
+- stack neatly under the lyrics / song workspace
+- be collapsed by default
+- open smoothly when tapped
+- not overwhelm the screen
+- keep controls easy to tap
+- keep sliders usable on small screens
+
+4. KEEP ALL FEATURES
+Do NOT remove any functionality.
+Preserve:
+- stem channels
+- mute buttons
+- volume sliders
+- key / BPM / energy / hook strength
+- Render Final Demo
+- Voice Clone controls if they live there
+
+5. VISUAL CLEANUP
+Improve spacing for mobile:
+- more breathing room
+- cleaner card padding
+- better vertical rhythm
+- less cramped slider layout
+- avoid tiny side-by-side controls where mobile needs stacking
+
+6. RESPONSIVE BREAKPOINTS
+Make the layout feel intentional for:
+- desktop
+- tablet
+- mobile
+
+7. DO NOT OVERCOMPLICATE
+This should feel premium, simple, and creator-friendly.
+Think:
+"mobile music creation app"
+not
+"squeezed desktop dashboard"
+
+8. AFTER CHANGES
+Tell me:
+- what file(s) were updated
+- how the mobile right panel now behaves
+- whether any controls were moved or reorganized

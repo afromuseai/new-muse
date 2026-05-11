@@ -1,0 +1,165 @@
+AfroMuse needs a deeper dialect-first lyrics writing upgrade for Jamaican Patois and West African Pidgin.
+
+IMPORTANT:
+Do NOT redesign the UI.
+Do NOT break the current V1 or V2 workflow.
+Do NOT touch audio generation, project library, output cards, or unrelated systems.
+
+GOAL:
+Fix the remaining authenticity problem where lyrics still sound like English-first writing with slang or dialect sprinkled on top.
+
+The writing must now feel more genuinely native in phrasing, thought rhythm, emotional expression, and hook construction.
+
+CURRENT PROBLEM:
+The recent upgrade improved some surface flavor, but outputs still often feel like:
+
+* English sentence logic underneath
+* dialect words layered on top
+* AI-translated phrasing
+* weak native idiom
+* inconsistent authenticity across sections
+* choruses that are understandable but not naturally native or chantable
+
+This is especially visible in:
+
+* Jamaican Patois outputs
+* West African Pidgin outputs
+
+BUILD THE FOLLOWING:
+
+1. SHIFT TO DIALECT-FIRST WRITING LOGIC
+   Upgrade the lyrics generation prompt logic so AfroMuse writes from a dialect-first mindset, not English-first with dialect decoration.
+
+This means the model should be guided to think in:
+
+* native phrase structure
+* local emotional rhythm
+* realistic spoken / sung expression
+* believable hook language
+
+The song should feel like it was conceived in the dialect, not translated into it.
+
+2. STRENGTHEN NATIVE PHRASE CONSTRUCTION
+   Improve the generation instructions so Jamaican Patois and West African Pidgin outputs use more natural phrase-building patterns.
+
+Focus on:
+
+* how thoughts are naturally expressed
+* how tension / pain / romance / flex / prayer are phrased locally
+* how short punch lines and hook lines are formed
+* how real artists would naturally say it in song form
+
+Do NOT just swap vocabulary.
+Do NOT just sprinkle slang.
+
+3. IMPROVE CHORUS / HOOK AUTHENTICITY
+   This is a major priority.
+
+Hooks and choruses must feel more naturally native and chantable.
+
+Right now some choruses still sound like:
+
+* generic English ideas
+* translated into dialect
+
+Improve:
+
+* replay feel
+* chantability
+* native emotional punch
+* believable local simplicity
+* artist-ready hook construction
+
+The hook should feel like something a real artist would naturally repeat.
+
+4. REDUCE ENGLISH SENTENCE SKELETON
+   Add stronger anti-pattern instructions to discourage outputs that still feel like English underneath.
+
+Examples of what to reduce:
+
+* overly formal sentence flow
+* textbook English phrasing with dialect words inserted
+* motivational or generic English ideas translated into local style
+* awkward hybrid phrasing
+
+AfroMuse should avoid sounding like:
+“standard English with accent styling”
+
+5. ADD CULTURAL LANGUAGE DEPTH
+   Improve the prompt intelligence so the writing better reflects native emotional language and lived-in expression.
+
+This should help with:
+
+* struggle songs
+* love songs
+* spiritual songs
+* hustle / flex songs
+* street survival songs
+* heartbreak songs
+
+The writing should feel more culturally grounded and believable.
+
+6. IMPROVE CONSISTENCY THROUGHOUT THE SONG
+   Ensure the dialect authenticity stays stronger across:
+
+* intro
+* verses
+* chorus
+* bridge
+* outro
+
+Avoid:
+
+* strong dialect in one section
+* but weak English-ish writing in another section
+
+The full song should feel like one real voice.
+
+7. KEEP IT MUSICAL AND SINGABLE
+   Very important:
+   Do NOT overcorrect into unreadable or overly dense slang.
+
+The goal is:
+
+* native-feeling
+* musical
+* clear enough to sing
+* commercially usable
+* emotionally believable
+
+Do NOT make it feel like parody or forced street imitation.
+
+8. KEEP THE STRUCTURE GUARDRAILS FULLY INTACT
+   Do NOT weaken the recent structure discipline work.
+
+The following must remain fully compatible:
+
+* intro line limits
+* verse / chorus / bridge rules
+* anti-drift laws
+* post-generation validation
+* controlled retry behavior
+
+This upgrade is about stronger language authenticity, not changing the structure system.
+
+9. OPTIONAL INTERNAL DIALECT ANCHORING
+   If helpful internally, add stronger dialect anchor guidance or style examples inside the prompt logic to reinforce:
+
+* Jamaican Patois writing behavior
+* West African Pidgin writing behavior
+
+This should improve output quality but remain internal only.
+
+10. FINAL GOAL
+    AfroMuse should now generate Jamaican Patois and West African Pidgin lyrics that feel:
+
+* more native
+* less translated
+* more believable
+* more emotionally grounded
+* more artist-ready
+* more hook-credible
+
+IMPORTANT:
+This is a deeper authenticity pass.
+The output should now feel much less like AI slang decoration and much more like real artist songwriting voice.

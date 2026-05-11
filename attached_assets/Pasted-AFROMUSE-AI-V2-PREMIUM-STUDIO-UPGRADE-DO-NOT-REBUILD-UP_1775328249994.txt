@@ -1,0 +1,487 @@
+AFROMUSE AI — V2 PREMIUM STUDIO UPGRADE (DO NOT REBUILD, UPGRADE EXISTING UI ONLY)
+
+You are upgrading the existing AfroMuse AI V2 Audio Studio into a more premium, artist-first, producer-ready experience.
+
+CRITICAL INSTRUCTION
+
+Do NOT rebuild the app.
+Do NOT remove working logic.
+Do NOT replace backend flows that already work.
+Do NOT break the current V1 Lyrics Studio or the current V2 Audio Studio routing / data flow.
+
+Your job is to upgrade the existing V2 studio UI/UX only so it feels like a serious music product.
+
+This is a premium pass, not a rewrite.
+
+PRIMARY GOAL
+
+The V2 Audio Studio must stop feeling like a generic settings form and start feeling like:
+
+“I am building a real record.”
+
+The page should feel:
+
+premium
+structured
+studio-like
+inspiring
+clear
+musical
+artist-friendly
+producer-trustworthy
+
+It should feel like a creative workstation, not a developer panel.
+
+DO NOT TOUCH / DO NOT BREAK
+
+Keep all currently working logic intact, including:
+
+custom lyrics flow
+quick-send from V1 lyrics into V2 studio
+generationMode logic
+instrumental-only logic
+beat preview generation
+vocal demo generation
+session options
+blueprint logic
+loading / success / error states
+export placeholders
+result cards
+API calls
+backend payload wiring
+toasts
+state fixes already completed
+
+You may rename labels, reorganize sections, improve hierarchy, upgrade visuals, and improve UX clarity — but do not break functionality.
+
+UPGRADE STRATEGY
+
+We are transforming the V2 studio from:
+
+“form with controls”
+
+into:
+
+“record-building workflow”
+
+The entire studio should feel like a guided session build process.
+
+NEW PAGE POSITIONING
+
+At the top of the V2 Audio Studio, upgrade the hero/header section so it feels intentional and premium.
+
+Replace generic tone with this positioning:
+Main Heading
+Audio Studio
+Subheading
+
+Shape your lyrics into a playable session. Build beat direction, vocal identity, and arrangement-ready output.
+
+Support Text
+
+This is where artists and producers turn ideas into a record blueprint.
+
+ADD A PREMIUM MODE STRIP / HEADER BADGES
+
+At the top of the Audio Studio, add a small horizontal badge row with premium studio indicators such as:
+
+Session Builder
+Artist + Producer Workflow
+Custom Lyrics Ready
+Instrumental / Vocal Split
+
+These should feel like premium feature chips, not loud marketing spam.
+
+RESTRUCTURE THE ENTIRE STUDIO INTO 5 CLEAR WORKFLOW BLOCKS
+
+The current controls may already exist.
+Do NOT remove them — reorganize them into the following premium grouped sections.
+
+SECTION 1 — LYRICS SOURCE
+Title:
+Lyrics Source
+Subtitle:
+
+Choose what this session should be built from.
+
+This section should clearly present the user’s lyric source options in a premium card.
+
+Required UX:
+
+The user must immediately understand:
+
+they can use lyrics generated above in V1
+OR paste their own lyrics manually
+OR quickly set up instrumental-only mode
+Include / improve:
+existing quick-send / synced lyrics flow
+custom lyrics textarea / input
+any source indicators already present
+current helper states
+Improve wording:
+
+Use language like:
+
+Use Lyrics From Studio Above
+Use My Own Lyrics
+Instrumental-Only Setup
+
+Avoid robotic terms like “sync payload” or “bridge source”.
+
+Add a subtle helper note:
+
+Tip: You can write in the Lyrics Studio above, then send it here instantly.
+
+SECTION 2 — SESSION IDENTITY
+Title:
+Session Identity
+Subtitle:
+
+Define the musical direction before generation.
+
+This block should feel like the “sound direction” area.
+
+Group all relevant controls here, such as:**
+genre
+mood
+sound/style reference
+vibe / direction fields
+any sonic identity controls already present
+Improve labels to feel musical and premium:
+Replace weak labels like:
+Genre → keep if already good
+Mood → keep if already good
+Sound Reference → upgrade to:
+Sound / Artist Direction
+Style → upgrade to:
+Session Feel
+Vibe → upgrade to:
+Energy + Atmosphere
+
+Only rename if safe and not backend-breaking.
+
+Add a small helper line:
+
+Think like a producer: what should this record feel like in the room?
+
+SECTION 3 — VOCAL IDENTITY
+Title:
+Lead Vocal Identity
+Subtitle:
+
+Shape how the performance should feel.
+
+This section is very important. It should feel like a real artist performance setup.
+
+Group here anything related to:
+voice gender
+vocal type
+delivery style
+singer energy
+topline feel
+any performance-related controls
+Upgrade wording heavily:
+Replace generic labels like:
+Voice Gender → Lead Voice
+Vocal Style → Performance Feel
+Delivery → Delivery Energy
+Tone → Vocal Character
+
+Use language that feels musical, not technical.
+
+Examples of good selectable language:
+Male
+Female
+Soft
+Airy
+Gritty
+Emotional
+Prayerful
+Intimate
+Confident
+Smooth
+Melodic
+Street
+Soulful
+
+If these controls do not yet exist visually, create the UI shell for them in a clean way without breaking the current payload structure. If backend doesn’t yet use some of them, visually label them as “session shaping” controls and wire them safely for future use.
+
+SECTION 4 — BUILD MODE
+Title:
+Build Mode
+Subtitle:
+
+Choose what kind of session you want AfroMuse to prepare.
+
+This section must feel powerful and easy.
+
+Present generation mode as premium selectable cards or segmented controls, not plain form controls.
+Required options:
+Full Session
+Beat preview + vocal direction
+Instrumental Only
+Build beat direction without vocals
+Vocal Demo Setup
+Focus on topline / guide vocal direction
+
+If your current app already uses generationMode, preserve it as the single source of truth.
+
+IMPORTANT:
+
+Do not reintroduce duplicate instrumental-only state.
+
+Everything must still map cleanly to:
+
+full
+instrumental
+vocal demo
+(or whatever your existing equivalent state shape is)
+Add a small helper line:
+
+Pick the fastest route to the version you need right now.
+
+SECTION 5 — SESSION OPTIONS
+Title:
+Session Options
+Subtitle:
+
+Fine-tune how this build should behave.
+
+This is where the more tactical controls should live.
+
+Move all supporting controls here, such as:
+
+beat-only checkbox (if still present in a meaningful way)
+session shaping toggles
+generation preferences
+blueprint helpers
+any additional switches
+Improve copy clarity:
+
+Make every toggle feel obvious and musician-friendly.
+
+Example:
+
+Instead of:
+
+“Beat-only — skip vocals”
+
+Use:
+
+Instrumental Focus
+Build this session without vocal generation
+
+Or if you must preserve existing meaning:
+
+Beat-only Mode
+Skip vocal generation for this build
+
+Keep it clean and understandable.
+
+RESULTS AREA — PREMIUM OUTPUT EXPERIENCE UPGRADE
+
+Do NOT remove the existing result cards.
+
+Upgrade them so the output feels more premium and more “studio product”.
+
+A. Rename result zones for clarity
+Instrumental result area:
+
+Change wording to feel more premium:
+
+Beat Preview
+Instrumental Session
+Production Draft
+
+Best preferred label:
+
+Beat Preview
+Vocal result area:
+
+Use:
+
+Vocal Demo
+Blueprint result area:
+
+Use:
+
+Session Blueprint
+
+These should feel like intentional deliverables.
+
+B. Add small premium descriptions under each result card
+Beat Preview:
+
+Your first-pass sonic direction for the record.
+
+Vocal Demo:
+
+A guide performance direction for topline and melody feel.
+
+Session Blueprint:
+
+Arrangement, structure, and production guidance built from this session.
+
+C. Upgrade empty states
+
+Current empty states should feel less dead and more creative.
+
+Example improved empty copy:
+
+Instead of generic blank placeholders, use language like:
+
+No beat preview yet
+Build your first pass to hear the direction.
+No vocal demo yet
+Set your lead vocal identity, then click Generate.
+No blueprint yet
+Generate a beat preview first to unlock the session plan.
+
+Make empty states feel intentional, not broken.
+
+BUTTON LANGUAGE UPGRADE
+
+Upgrade all major CTA wording so it feels like a music product.
+
+Use stronger, cleaner CTA copy such as:
+Main build actions:
+Build Session
+Build Full Session
+Build Beat Preview
+Build Vocal Demo
+Send To Audio Studio
+Use These Lyrics
+Set Up Instrumental Session
+
+Avoid robotic / misleading copy like:
+
+generate from this
+process request
+trigger generation
+sync payload
+VISUAL DESIGN UPGRADE
+
+Without rebuilding the app, upgrade the visual styling of the V2 studio so it feels more premium.
+
+Desired visual feel:
+dark, modern, music-software inspired
+layered cards
+stronger section spacing
+cleaner typography hierarchy
+better padding
+stronger visual grouping
+more confidence and less clutter
+Add:
+cleaner section dividers
+subtle glow / highlight on active build mode
+premium chips / tags
+more studio-like control cards
+better spacing between sections
+stronger heading/subheading rhythm
+Avoid:
+overdesign
+too many borders
+clutter
+noisy gradients everywhere
+anything that makes it feel like a crypto dashboard
+
+This should feel like:
+
+music software
+
+not
+
+startup admin panel
+MOBILE RESPONSIVENESS
+
+Upgrade responsiveness so the page still feels premium on smaller screens.
+
+Ensure:
+
+cards stack cleanly
+controls do not feel cramped
+build mode cards remain tappable
+headers remain readable
+text areas stay usable
+result cards do not break layout
+MICROCOPY RULES
+
+All copy across the Audio Studio must feel:
+
+artist-friendly
+producer-aware
+natural
+premium
+non-technical
+
+Avoid internal/dev language like:
+
+payload
+bridge state
+sync layer
+API source
+generation object
+mode resolver
+
+The user should feel like they are using a music product, not seeing app internals.
+
+OPTIONAL NICE TOUCHES (ADD IF SAFE)
+
+If safe and easy, add:
+
+1. Session status strip
+
+A small session summary bar showing:
+
+Lyrics source
+Build mode
+Vocal identity
+Session feel
+
+This should update live and feel premium.
+
+2. “Ready to Build” summary box
+
+At the bottom before the CTA, show a small summary like:
+
+Ready to build:
+
+Afrobeats / Spiritual
+Custom lyrics
+Male lead
+Full session
+
+This adds confidence before generation.
+
+3. Better CTA placement
+
+Ensure the main build button feels obvious and important.
+
+STRICT FINAL RULE
+
+You are upgrading the existing V2 Audio Studio only.
+
+You are NOT:
+
+rebuilding the app
+replacing backend systems
+removing current working logic
+changing API contracts unnecessarily
+touching V1 Lyrics Studio functionality unless required for label consistency
+
+You are performing a premium product pass.
+
+The final result should feel like:
+
+AfroMuse AI V2 Audio Studio — Premium Session Builder
+
+not a prototype.
+
+AFTER IMPLEMENTATION
+
+Return a concise summary of:
+
+what was visually upgraded
+what was reorganized
+what labels/copy were improved
+what existing logic was preserved

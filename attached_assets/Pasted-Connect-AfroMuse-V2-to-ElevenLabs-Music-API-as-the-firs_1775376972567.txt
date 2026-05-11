@@ -1,0 +1,90 @@
+Connect AfroMuse V2 to ElevenLabs Music API as the first real audio generation provider.
+
+IMPORTANT:
+Do NOT redesign the UI.
+Do NOT break the current V2 workflows.
+Do NOT remove any existing engine, provider, diagnostics, project library, or Audio Studio architecture.
+Do NOT touch the lyrics generation workflow.
+Do NOT activate vocals, mastering, or stems yet unless already safely isolated.
+
+GOAL:
+Use ElevenLabs Music API as AfroMuse’s first real audio rendering engine so the Audio Studio can generate real instrumental previews in MP3/WAV-ready form.
+
+BUILD THE FOLLOWING:
+
+1. USE ELEVENLABS AS THE LIVE INSTRUMENTAL PROVIDER
+   Upgrade the current instrumental provider so that its live path uses the ElevenLabs Music API.
+
+2. READ THE ELEVENLABS SECRET
+   Use this environment variable:
+
+* ELEVENLABS_API_KEY
+
+Also support these optional env vars if present:
+
+* ELEVENLABS_MUSIC_ENABLED
+* ELEVENLABS_PROVIDER_MODE
+* ELEVENLABS_OUTPUT_FORMAT
+* ELEVENLABS_DEFAULT_DURATION_SECONDS
+
+3. CONNECT AFROMUSE SESSION DATA TO ELEVEN MUSIC
+   When a user builds an instrumental session, map AfroMuse’s existing session fields into a strong music-generation prompt using:
+
+* genre
+* BPM
+* key
+* energy
+* atmosphere
+* sound / artist direction
+* mix feel
+* song scope
+* instrumental-only mode
+* session notes
+* sonic identity if available
+
+4. GENERATE REAL AUDIO
+   Use ElevenLabs Music API to request real music generation.
+   The output should support:
+
+* preview audio URL or playable audio result
+* optional WAV output if available
+* title / generation notes
+* duration
+* provider job ID if returned
+
+5. PRESERVE CURRENT ENGINE FLOW
+   Keep AfroMuse’s existing architecture intact:
+
+* translator layer
+* adapter layer
+* normalized response
+* job lifecycle
+* diagnostics
+* fallback system
+
+6. KEEP FALLBACK SAFETY
+   If ElevenLabs fails, AfroMuse should gracefully fall back to the current mock instrumental provider instead of crashing.
+
+7. DO NOT PRETEND OTHER PROVIDERS ARE LIVE
+   Only activate real live generation for:
+
+* instrumental provider
+
+Keep these mocked for now:
+
+* vocals
+* mastering
+* stems
+
+8. AFROMUSE OUTPUT BEHAVIOR
+   When a user generates in Audio Studio:
+
+* Instrumental Preview should now be real audio when ElevenLabs succeeds
+* Existing cards / UI should remain visually unchanged
+* Output should feel premium, real, and production-ready
+
+IMPORTANT:
+This is the first real AfroMuse audio unlock.
+Do not redesign the app.
+Do not overbuild.
+Just make instrumental generation truly live through ElevenLabs while preserving everything else.

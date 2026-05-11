@@ -1,0 +1,197 @@
+We need to significantly improve the AfroMuse Studio page so it feels like a premium creative workspace, not just a basic AI form + text output.
+
+The Studio page is the core product experience, so it should feel polished, artist-friendly, modern, and emotionally creative.
+
+Please redesign / improve the Studio page with the following goals:
+
+==================================================
+1. OVERALL EXPERIENCE
+==================================================
+
+The Studio should feel like:
+- a premium AI songwriting workspace
+- a place artists would enjoy creating in
+- clean, modern, focused, and inspiring
+- more like a real creative product, less like a plain AI tool
+
+The page should feel:
+- visually premium
+- easy to use
+- mobile-friendly
+- calm but creative
+- well-spaced and readable
+
+==================================================
+2. LAYOUT IMPROVEMENTS
+==================================================
+
+Please improve the layout so the page feels more structured and premium.
+
+Recommended structure:
+
+LEFT / TOP SECTION:
+- Song generation form
+- Topic
+- Genre
+- Mood
+- Style / Inspiration
+- Notes
+- Generate Song button
+
+RIGHT / LOWER MAIN SECTION:
+- Generated song result card / workspace
+- Clean display of the generated lyrics
+
+If the current layout already works, improve it visually rather than rebuilding unnecessarily.
+
+==================================================
+3. PREMIUM FORM DESIGN
+==================================================
+
+The generation form should look more polished and branded.
+
+Please improve:
+- spacing
+- label styling
+- input styling
+- dropdown styling
+- textarea styling
+- button styling
+- section grouping
+
+The Generate Song button should feel strong and premium.
+
+It should look like the main action of the page.
+
+==================================================
+4. GENERATED SONG OUTPUT SHOULD FEEL PREMIUM
+==================================================
+
+This is the most important improvement.
+
+The generated song should NOT appear as one plain block of text.
+
+Please make the generated output feel like a real songwriting workspace.
+
+Requirements:
+
+- Clearly separate sections such as:
+  - Intro
+  - Verse 1
+  - Chorus
+  - Verse 2
+  - Bridge
+  - Final Chorus / Outro
+
+- Use clean typography and spacing
+- Add visible section labels
+- Make the output easy to read and artist-friendly
+- Make it feel like something a songwriter would actually work with
+
+The result should feel more like:
+- a lyrics document
+- a creative draft workspace
+- a usable songwriting sheet
+
+Not like:
+- raw AI output
+- plain copied text
+- a cluttered text box
+
+==================================================
+5. IMPORTANT ACTION BUTTONS
+==================================================
+
+Please add or improve action buttons around the generated song result:
+
+Required:
+- Copy Lyrics
+- Save Project
+- Generate Again
+
+Nice to have if easy:
+- Clear / Reset
+- Download Text (optional later)
+- Rewrite Chorus (later, optional)
+- Rewrite Verse (later, optional)
+
+Buttons should feel clean and useful, not cluttered.
+
+==================================================
+6. UX / FEEDBACK IMPROVEMENTS
+==================================================
+
+Please improve the interactive feel of the Studio.
+
+Important UX upgrades:
+- loading state while generating
+- disable Generate button while generation is in progress
+- visible success / feedback after generation
+- success feedback after saving
+- success feedback after copying lyrics
+- good empty state before first generation
+
+The page should feel alive and responsive.
+
+==================================================
+7. EMPTY STATE / BEFORE GENERATION
+==================================================
+
+Before the user generates a song, the result area should not feel blank or dead.
+
+Please add a polished empty state such as:
+
+- a creative placeholder card
+- helpful guidance text
+- “Your generated song will appear here”
+- a branded inspirational message
+
+This should make the page feel intentional and complete even before use.
+
+==================================================
+8. BRAND FEEL / AFROMUSE IDENTITY
+==================================================
+
+The Studio page should visually match AfroMuse’s brand feel:
+
+- modern
+- music-tech
+- premium
+- Afro-inspired but not cliché
+- clean and stylish
+
+Avoid making it feel:
+- too corporate
+- too plain
+- too generic SaaS
+- too cluttered
+
+We want it to feel like a serious music creation product.
+
+==================================================
+9. MOBILE RESPONSIVENESS
+==================================================
+
+Please make sure the improved Studio page still looks strong and usable on mobile.
+
+Especially:
+- form stacking
+- output readability
+- button spacing
+- section layout
+
+==================================================
+10. FINAL GOAL
+==================================================
+
+The final Studio page should feel like the strongest part of AfroMuse.
+
+When a user lands there, it should feel like:
+“This is where I create.”
+
+It should feel premium enough that users want to:
+- generate again
+- save drafts
+- spend time inside the product
+
+Please focus on polish, clarity, usability, and premium creative feel.

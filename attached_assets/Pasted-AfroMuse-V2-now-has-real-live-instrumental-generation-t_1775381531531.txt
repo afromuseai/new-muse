@@ -1,0 +1,118 @@
+AfroMuse V2 now has real live instrumental generation through ElevenLabs and the output trust layer is working well.
+
+Do NOT redesign the UI.
+Do NOT break any current working flows.
+Do NOT touch vocals, mastering, stems, or non-instrumental provider logic yet.
+
+GOAL:
+Upgrade the quality and controllability of AfroMuse’s real instrumental generation so users can shape better, more intentional beat results.
+
+BUILD THE FOLLOWING:
+
+1. STRONGER ELEVENLABS MUSIC PROMPT BUILDER
+   Upgrade the instrumental prompt construction so it produces much more intentional and musical prompts for ElevenLabs.
+
+Use the current AfroMuse session fields more intelligently, including:
+
+* genre
+* BPM
+* key
+* energy
+* atmosphere
+* sound / artist direction
+* mix feel
+* drum density
+* bass weight
+* emotional tone
+* session notes
+* sonic identity
+* build mode
+
+The generated prompt sent to ElevenLabs should feel like a premium producer brief, not a generic sentence.
+
+2. AFROMUSE HITMAKER PROMPT STYLE
+   Shape prompts like a real producer / A&R / beat director would.
+
+The final ElevenLabs prompt should naturally include:
+
+* bounce
+* groove
+* tempo feel
+* emotional lane
+* texture
+* percussion character
+* low-end weight
+* melody density
+* space / ambience
+* arrangement motion
+
+Avoid robotic keyword stuffing.
+Avoid weak or repetitive phrasing.
+The prompt should read like a confident creative brief for a commercially viable Afro-inspired record.
+
+3. SESSION FIELD INTELLIGENCE
+   Make the prompt builder smarter about how fields interact.
+
+Examples:
+
+* If genre is Afrobeats + energy is high + bass weight is heavy → push bounce, log drum movement, club-ready low end
+* If mood is romantic / reflective → reduce aggression and increase warmth, guitar softness, pad space, melodic intimacy
+* If mix feel is Bright & Crisp → emphasize clarity, air, transient detail
+* If mix feel is Dark & Gritty → emphasize texture, grit, edge, rawness
+* If sound direction references Burna / Wizkid / Asake / Tems / Davido type lanes, interpret stylistically but do NOT imitate copyrighted songs directly
+
+This should feel like AfroMuse actually understands music direction, not just form inputs.
+
+4. BUILD MODE AWARENESS
+   Make prompt behavior adapt to the selected build mode.
+
+Examples:
+
+* Instrumental Only → focus entirely on beat, progression, movement, transitions
+* Full Session → build with vocal space, hook lift, and arrangement support in mind
+* Vocal Demo Setup → prioritize pocket, singer support, breathing room, emotional phrasing space
+
+5. OUTPUT QUALITY GUARDRAILS
+   Add guardrails so the generated ElevenLabs prompt avoids bad prompt patterns such as:
+
+* too many conflicting adjectives
+* contradictory energy / mood language
+* overlong cluttered instructions
+* repetitive genre phrases
+* awkward “AI sounding” wording
+
+The final prompt should be:
+
+* concise enough to be effective
+* rich enough to be musical
+* premium enough to feel like AfroMuse’s signature generation style
+
+6. DEBUG / DIAGNOSTIC VISIBILITY (SAFE, NON-UI BREAKING)
+   Store the final built ElevenLabs prompt and/or a summarized generation brief in a safe internal field so it can be inspected later if needed for debugging or quality tuning.
+
+Do NOT expose raw ugly debug text to the main user-facing UI unless there is already a clean metadata/debug surface for it.
+
+7. KEEP THE LIVE AUDIO FLOW INTACT
+   Do NOT break:
+
+* ElevenLabs live generation
+* data:audio preview playback
+* download preview
+* project library statuses
+* fallback safety
+* job polling
+* current card layout
+
+8. AFROMUSE BRAND FEEL
+   The result should make AfroMuse feel like:
+
+* a premium Afro music ideation engine
+* a hitmaker assistant
+* a producer-aware creative tool
+* not a generic AI beat button
+
+IMPORTANT:
+This is a quality and intelligence upgrade for the live instrumental generation layer.
+Do not redesign the product.
+Do not overbuild.
+Make the music prompts smarter, cleaner, and more musically intentional.

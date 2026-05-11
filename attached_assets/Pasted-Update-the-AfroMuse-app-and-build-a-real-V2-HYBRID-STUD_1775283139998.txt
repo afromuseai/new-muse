@@ -1,0 +1,205 @@
+Update the AfroMuse app and build a real V2 HYBRID STUDIO experience.
+
+GOAL:
+Keep the existing V1 Lyrics Studio, but add a proper V2 Audio Generation workflow in a way that feels like a real product feature — not a hack, not a text block, not a fake prompt simulator.
+
+WHAT TO BUILD:
+
+==================================================
+1. KEEP V1 LYRICS STUDIO
+==================================================
+
+Do NOT remove the current lyric generation experience.
+
+Keep:
+- Genre
+- Mood
+- Theme / Idea
+- Sound Reference
+- Song Length
+- Language / Flavor
+- Hitmaker Mode
+- Lyrical Depth
+- Hook Repeat Level
+
+Keep the current lyric generation flow working.
+
+==================================================
+2. ADD A NEW V2 AUDIO STUDIO SECTION
+==================================================
+
+Create a NEW visible section in the Studio page called:
+
+### "AfroMuse Audio Studio (V2)"
+
+This must feel visually like a proper product card/section under the lyrics workflow.
+
+This section is for:
+- users who already have lyrics
+- users who generated lyrics in V1 and want to turn them into audio quickly
+
+==================================================
+3. ADD A LARGE CUSTOM LYRICS INPUT AREA
+==================================================
+
+Inside the new V2 Audio Studio section, add a large textarea called:
+
+### "Lyrics for Audio Generation"
+
+Requirements:
+- multi-line
+- tall
+- comfortable writing space
+- placeholder should say something like:
+
+"Paste your full lyrics here or use your generated AfroMuse lyrics..."
+
+Behavior:
+- If the user already generated lyrics in V1, add a button:
+
+### "Use Generated Lyrics"
+
+That should automatically copy the current generated lyrics into this textarea.
+
+This is very important.
+
+==================================================
+4. ADD V2 AUDIO CONTROLS
+==================================================
+
+Under the custom lyrics input, add a clean card called:
+
+### "Audio Generation Controls"
+
+Inside it add these controls:
+
+A. Genre / Style selector
+- Afrobeats
+- Dancehall
+- Amapiano
+- Gospel
+- Afro-fusion
+- R&B Afro
+- Street Pop
+
+B. Song Style / Vibe input
+Text input with placeholder like:
+"e.g. Burna Boy x Asake, Omah Lay type vibe, soulful church atmosphere"
+
+C. Vocal Gender selector
+- Male
+- Female
+- Mixed
+- Random
+
+D. Generation Mode selector
+Radio or segmented control:
+- Full Demo
+- Instrumental Only
+- Vocal Demo Only
+
+E. Section selector
+- Full Song
+- Chorus Only
+- Verse Only
+- Hook Only
+
+F. BPM input
+Optional numeric field
+
+G. Key input
+Optional text field (example: F# minor)
+
+H. Energy selector
+- Low
+- Medium
+- High
+
+==================================================
+5. ADD QUICK ACTION CHECKBOXES
+==================================================
+
+Inside the same controls card, add checkboxes for:
+
+- Use generated lyrics automatically
+- Generate only instrumental
+- Include arrangement notes
+- Include stems breakdown
+- Use hitmaker hook priority
+
+These must look polished and product-ready.
+
+==================================================
+6. ADD ACTION BUTTONS
+==================================================
+
+Under the controls, add 3 major buttons:
+
+### Primary:
+- Generate Instrumental Preview
+- Generate Vocal Demo
+- Generate Full Audio Concept
+
+These should feel like real AfroMuse feature buttons.
+
+==================================================
+7. ADD RESULT CARDS
+==================================================
+
+Under the action buttons, create a results area with 3 result cards:
+
+A. Instrumental Preview
+B. Vocal Demo
+C. Audio Blueprint
+
+Each card should support these states:
+- idle
+- loading
+- success
+- error
+
+Loading states should feel premium and branded.
+
+==================================================
+8. AUDIO BLUEPRINT CARD
+==================================================
+
+This is important.
+
+The "Audio Blueprint" result card should display:
+- BPM
+- Key
+- Genre
+- Energy
+- Vocal Type
+- Arrangement Style
+- Hook Focus
+- Producer Notes
+
+This is not real audio yet — but the UI must be ready for it.
+
+==================================================
+9. VISUAL DIRECTION
+==================================================
+
+Design direction:
+- premium
+- dark modern studio feel
+- clean AfroMuse product aesthetic
+- polished cards
+- proper spacing
+- mobile responsive
+- should feel like a real V2 launch feature
+
+==================================================
+10. RULES
+==================================================
+
+- DO NOT break the current V1 studio
+- DO NOT remove existing lyric generation
+- ADD this cleanly below it as a new workflow
+- Make it feel native to the product
+- Build real UI, not placeholder text dumps
+- Use reusable components where possible
+
+Now implement this fully.

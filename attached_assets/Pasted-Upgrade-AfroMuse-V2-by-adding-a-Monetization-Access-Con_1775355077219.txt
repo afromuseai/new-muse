@@ -1,0 +1,95 @@
+Upgrade AfroMuse V2 by adding a Monetization / Access Control Layer behind the existing V2 architecture.
+
+IMPORTANT:
+Do NOT redesign the current UI.
+Do NOT remove or replace any existing working V2 sections.
+Do NOT break any current generation flow, output cards, or engine/provider logic.
+This is a product logic upgrade only.
+
+GOAL:
+Prepare AfroMuse V2 to behave like a real premium SaaS music product with feature gating, plan access rules, and export restrictions — while keeping the current premium UX clean and believable.
+
+BUILD THE FOLLOWING:
+
+1. PLAN / ACCESS MODEL
+Create a lightweight internal access model for at least 2 plans:
+- free
+- pro
+
+Support future expansion, but keep it simple and modular.
+
+Each plan should define access to things such as:
+- session builds
+- instrumental preview generation
+- vocal preview generation
+- arrangement blueprint
+- mastered MP3 export
+- mastered WAV export
+- stems export
+- premium mix feels
+- pro tools cards / actions
+
+2. FEATURE GATE CONFIG
+Create a centralized feature gate config so the app can cleanly check if a feature is available.
+
+Support checks such as:
+- canGenerateInstrumental
+- canGenerateVocals
+- canGenerateBlueprint
+- canExportMp3
+- canExportWav
+- canExportStems
+- canUsePremiumMixFeels
+- canUseProTools
+
+This should be cleanly reusable in both frontend and future backend checks.
+
+3. USAGE / SESSION LIMIT STRUCTURE
+Add a lightweight usage tracking structure for future quota support.
+
+Support things like:
+- sessionsBuiltToday
+- instrumentalGenerationsUsed
+- vocalGenerationsUsed
+- exportsUsed
+
+Do NOT build a full billing system.
+Do NOT add real auth or Stripe yet.
+Just prepare the logic and state structure cleanly.
+
+4. EXPORT ACCESS LOGIC
+Wire clean access checks into the Final Export / Output logic.
+
+Rules should support behavior like:
+- Free users can preview but cannot export WAV
+- Free users cannot download stems
+- Pro users can access mastered export features
+- Buttons should remain graceful and premium when access is blocked
+
+Do not harshly break the UX — use soft product-grade gating behavior.
+
+5. PRO TOOLS ACCESS READINESS
+Wire the existing Pro Tools section so it can understand whether a user has access or not.
+
+Do NOT redesign the cards.
+Just make the cards future-aware of locked / available / upcoming state using centralized access logic.
+
+6. ACCESS STATUS UTILITIES
+Add clean helper utilities so future UI and backend code can ask things like:
+- isFeatureAvailable(plan, feature)
+- getUpgradeReason(feature)
+- getPlanBadgeLabel(plan)
+
+These should be easy to use later when real monetization is added.
+
+7. PRODUCT RULES
+- Keep everything modular and future-friendly
+- Do not over-engineer
+- Preserve the current polished V2 product feel
+- Keep the UX soft, premium, and believable
+- This is preparation for future monetization, not aggressive paywall behavior
+
+IMPORTANT:
+This is NOT a billing integration.
+This is NOT a redesign.
+This is a clean product architecture layer that prepares AfroMuse V2 for future premium access, exports, and plan-based capabilities.

@@ -1,0 +1,125 @@
+Now upgrade the internal intelligence of the V2 Audio Studio output engine so it feels dramatically smarter and more music-aware.
+
+GOAL:
+Make AfroMuse output feel less generic and more like a real creative music engine.
+
+==================================================
+1. IMPROVE GENRE-SPECIFIC MUSIC BEHAVIOR
+==================================================
+
+Upgrade output logic so each genre behaves differently and believably.
+
+Afrobeats should naturally favor:
+- groove pocket
+- bounce
+- melodic ease
+- warm bass
+- shaker movement
+- catchy hook lift
+
+Dancehall should naturally favor:
+- rhythm aggression
+- patois bounce
+- drum attack
+- chant-ready hook space
+- bass pressure
+- toast-ready verses
+
+Amapiano should naturally favor:
+- log drum movement
+- sparse space
+- groove repetition
+- atmospheric build
+- lounge or club lift
+
+Gospel / Spiritual should naturally favor:
+- emotional lift
+- spacious harmony
+- reverent warmth
+- soulful progression
+- uplifting section rise
+
+R&B Afro / Afro-fusion should naturally favor:
+- intimacy
+- melodic smoothness
+- emotional phrasing
+- moody textures
+- softer arrangement transitions
+
+==================================================
+2. MAKE OUTPUT RESPOND TO SECTION TYPE
+==================================================
+
+If user selects:
+- Full Song
+- Chorus Only
+- Verse Only
+- Hook Only
+
+Then the generated output should adapt accordingly.
+
+Example:
+- Hook Only should focus heavily on melody, repetition, impact, chantability
+- Verse Only should focus more on phrasing, cadence, emotional storytelling
+- Chorus Only should emphasize lift and replay value
+
+==================================================
+3. MAKE OUTPUT RESPOND TO ENERGY LEVEL
+==================================================
+
+Low / Medium / High energy should visibly affect:
+- arrangement density
+- drum behavior
+- bass movement
+- vocal intensity
+- transition intensity
+- hook delivery
+
+==================================================
+4. MAKE STYLE REFERENCE MATTER MORE
+==================================================
+
+If a user enters a style reference like:
+- "Burna Boy x Asake"
+- "Omah Lay type vibe"
+- "spiritual church atmosphere"
+- "club banger with emotional hook"
+
+Then AfroMuse should meaningfully adapt the output tone and direction.
+
+Do not imitate artists directly — but do adapt the production language and feel.
+
+==================================================
+5. MAKE LYRICS ANALYSIS FEEL SMARTER
+==================================================
+
+If lyrics are present, analyze them lightly to infer:
+- emotional tone
+- likely delivery intensity
+- whether the hook should feel intimate, explosive, prayerful, aggressive, etc.
+- whether arrangement should stay sparse or expand wide
+
+==================================================
+6. NO GENERIC FILLER
+==================================================
+
+Reduce repetitive generic phrasing.
+Avoid boring filler like:
+- "The beat should be good"
+- "The vocals should match the song"
+- "The song should sound emotional"
+
+Everything should feel specific and useful.
+
+==================================================
+7. IMPORTANT
+==================================================
+
+AfroMuse should now feel like it understands:
+- genre
+- mood
+- section
+- energy
+- user intent
+
+Now implement this upgraded intelligence cleanly.

@@ -1,0 +1,133 @@
+AfroMuse AI V12 — HIT PREDICTOR ENGINE
+🧠 CORE SHIFT IN V12
+
+Previous versions:
+
+focused on structure (chorus, verse, etc.)
+
+V12 focus:
+
+hit probability
+hook memorability
+emotional replay value
+chant strength
+stream retention
+🚨 1. HOOK SCORING SYSTEM (NEW CORE)
+
+Every hook is now automatically evaluated:
+
+🔥 A–F HIT SCALE
+🟢 A+ (Viral / Hit-ready)
+3–7 words max
+emotional + rhythmic
+repeatable instantly
+works as chant
+🟢 A (Strong hit)
+clear hook
+slightly long but memorable
+🟡 B (Good but not viral)
+emotional but not catchy enough
+🟠 C (Weak hook)
+too long / too complex
+🔴 D–F (Reject)
+sounds like sentence, not music
+🎯 2. HOOK ENGINE RULE (V12 STRICT)
+
+A valid hook MUST have:
+
+✔ 1 emotional core
+✔ 1 rhythm bounce
+✔ 1 repeatable phrase
+✔ max 7 syllable cluster feel
+
+❌ INVALID HOOK EXAMPLE:
+
+“Yɛn nsa ahyɛ ase, yɛn ankasa na yɛbɛsan”
+
+👉 Too long, too sentence-like
+
+✔ FIXED HOOK:
+
+“Yɛn nsa yɛ bom”
+“Me gyidi kɔ so”
+“Ɛnyɛ twerɛ bio”
+
+🧠 3. VERSE INTELLIGENCE ENGINE
+
+Now verses are no longer “fillers”.
+
+VERSE MUST FOLLOW:
+
+✔ Story progression (not repetition)
+✔ Emotion shift every 4 lines
+✔ At least 1 “turn moment” (change in feeling)
+
+Structure:
+Setup (problem / life)
+Pressure build
+Emotional turn
+Resolution or tension drop
+🔥 4. CHORUS ENGINE V12 (8-LINE FIXED MODEL)
+
+Every chorus MUST follow:
+
+CORE RULE:
+
+👉 Line 1–2 = Hook repetition (same idea)
+👉 Line 3–4 = Emotional expansion
+👉 Line 5–6 = Rhythm bounce (short punch lines)
+👉 Line 7–8 = Final hook impact
+
+🎛 5. “REPLAY TRIGGER” SYSTEM
+
+A song is considered HIT-ready only if it contains:
+
+✔ At least 2 of these:
+🔁 Repeated chant line
+🎤 Crowd-screamable phrase
+🧠 Simple emotional truth
+🎵 Rhythmic repetition pattern
+💔 Emotional vulnerability moment
+⚠️ 6. LANGUAGE FLOW FIX (BIG IMPROVEMENT)
+
+V12 stops “AI translation feel”.
+
+RULE:
+NO repeated full sentence structures
+NO mechanical repetition across lines
+MUST vary rhythm every 1–2 lines
+Instead:
+
+✔ broken phrasing
+✔ partial repetition
+✔ natural speech rhythm
+✔ Afro-Twi + drill hybrid flow
+
+🎯 7. HIT PREDICTION OUTPUT (NEW FEATURE)
+
+Every song now ends with:
+
+📊 HIT SCORE:
+
+Example:
+
+Hook Strength: A
+Replay Value: High
+Emotional Depth: Medium
+Viral Potential: 82%
+
+👉 Verdict:
+
+“Studio Ready”
+“Needs hook fix”
+“Potential hit after rewrite”
+🔥 8. FINAL OUTPUT STYLE (V12 FORMAT)
+
+Every generated song now comes with:
+
+✔ Clean lyrics
+✔ Correct 8-line chorus
+✔ Structured verses
+✔ Hook score
+✔ Hit prediction
+✔ Suggested improvement (if needed)

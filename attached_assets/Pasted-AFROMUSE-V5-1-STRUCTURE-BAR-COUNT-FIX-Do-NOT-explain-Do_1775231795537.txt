@@ -1,0 +1,200 @@
+AFROMUSE V5.1 — STRUCTURE / BAR-COUNT FIX
+Do NOT explain. Do NOT summarize. Just implement this fully.
+
+AfroMuse V5 is writing stronger lyrics now, but the section line counts still do NOT feel like real human songwriting structure.
+
+This must now be fixed with HARD STRUCTURAL WRITING RULES.
+
+====================================================
+PROBLEM TO FIX
+====================================================
+
+Current outputs sometimes create sections like:
+- 10-line verses
+- odd-number phrasing
+- uneven section lengths
+- bridges that are too short or too long
+
+This makes the songs feel:
+- less musical
+- less recordable
+- less producer-friendly
+- less human-composed
+
+AfroMuse must now write with REAL SONGWRITING / BAR-GROUP STRUCTURE.
+
+Commercial songwriting in Afrobeat / Dancehall / Amapiano / Afro-fusion is usually built in 4-bar phrase groupings.
+
+So sections should follow 4-line multiple logic.
+
+====================================================
+NEW HARD STRUCTURE RULES
+====================================================
+
+1) INTRO RULE
+Intro must be:
+- 2 lines OR 4 lines only
+- never long
+- never hidden verse
+- never chorus-length
+- still must follow the V5 intro quality rules
+
+Allowed intro lengths:
+- 2 lines
+- 4 lines
+
+Not allowed:
+- 3 lines
+- 5+ lines
+
+====================================================
+2) VERSE RULE
+====================================================
+
+Verse sections must now ALWAYS follow 4-line grouping logic.
+
+Allowed Verse lengths ONLY:
+- 8 lines
+- 12 lines
+- 16 lines
+
+NOT allowed:
+- 7
+- 9
+- 10
+- 11
+- 13
+- 14
+- 15
+- random uneven lengths
+
+NEW behavior:
+- SHORT songs → usually 8-line verses
+- STANDARD songs → 8 or 12-line verses
+- LONG songs / DEEP mode → 12 or 16-line verses
+
+Verse lengths must be selected intentionally based on:
+- song length
+- lyrical depth
+- genre pacing
+
+====================================================
+3) CHORUS RULE
+====================================================
+
+Chorus must feel musically loopable and performance-ready.
+
+Allowed Chorus lengths:
+- 4 lines
+- 8 lines
+
+Optional allowance:
+- 6 lines ONLY if clearly structured as:
+  - 4 core hook lines
+  - 2 repeated tag / chant lines
+
+But default preference should be:
+- 4 lines for cleaner commercial hooks
+- 8 lines for fuller melodic choruses
+
+Avoid messy, uneven chorus structures.
+
+====================================================
+4) BRIDGE RULE
+====================================================
+
+Bridge must ALWAYS be:
+
+### EXACTLY 4 LINES
+
+No less.
+No more.
+
+Bridge should act like:
+- emotional shift
+- tension reset
+- lyrical pivot
+- final lift setup
+
+But it must ALWAYS remain exactly 4 lines.
+
+This is now a hard law.
+
+====================================================
+5) OUTRO / FINAL CHORUS RULE
+====================================================
+
+Outro / Final Chorus must also feel musically structured.
+
+Allowed lengths:
+- 2 lines
+- 4 lines
+- 8 lines
+
+No random uneven outro lengths.
+
+====================================================
+6) ADD STRUCTURE ENGINE / BAR COUNT VALIDATOR
+====================================================
+
+Add a new internal validator before final output:
+
+STRUCTURE CHECK must validate:
+- Intro line count
+- Verse 1 line count
+- Chorus line count
+- Verse 2 line count
+- Bridge line count
+- Outro line count
+
+If any section breaks the allowed structural rules:
+- automatically rewrite that section before output
+
+This should be a HARD FAIL / REWRITE system.
+
+====================================================
+7) IMPORTANT: PRESERVE QUALITY WHILE FIXING STRUCTURE
+====================================================
+
+Do NOT make the songs robotic just to obey structure.
+
+The AI must still preserve:
+- emotional sharpness
+- natural flow
+- keeper lines
+- replay value
+- hook quality
+- genre realism
+
+This upgrade is about:
+STRUCTURE + MUSICAL ARRANGEMENT REALISM
+
+Not just line counting.
+
+====================================================
+8) OPTIONAL SMART BEHAVIOR
+====================================================
+
+If useful, AfroMuse may internally treat:
+- 1 line = 1 bar / phrase unit
+for songwriting structure purposes.
+
+This should help it write more naturally in performance blocks.
+
+====================================================
+9) FINAL TASK
+====================================================
+
+Implement this fully in:
+- generation rules
+- backend prompt logic
+- internal validation / rewrite system
+
+Then show me ONLY:
+
+1. What structural rules were added
+2. Whether line-count validation is now enforced
+3. Whether AfroMuse is now structurally production-ready
+
+Do not give partial work.
+Implement fully.

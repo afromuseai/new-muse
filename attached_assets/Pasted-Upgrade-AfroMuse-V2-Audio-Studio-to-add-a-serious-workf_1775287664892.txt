@@ -1,0 +1,111 @@
+Upgrade AfroMuse V2 Audio Studio to add a serious workflow intelligence layer.
+
+GOAL:
+Introduce two different creation modes inside the V2 Audio Studio so users can choose whether they want a simple creative experience or a technical production experience.
+
+==================================================
+1. ADD A NEW MODE TOGGLE
+==================================================
+
+Inside the V2 Audio Studio controls area, add a premium segmented toggle called:
+
+### "Audio Workflow Mode"
+
+Options:
+- Artist Mode
+- Producer Mode
+
+Default:
+- Artist Mode
+
+This must feel polished and important.
+
+==================================================
+2. ARTIST MODE BEHAVIOR
+==================================================
+
+When Artist Mode is selected, AfroMuse should feel:
+- easier
+- more emotional
+- less technical
+- faster to use
+
+In Artist Mode:
+- prioritize vibe
+- prioritize hook feel
+- prioritize vocal emotion
+- simplify technical language where appropriate
+
+The UI should feel more creator-friendly.
+
+==================================================
+3. PRODUCER MODE BEHAVIOR
+==================================================
+
+When Producer Mode is selected, AfroMuse should feel:
+- more technical
+- more structured
+- more arrangement-aware
+- more useful for beat makers / producers / engineers
+
+In Producer Mode:
+- prioritize arrangement
+- prioritize transitions
+- prioritize layering
+- prioritize section energy
+- prioritize mix / texture / build behavior
+
+The UI should expose more detail naturally.
+
+==================================================
+4. PRODUCER MODE DETAIL PANELS
+==================================================
+
+When Producer Mode is selected, expand or reveal additional optional fields such as:
+
+- Intro Behavior
+- Chorus Lift Preference
+- Drum Density
+- Bass Weight
+- Transition Style
+- Outro Style
+
+These can be dropdowns or compact selectors.
+
+Keep them visually clean.
+
+==================================================
+5. RESULT CARD DIFFERENTIATION
+==================================================
+
+Result cards should react to the selected mode.
+
+Artist Mode results should feel:
+- emotional
+- musical
+- easy to understand
+- vibe-first
+
+Producer Mode results should feel:
+- structured
+- technical
+- arrangement-minded
+- studio-useful
+
+==================================================
+6. UX RULES
+==================================================
+
+- Do not clutter the UI
+- Keep the app premium
+- Producer Mode should feel powerful, not messy
+- Artist Mode should feel effortless, not dumbed down
+
+==================================================
+7. IMPORTANT
+==================================================
+
+This should feel like a real product upgrade:
+### "AfroMuse V2.1 Workflow Intelligence"
+
+Now implement this cleanly.

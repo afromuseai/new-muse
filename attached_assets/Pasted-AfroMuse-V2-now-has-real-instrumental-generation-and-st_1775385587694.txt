@@ -1,0 +1,101 @@
+AfroMuse V2 now has real instrumental generation and stronger beat intelligence.
+
+Do NOT redesign the app.
+Do NOT break any current workflows.
+Do NOT touch vocals, mastering, stems, or unrelated provider logic.
+
+GOAL:
+Upgrade the playback and session feel of the Instrumental Preview so AfroMuse feels more like a premium studio experience once a beat is generated.
+
+BUILD THE FOLLOWING:
+
+1. PREMIUM PLAYBACK STRIP
+   Upgrade the Instrumental Preview card so the live audio area feels more polished and studio-like.
+
+Add a cleaner playback strip with:
+
+* Play / Pause
+* current time
+* duration
+* progress bar / seek bar
+* a more premium spacing / hierarchy around the player
+
+Do NOT overbuild a custom audio workstation.
+Keep it elegant, light, and believable.
+
+2. WAVEFORM / VISUAL AUDIO FEEL (LIGHTWEIGHT)
+   Add a tasteful lightweight visual audio feel for live generated beats.
+
+This can be either:
+
+* a simple waveform-style progress display
+  OR
+* a premium animated audio bar strip
+  OR
+* another tasteful audio visual treatment
+
+IMPORTANT:
+It should feel premium and modern, not gimmicky.
+It should only appear when real live audio exists.
+Do NOT make it noisy.
+
+3. SESSION PLAYBACK TRUST
+   When the result is live ElevenLabs audio:
+
+* make playback feel “real” and product-grade
+* reinforce that this is a playable generated preview
+* keep fallback / mock output visually distinct and honest
+
+4. DOWNLOAD EXPERIENCE POLISH
+   Improve the “Download Preview · MP3” interaction so it feels more intentional and premium:
+
+* better button wording if needed
+* graceful loading / disabled states if relevant
+* clearer metadata framing around what is being downloaded
+
+Do NOT fake WAV or fake stems.
+Only support what is real.
+
+5. MINI SESSION METADATA BAR
+   Add a subtle premium metadata strip near the player for live audio sessions showing compact useful details like:
+
+* Genre
+* BPM
+* Key
+* Energy
+* Build Mode
+* optional Beat DNA traits if they exist
+
+Keep this elegant and not cluttered.
+
+6. “CREATED FOR THIS SESSION” FEEL
+   Make the Instrumental Preview card feel more connected to the session that generated it.
+
+Examples:
+
+* “Built from your current session settings”
+* “Generated from your AfroMuse session blueprint”
+* “Shaped from your Beat DNA”
+  Use tasteful, premium microcopy — not cheesy marketing copy.
+
+7. PROJECT LIBRARY LIGHT UPGRADE
+   If a saved session contains live audio:
+
+* make sure it is visually easy to recognize in the Project Library
+* keep it subtle and premium
+* do NOT redesign the whole panel
+
+8. KEEP EVERYTHING ELSE STABLE
+   Do NOT break:
+
+* ElevenLabs live generation
+* fallback behavior
+* job polling
+* download preview
+* Audio Studio layout
+* Project Library resume flow
+* current V2 UI identity
+
+IMPORTANT:
+This is not a redesign.
+This is a premium playback and trust upgrade so generated beats feel more real, polished, and studio-ready inside AfroMuse V2.

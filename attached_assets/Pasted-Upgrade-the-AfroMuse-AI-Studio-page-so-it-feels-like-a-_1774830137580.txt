@@ -1,0 +1,79 @@
+Upgrade the AfroMuse AI Studio page so it feels like a real premium AI music creation workspace.
+
+IMPORTANT:
+Do not rebuild the whole app.
+Only improve the existing Studio page.
+
+Main Goal:
+Make the Studio page feel exciting, useful, premium, and startup-quality.
+
+The Studio page should feel like:
+- a creative workspace
+- an AI songwriting control center
+- something artists would actually want to use
+
+Please improve these areas:
+
+1. OVERALL LAYOUT
+- Improve spacing and structure
+- Make the layout cleaner and more polished
+- Keep 2-column desktop layout and stacked mobile layout
+- Improve visual balance between input panel and output panel
+
+2. INPUT PANEL
+- Make the form feel more premium and polished
+- Improve field spacing, labels, placeholders, and dropdown styling
+- Improve the “Generate Song” button so it feels powerful and exciting
+- Improve “Clear Form” styling
+- Add a better loading / generating state if possible
+
+3. OUTPUT PANEL
+- Make the generated song output look more impressive and useful
+- Improve the styling of:
+  - Song Title
+  - Hook
+  - Verse 1
+  - Verse 2
+  - Bridge
+  - Chord / vibe notes
+  - Melody direction
+  - Arrangement suggestion
+- Improve typography, spacing, card styling, and readability
+- Make it feel like a premium AI result panel
+
+4. ACTION BUTTONS
+Improve the buttons:
+- Regenerate
+- Copy Lyrics
+- Save Project
+
+Make them cleaner, more modern, and more visually consistent.
+
+5. PRO FEATURE PREVIEW BOX
+Make the “Coming Soon” feature box feel more premium and exciting.
+
+Show:
+- Generate Audio
+- Create Instrumental
+- Download Stems
+
+This should create future product desire.
+
+6. MOBILE EXPERIENCE
+Make sure the Studio page feels clean and easy to use on mobile.
+Fix:
+- cramped spacing
+- oversized sections
+- awkward button layout
+- poor text flow
+
+Design Direction:
+- Dark luxury creative workspace
+- Music-tech UI
+- Afrobeat premium identity
+- Elegant glow effects
+- Clean cards
+- Strong CTA styling
+
+Do NOT add random advanced features yet.
+Focus on making the Studio page feel like a serious product.

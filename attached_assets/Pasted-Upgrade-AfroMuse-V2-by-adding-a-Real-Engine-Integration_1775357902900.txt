@@ -1,0 +1,94 @@
+Upgrade AfroMuse V2 by adding a Real Engine Integration Readiness Layer on top of the existing provider architecture.
+
+IMPORTANT:
+Do NOT redesign the current UI.
+Do NOT remove or replace any existing working sections.
+Do NOT break the current Audio Studio, Project Library, engine/provider logic, monetization layer, or output flow.
+This is a serious internal architecture upgrade only.
+
+GOAL:
+Prepare AfroMuse V2 to cleanly support future real audio-generation providers by adding capability profiles, payload translation, response normalization readiness, and live-connection compatibility structure.
+
+BUILD THE FOLLOWING:
+
+1. PROVIDER CAPABILITY PROFILES
+Expand the provider system so each provider can explicitly declare what it supports.
+
+Support capability fields such as:
+- supportsInstrumental
+- supportsVocals
+- supportsBlueprint
+- supportsMastering
+- supportsStems
+- supportsPreviewOnly
+- supportsFullExport
+- supportsPolling
+- supportsRealtime
+- supportsCustomLyrics
+
+Keep this lightweight but real.
+
+2. PAYLOAD TRANSLATION LAYER
+Add a clean payload translation layer that can convert AfroMuse’s internal session payload into provider-ready request payloads.
+
+This should prepare for future providers having different request shapes.
+
+Support translation for at least:
+- instrumental generation payload
+- vocal generation payload
+- mastering payload
+- stems/export payload
+
+Do not hard-code directly inside routes.
+Keep this modular and easy to swap later.
+
+3. RESPONSE ADAPTER READINESS
+Add a response adapter structure so future real provider responses can be normalized cleanly into the existing AfroMuse normalized response format.
+
+Prepare clean adapter functions for:
+- instrumental responses
+- vocal responses
+- mastering responses
+- stems/export responses
+
+Use the current mock provider outputs to prove the architecture works.
+
+4. PROVIDER HEALTH / STATUS STRUCTURE
+Upgrade provider metadata so AfroMuse can understand provider availability more clearly.
+
+Support provider states such as:
+- mock
+- live-ready
+- unavailable
+- disabled
+
+This should remain internal for now but future-safe.
+
+5. MODE / FEATURE COMPATIBILITY CHECKS
+Add internal compatibility helpers so AfroMuse can determine whether a provider can handle a requested session mode or feature before dispatching.
+
+Support checks such as:
+- canProviderHandleBuildMode
+- canProviderHandleMasteredExport
+- canProviderHandleCustomLyrics
+- canProviderHandleStems
+
+This should make the system smarter before real API integration happens.
+
+6. LIVE SWAP READINESS RULES
+Refactor the provider structure where needed so replacing a mock provider with a real live provider later is clean and isolated.
+
+The goal is:
+When a real API is added later, changes should mostly happen inside the relevant provider module and its translator/adapter — not across the UI or route system.
+
+7. PRODUCT / ARCHITECTURE RULES
+- Keep everything modular and product-grade
+- Do not over-engineer
+- Preserve the current working system
+- Focus on future engine swap-readiness
+- Keep AfroMuse V2 feeling like a serious platform under the hood
+
+IMPORTANT:
+This is NOT real API integration yet.
+This is NOT a redesign.
+This is the final architecture-hardening layer before live external engine connection.

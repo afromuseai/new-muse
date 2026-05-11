@@ -1,0 +1,418 @@
+AFROMUSE AI — OUTPUT CARDS PREMIUM UPGRADE
+SAFE UI / UX ENHANCEMENT TASK
+DO NOT BREAK ANY EXISTING WORKING LOGIC
+
+You are upgrading the EXISTING AfroMuse Audio Studio result experience.
+
+IMPORTANT:
+This is NOT a backend rebuild.
+This is NOT a fake audio engine.
+This is NOT a data model rewrite.
+
+You are only upgrading the PRESENTATION, CLARITY, and PRODUCT FEEL of the 3 existing output modules:
+
+1. Beat Preview
+2. Vocal Demo
+3. Session Blueprint
+
+Do NOT remove or break:
+- current generation flow
+- current state logic
+- current API wiring
+- current loading states
+- current success/error states
+- waveform / player logic
+- metadata logic
+- existing download buttons
+- synced lyrics bridge
+- Audio Studio workflow above
+
+This is a visual / UX premiumization pass only.
+
+==================================================
+GOAL
+==================================================
+
+Make the output area feel less like:
+“three generic result cards”
+
+and more like:
+“three distinct music creation modules with clear purpose”
+
+Each module should feel:
+- more premium
+- more intentional
+- more useful
+- more believable
+- more artist/producer-ready
+
+==================================================
+SECTION TITLE UPGRADE
+==================================================
+
+Upgrade the overall output section heading.
+
+Current idea:
+Session Output
+
+Replace with:
+YOUR SESSION BUILD
+
+Subtitle:
+Everything generated for this idea lives here.
+
+This should feel more premium and emotionally satisfying after generation.
+
+==================================================
+MODULE 1 — BEAT PREVIEW CARD UPGRADE
+==================================================
+
+Rename the card title from:
+Beat Preview
+
+To:
+INSTRUMENTAL PREVIEW
+
+Subtitle:
+Your current beat direction and playback preview.
+
+This card should feel like a producer-facing beat concept module.
+
+--------------------------------------------------
+A. HEADER UPGRADE
+--------------------------------------------------
+
+At the top-right or top row of the card, show small premium info chips when data exists:
+
+- BPM
+- Key
+- Energy
+- Genre
+
+These should be compact and elegant.
+
+--------------------------------------------------
+B. ADD “SONIC IDENTITY” MINI BLOCK
+--------------------------------------------------
+
+Inside the card, above or near the player, add a clean mini info section:
+
+Label:
+SONIC IDENTITY
+
+Fields:
+- Core Bounce
+- Atmosphere
+- Main Texture
+
+These should populate safely from existing metadata if possible.
+If exact data is unavailable, derive gracefully from existing session values like:
+- genre
+- mood
+- energy
+- sound direction
+- arrangement details
+
+Examples:
+Core Bounce: Mid-tempo Afrobeats Pulse
+Atmosphere: Warm / Reflective / Spiritual
+Main Texture: Log Drum + Electric Piano
+
+Do NOT invent unsafe random nonsense.
+Use tasteful, believable defaults.
+
+--------------------------------------------------
+C. PLAYER FEEL UPGRADE
+--------------------------------------------------
+
+The player area should feel more “audio product” and less generic.
+
+Improve the visual framing around:
+- waveform
+- play button
+- progress bar
+- time display
+
+Keep all current logic.
+Do NOT rebuild the actual player system.
+Only improve the visual hierarchy and premium feel.
+
+Add a small helper label under the player:
+Preview playback for session direction only.
+
+--------------------------------------------------
+D. EXPORT / ACTION FOOTER
+--------------------------------------------------
+
+At the bottom of the card, create a cleaner action row.
+
+Group actions better and make them feel intentional:
+- Session Notes
+- MP3 Export (coming soon)
+- any existing relevant actions
+
+If MP3 is not live, keep honest “Soon” behavior.
+Do NOT fake file export.
+
+==================================================
+MODULE 2 — VOCAL DEMO CARD UPGRADE
+==================================================
+
+Rename the card title from:
+Vocal Demo
+
+To:
+VOCAL DIRECTION PREVIEW
+
+Subtitle:
+A guide render for vocal feel, tone, and delivery.
+
+This card should feel like an artist / topline direction module.
+
+--------------------------------------------------
+A. HEADER UPGRADE
+--------------------------------------------------
+
+At the top of the card, add premium chips when data exists:
+
+- Lead Voice
+- Performance Feel
+- Build Mode
+
+Examples:
+Female
+Emotional
+Full Session
+
+--------------------------------------------------
+B. ADD “VOCAL IDENTITY” MINI BLOCK
+--------------------------------------------------
+
+Inside the card, above or near the player, add:
+
+Label:
+VOCAL IDENTITY
+
+Fields:
+- Lead Type
+- Delivery Style
+- Emotional Tone
+
+Populate from existing state if possible:
+- voice selection
+- performance feel
+- mood
+- lyrical depth
+- generation mode
+
+Examples:
+Lead Type: Female Lead
+Delivery Style: Smooth + Intimate
+Emotional Tone: Late-night / Romantic / Soft ache
+
+Again:
+Do NOT generate garbage.
+Use believable and graceful derivation.
+
+--------------------------------------------------
+C. PLAYER FEEL UPGRADE
+--------------------------------------------------
+
+Just like Instrumental Preview:
+keep current player logic,
+but improve framing and premium feel.
+
+Add helper label:
+Guide playback to shape vocal direction.
+
+--------------------------------------------------
+D. EMPTY / DISABLED STATE IMPROVEMENT
+--------------------------------------------------
+
+If Vocal Demo is disabled due to Instrumental Only mode,
+make the empty state feel more premium and intentional.
+
+Instead of feeling “blocked,” it should feel like:
+
+“This session is currently set to beat-building mode.”
+
+Use cleaner copy such as:
+Vocal direction is currently off for this session.
+Turn off Instrumental Only to enable guide vocals.
+
+Keep it elegant, not error-like.
+
+==================================================
+MODULE 3 — SESSION BLUEPRINT CARD UPGRADE
+==================================================
+
+Rename the card title from:
+Session Blueprint
+
+To:
+ARRANGEMENT BLUEPRINT
+
+Subtitle:
+A structure-first map for building or recording the session.
+
+This card should feel like a studio / producer planning tool.
+
+--------------------------------------------------
+A. MAKE THE CONTENT FEEL STRUCTURED
+--------------------------------------------------
+
+If the blueprint currently renders as plain text or simple blocks,
+upgrade the presentation so it feels like a readable arrangement sheet.
+
+Preferred feel:
+section-based studio map
+
+Examples:
+INTRO
+VERSE 1
+HOOK
+VERSE 2
+BRIDGE
+FINAL HOOK
+OUTRO
+
+Each section should feel visually separated and intentional.
+
+--------------------------------------------------
+B. ADD “BUILD NOTES” MINI PANEL
+--------------------------------------------------
+
+Inside the card, add a small premium panel:
+
+Label:
+BUILD NOTES
+
+Fields:
+- Suggested Lift Point
+- Best Chorus Moment
+- Recording Focus
+
+Populate gracefully from existing arrangement/session context if possible.
+
+Examples:
+Suggested Lift Point: First Chorus Entry
+Best Chorus Moment: Hook Repeat 2
+Recording Focus: Tight emotional lead with open ad-libs
+
+Do NOT overcomplicate.
+This should feel useful, not noisy.
+
+--------------------------------------------------
+C. ADD “SESSION USE” FOOTER
+--------------------------------------------------
+
+At the bottom of the card, add a tiny helpful note:
+
+Useful for:
+- beat planning
+- vocal recording prep
+- arrangement reference
+
+This reinforces product value.
+
+==================================================
+GLOBAL OUTPUT AREA IMPROVEMENTS
+==================================================
+
+Apply these improvements across all 3 modules:
+
+--------------------------------------------------
+1. STRONGER CARD DIFFERENTIATION
+--------------------------------------------------
+
+Each card should feel like its own product module,
+not 3 copies of the same card with different text.
+
+Suggested accent direction:
+- Instrumental Preview → sky / cyan / cool blue
+- Vocal Direction Preview → violet / pink / purple
+- Arrangement Blueprint → amber / gold / warm neutral
+
+Keep it subtle and premium.
+
+--------------------------------------------------
+2. BETTER EMPTY STATES
+--------------------------------------------------
+
+If no generation has happened yet,
+each module should have a better premium empty state.
+
+Not boring.
+Not robotic.
+
+Examples of tone:
+- “Generate a beat preview to define the sonic lane.”
+- “Build vocal direction once your session setup is ready.”
+- “Create an arrangement map for recording and production.”
+
+Each should clearly explain why the module matters.
+
+--------------------------------------------------
+3. BETTER LOADING STATES
+--------------------------------------------------
+
+Upgrade loading copy for each module.
+
+Examples:
+Instrumental:
+Shaping instrumental direction...
+
+Vocal:
+Rendering vocal feel...
+
+Blueprint:
+Mapping session structure...
+
+This should feel like a serious music product.
+
+--------------------------------------------------
+4. BETTER SUCCESS FEEL
+--------------------------------------------------
+
+When a result exists, the card should feel satisfying and “earned.”
+
+Use:
+- stronger visual hierarchy
+- cleaner spacing
+- premium module identity
+- subtle confidence in copy
+
+==================================================
+INTERACTION SAFETY
+==================================================
+
+DO NOT:
+- create fake real exports
+- create fake waveform functionality
+- break current buttons
+- change API behavior
+- introduce unstable state coupling
+- add unnecessary complexity
+
+If you add helper text, chips, badges, or derived metadata,
+do it SAFELY and gracefully.
+
+No brittle assumptions.
+
+==================================================
+SUCCESS RESULT
+==================================================
+
+When complete, the output area should feel like:
+
+1. A real premium music workflow
+2. Distinct modules with real creative purpose
+3. A stronger product than a standard AI app
+
+The user should immediately understand:
+
+- what the beat preview is for
+- what the vocal preview is for
+- what the blueprint is for
+
+Build this cleanly, safely, and with premium product discipline.

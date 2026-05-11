@@ -1,0 +1,351 @@
+AFROMUSE AI — V2 PRO FEATURES VISUAL LAYER UPGRADE
+SAFE UI / PRODUCT EVOLUTION TASK
+DO NOT BREAK ANY EXISTING WORKING LOGIC
+
+You are upgrading the EXISTING AfroMuse Audio Studio V2 interface into a more premium, productized experience.
+
+IMPORTANT:
+This is NOT a backend engine task.
+This is NOT real stems or real final export generation.
+This is a SAFE UI / UX / product-layer upgrade only.
+
+Do NOT remove or break:
+- Lyrics Studio above
+- quick-send flow from Lyrics Studio into Audio Studio
+- synced lyrics logic
+- manual lyrics mode
+- instrumental-only mode
+- generationMode logic
+- current Audio Studio cards
+- Beat Preview / Vocal Demo / Session Blueprint functionality
+- existing API calls
+- existing session builder logic
+
+Your job is to ADD a premium “V2 Pro Features” layer beneath the current Audio Studio workflow so AfroMuse feels like it is becoming a serious artist/producer platform.
+
+==================================================
+GOAL
+==================================================
+
+Make the Audio Studio feel like:
+
+“this is not just a demo tool —
+this is evolving into a real songwriting-to-audio platform.”
+
+This should feel premium, believable, and commercially attractive.
+
+==================================================
+WHAT TO BUILD
+==================================================
+
+Add a NEW section below the current Session Output area.
+
+Section title:
+PRO TOOLS
+
+Subtitle:
+Premium session tools for artists, writers, and producers.
+
+This new section should visually feel premium and slightly separated from the main generation workflow.
+Use a strong card container with polished spacing, subtle gradients, and clear hierarchy.
+
+==================================================
+PART 1 — PRO TOOLS FEATURE GRID
+==================================================
+
+Create a responsive premium feature grid of cards.
+
+Each card should have:
+- icon
+- title
+- short premium description
+- status badge
+- hover effect
+- optional mini sublabel
+- clean lock / soon / beta presentation where appropriate
+
+Use 8 premium feature cards:
+
+--------------------------------------------------
+1. STEMS EXPORT
+--------------------------------------------------
+Title:
+Stems Export
+
+Description:
+Download separated session parts for flexible mixing and arrangement.
+
+Mini label:
+Drums • Bass • Music • Guide Vocals
+
+Status badge:
+COMING SOON
+
+--------------------------------------------------
+2. FULL WAV EXPORT
+--------------------------------------------------
+Title:
+Full WAV Export
+
+Description:
+Export your session as a high-quality studio-ready bounce.
+
+Mini label:
+24-bit master-ready output
+
+Status badge:
+COMING SOON
+
+--------------------------------------------------
+3. MP3 SESSION EXPORT
+--------------------------------------------------
+Title:
+MP3 Session Export
+
+Description:
+Download a quick-share version for phone playback, demos, and previews.
+
+Mini label:
+Fast artist sharing
+
+Status badge:
+COMING SOON
+
+--------------------------------------------------
+4. VOCAL MODEL SLOTS
+--------------------------------------------------
+Title:
+Vocal Model Slots
+
+Description:
+Choose and save different vocal identities for future demo renders.
+
+Mini label:
+Lead • Alt Lead • Harmony Voice
+
+Status badge:
+BETA PREP
+
+--------------------------------------------------
+5. HOOK ALTERNATES
+--------------------------------------------------
+Title:
+Hook Alternates
+
+Description:
+Generate alternate hook melodies, toplines, or chorus directions.
+
+Mini label:
+For stronger replay value
+
+Status badge:
+PLANNED
+
+--------------------------------------------------
+6. INSTRUMENTAL VARIATIONS
+--------------------------------------------------
+Title:
+Instrumental Variations
+
+Description:
+Build alternate beat directions for the same song idea or vocal concept.
+
+Mini label:
+Club • Smooth • Dark • Acoustic-lite
+
+Status badge:
+PLANNED
+
+--------------------------------------------------
+7. ARRANGEMENT EXPORT
+--------------------------------------------------
+Title:
+Arrangement Export
+
+Description:
+Export a producer-friendly structure sheet for recording and beat building.
+
+Mini label:
+Intro • Verse • Hook • Bridge map
+
+Status badge:
+READY SOON
+
+--------------------------------------------------
+8. RELEASE PACK
+--------------------------------------------------
+Title:
+Release Pack
+
+Description:
+Prepare song title, writing sheet, credits, and session notes in one place.
+
+Mini label:
+Artist-ready organization
+
+Status badge:
+PLANNED
+
+==================================================
+PART 2 — SESSION READINESS PANEL
+==================================================
+
+Under the Pro Tools grid, add a new premium card section:
+
+Title:
+SESSION READINESS
+
+Subtitle:
+A quick look at what your session already has and what unlocks next.
+
+This should feel like a premium “progress / capability” dashboard.
+
+Inside it, create two clean columns or stacked cards:
+
+--------------------------------------------------
+LEFT SIDE:
+CURRENT SESSION READY
+--------------------------------------------------
+
+Use check icons and show these as available now:
+
+- Lyrics Input
+- Genre + Mood Direction
+- BPM / Key Setup
+- Vocal Identity Setup
+- Instrumental Build Path
+- Vocal Demo Setup
+- Session Blueprint
+
+--------------------------------------------------
+RIGHT SIDE:
+NEXT PRO UNLOCKS
+--------------------------------------------------
+
+Use softer lock / soon icons and show:
+
+- Stems Download
+- WAV Bounce
+- Vocal Model Saving
+- Hook Alternate Generator
+- Beat Variation Engine
+- Release Pack Export
+
+This panel should make the product feel like it is clearly growing.
+
+==================================================
+PART 3 — PRODUCER / ARTIST POSITIONING STRIP
+==================================================
+
+Add a thin premium strip beneath Session Readiness:
+
+Text label:
+Built for both artists and producers.
+
+Supporting copy:
+Start with lyrics, shape the session, test the vocal identity, and prepare the structure before final audio rendering.
+
+On the right side of this strip, add small premium tags:
+- Songwriting
+- Beat Prep
+- Vocal Direction
+- Session Planning
+
+==================================================
+PART 4 — CTA PANEL
+==================================================
+
+At the bottom of this new Pro Tools area, add a polished premium CTA card.
+
+Title:
+AfroMuse Pro Engine
+
+Description:
+The next layer of AfroMuse will expand from writing into real session generation, export, and artist-ready delivery.
+
+Inside the card show 3 mini bullets:
+- More realistic audio generation
+- Export-ready session tools
+- Stronger artist / producer workflow
+
+Then add two polished buttons:
+
+PRIMARY BUTTON:
+See What’s Coming
+
+SECONDARY BUTTON:
+Prepare My Session
+
+IMPORTANT:
+These buttons should be safe UI buttons only for now.
+Do NOT connect them to any backend route.
+Do NOT fake downloads.
+Do NOT pretend real export exists.
+
+Use graceful toasts or non-breaking placeholders when clicked.
+
+==================================================
+INTERACTION RULES
+==================================================
+
+When users click locked / planned / coming-soon feature cards:
+
+Do NOT do nothing.
+Instead:
+- show a polished toast
+- or lightweight UI feedback
+
+Example toast style:
+“Stems Export is part of the upcoming AfroMuse Pro audio layer.”
+
+Make each card feel interactive and alive, even if not functional yet.
+
+==================================================
+VISUAL RULES
+==================================================
+
+This must feel more premium than utility-like.
+
+Design direction:
+- polished modern music SaaS
+- dark premium studio aesthetic
+- elegant spacing
+- glowing but restrained accents
+- subtle depth
+- cards should feel “valuable”
+- do NOT make it childish or overly flashy
+
+Use different subtle accent moods across cards:
+- amber / gold for export-related features
+- violet / pink for vocal-related features
+- sky / cyan for producer / arrangement tools
+- neutral premium gray for roadmap / future layers
+
+==================================================
+DO NOT DO THESE
+==================================================
+
+DO NOT:
+- break existing state
+- replace existing Audio Studio sections
+- remove current outputs
+- create fake real downloads
+- create fake audio renders
+- clutter the page
+- overcomplicate the UI
+- merge this with Lyrics Studio
+- turn this into a settings dump
+
+This is a premium expansion layer — not a rebuild.
+
+==================================================
+SUCCESS RESULT
+==================================================
+
+When complete, AfroMuse Audio Studio should now feel like:
+
+1. A current usable workflow
+2. A premium future-facing music product
+3. A platform that clearly has paid potential
+
+Build this cleanly, safely, and with production-quality UI discipline.

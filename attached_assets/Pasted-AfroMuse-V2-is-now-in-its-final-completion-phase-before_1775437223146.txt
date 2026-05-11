@@ -1,0 +1,103 @@
+AfroMuse V2 is now in its final completion phase before real engine activation and then V3.
+
+Do NOT redesign the app.
+Do NOT touch V3 features yet.
+Do NOT activate voice cloning, persona systems, or vocal control yet.
+Do NOT break any current working flows.
+
+GOAL:
+Implement the premium Lyrics-Aware Beat Shaping system so AfroMuse can intelligently shape instrumental direction using either generated lyrics or user-written lyrics.
+
+This should make the Audio Studio feel like it is building a beat for the song — not generating a disconnected instrumental.
+
+BUILD THE FOLLOWING:
+
+1. ADD LYRICS-AWARE INSTRUMENTAL INTELLIGENCE
+   Upgrade the Audio Studio / instrumental generation intelligence so lyrics can influence beat shaping when available.
+
+This must work for BOTH:
+
+* lyrics generated inside Lyrics Studio
+* user-pasted custom lyrics
+
+If lyrics are present, AfroMuse should use them to influence the beat direction intelligently.
+
+2. BUILD A LIGHTWEIGHT INTERNAL LYRICS SIGNAL LAYER
+   Create a compact internal “Lyrics Signal” analysis system that derives useful musical signals from the lyrics without changing the clean V2 UI.
+
+Analyze for signals such as:
+
+* emotional tone
+* romantic / street / spiritual / celebratory / reflective lane
+* energy level
+* melodic softness vs intensity
+* repetition / hook potential
+* chorus lift potential
+* pacing feel
+* intimacy vs performance scale
+* storytelling vs vibe-led writing
+
+This should become a clean internal structured summary, not a giant raw text block.
+
+3. FEED THE LYRICS SIGNAL INTO THE INSTRUMENTAL PROMPT INTELLIGENCE
+   When lyrics are present, use the Lyrics Signal to shape the actual instrumental generation brief / session intelligence in meaningful ways.
+
+Examples:
+
+* romantic / intimate lyrics → softer melodic textures, warmer space, more vocal breathing room
+* street / confident lyrics → stronger percussion attitude, firmer low end, more swagger
+* spiritual / reflective lyrics → more restraint, openness, emotional lift, ambient support
+* highly repetitive / hook-heavy lyrics → more chorus payoff and replay energy
+* storytelling-heavy lyrics → smoother arrangement support and less chaotic movement
+
+This must affect the real musical direction, not just store metadata.
+
+4. RESPECT USER-WRITTEN LYRICS
+   If the user pastes their own lyrics, AfroMuse should treat them as serious creative input.
+
+The beat generation system should feel like it is building around the song, not ignoring it.
+
+5. STRENGTHEN THE EXISTING LYRICS → AUDIO BRIDGE
+   If the user creates lyrics in Lyrics Studio and then sends them into Audio Studio, AfroMuse should use that lyrical content automatically to influence beat shaping.
+
+Do NOT redesign this flow.
+Just make it smarter and more musically aware.
+
+6. OPTIONAL LIGHT MICROCOPY ONLY IF IT FITS CLEANLY
+   If helpful, add subtle premium status language such as:
+
+* “Beat shaped from lyrics”
+* “Using lyrical mood and structure”
+* “Lyrics-aware generation”
+
+Only if it fits naturally and does NOT clutter the UI.
+
+7. SAVE / RESUME COMPATIBILITY
+   Ensure the lyrics-aware intelligence remains compatible with:
+
+* Project Library save / resume
+* session duplication
+* current session restore logic
+* preview generation flow
+* current Audio Studio workflow
+
+8. INTERNAL DIAGNOSTIC SUPPORT
+   Store a compact internal summary of the lyrics-derived musical signals for future tuning / debugging.
+
+Do NOT expose raw debug blocks in the main user-facing UI.
+
+9. KEEP EVERYTHING ELSE STABLE
+   Do NOT break:
+
+* preview generation
+* instrumental preview rendering
+* fallback logic
+* project library
+* current result cards
+* V2 layout
+* generation flow
+
+IMPORTANT:
+This is one of the final major V2 intelligence upgrades.
+AfroMuse should now feel like it understands the song and shapes the beat around it.
+This should make the product feel more like a real creative assistant and less like separate disconnected tools.

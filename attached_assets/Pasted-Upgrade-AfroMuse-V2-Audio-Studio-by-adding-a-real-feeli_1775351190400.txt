@@ -1,0 +1,102 @@
+Upgrade AfroMuse V2 Audio Studio by adding a real-feeling Render Engine Layer and final export workflow.
+
+Do NOT redesign the existing UI. Do NOT remove or replace any current V2 sections. Build on top of the current premium V2 structure exactly as it exists.
+
+GOAL:
+Make the V2 Audio Studio feel like a real audio generation engine is running underneath it, even before full backend audio APIs are connected.
+
+ADD THE FOLLOWING:
+
+1. SESSION PIPELINE STATUS BAR
+Create a premium horizontal pipeline progress strip near the top of the Audio Studio output area.
+
+Include 4 generation stages:
+- Instrumental
+- Vocals
+- Blueprint
+- Master Export
+
+Each stage must support:
+- idle
+- processing
+- success
+- error
+
+Use visual indicators:
+- idle = dim
+- processing = animated pulse / glow
+- success = green check
+- error = red warning
+
+Each stage should have short helper copy beneath the label:
+- Instrumental → "Building sonic direction"
+- Vocals → "Preparing vocal performance"
+- Blueprint → "Mapping arrangement"
+- Master Export → "Preparing final render"
+
+2. OUTPUT STATE LOGIC
+Wire the output cards so they react to generation progress.
+
+Rules:
+- If generation mode is Instrumental Only:
+  - hide or disable Vocal Direction Preview
+  - Master Export remains unavailable unless explicitly allowed later
+- If Instrumental is ready:
+  - Instrumental Preview becomes active
+- If Vocal is ready:
+  - Vocal Direction Preview becomes active
+- If both Instrumental + Vocal are ready:
+  - Master Export card becomes available
+- If Blueprint is ready:
+  - Arrangement Blueprint becomes fully active
+
+Use realistic loading and ready-state transitions.
+
+3. FINAL EXPORT CARD (NEW)
+Add a new premium card under the existing Session Output section called:
+
+"Final Export"
+
+Subtitle:
+"Prepare your session for final delivery."
+
+This card should include:
+- Export MP3 button
+- Export WAV button
+- Download Stems button
+- Render Status badge
+- Mix Feel display
+- Export Quality display (Preview / Standard / Studio)
+
+Behavior:
+- If export is not ready, buttons should show disabled or “Soon”
+- If session is ready, buttons should become active
+- Clicking disabled buttons should show a polished toast message, not fake success
+
+Add small helper note:
+"Final export unlocks when the render engine completes the full session."
+
+4. SESSION HISTORY / BUILD MEMORY (LIGHTWEIGHT)
+Add a small compact panel below Final Export called:
+
+"Recent Session Build"
+
+This should display:
+- Session title or fallback name
+- Current mode (Full Session / Instrumental Only / Vocal Demo)
+- Last completed generation stage
+- Timestamp label like "Just now" / "Moments ago"
+
+Keep this lightweight and premium — not a full database system, just realistic UI state.
+
+5. POLISH / UX RULES
+- Match the current V2 premium visual language exactly
+- Keep all spacing, color hierarchy, and typography aligned with the current Audio Studio
+- Do not add clutter
+- Keep everything believable, premium, and product-grade
+- Preserve all existing V2 functionality and controls
+
+IMPORTANT:
+This is NOT a redesign.
+This is a V2 engine-layer upgrade.
+Only add and wire what is requested above.

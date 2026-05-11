@@ -1,0 +1,160 @@
+AfroMuse V1 should get a controlled dialect style expansion in the Lyrics Studio.
+
+IMPORTANT:
+Do NOT break the current V1 or V2 workflow.
+Do NOT redesign the whole page.
+Do NOT touch audio generation, project library, session engine, or unrelated systems.
+
+GOAL:
+Improve lyrical authenticity by expanding the language system beyond generic “Jamaican Patois” and “West African Pidgin” into more specific, musically useful writing style variants.
+
+WHY THIS IS NEEDED:
+The current broad dialect modes are too generic.
+That makes the lyrics sometimes feel inconsistent or AI-ish.
+
+AfroMuse needs more specific writing identity modes so the model can generate more believable phrasing, emotional rhythm, and hook language.
+
+BUILD THE FOLLOWING:
+
+1. ADD A NEW CONTROL IN LYRICS STUDIO
+   Add a new field in the Lyrics Studio called either:
+
+* Dialect Style
+  OR
+* Language Style
+
+Use the cleaner / more premium naming choice that fits the current UI best.
+
+This should feel like a natural part of the current Lyrics Studio controls — not a new bulky form section.
+
+2. KEEP THE MAIN LANGUAGE FIELD INTACT
+   Do NOT remove the current main language selection.
+
+Keep the current top-level language logic intact (for example:
+
+* English
+* Jamaican Patois
+* West African Pidgin
+  or current equivalents)
+
+The new style field should act as a sub-style / writing flavor selector.
+
+3. MAKE THE NEW OPTIONS CONTEXT-AWARE
+   Only show relevant style options depending on the selected language.
+
+A) If the selected language is Jamaican Patois:
+Show:
+
+* Auto
+* Jamaican Street
+* Jamaican Spiritual
+
+B) If the selected language is West African Pidgin:
+Show:
+
+* Auto
+* Naija Melodic Pidgin
+* Ghana Urban Pidgin
+* Afro-fusion Clean Pidgin
+
+C) If the selected language is English or anything else:
+Hide the field entirely OR show only Auto if cleaner.
+
+The UI should stay elegant and uncluttered.
+
+4. WIRE THE NEW FIELD THROUGH THE FULL LYRICS GENERATION FLOW
+   This is extremely important.
+
+The new Dialect Style / Language Style selection must be fully wired through:
+
+* form state
+* default values
+* clear/reset behavior
+* save/load session behavior
+* project library persistence
+* lyrics generation request payload
+* any session restoration logic already in place
+
+Do NOT leave it as a dead UI control.
+
+5. USE THE NEW STYLE TO SHAPE LYRICS INTELLIGENCE
+   Update the lyrics generation logic so each style meaningfully affects the writing behavior.
+
+A) Jamaican Street should bias toward:
+
+* rawer street realism
+* harder phrasing
+* stronger survival / badmind / pressure language
+* tougher emotional delivery
+
+B) Jamaican Spiritual should bias toward:
+
+* faith / endurance / Jah-centered language
+* reflective emotional weight
+* cleaner, more rooted phrasing
+* spiritual resilience
+
+C) Naija Melodic Pidgin should bias toward:
+
+* smoother, more singable phrasing
+* emotionally musical hooks
+* sweet, flowing Afrobeats-ready language
+* melodic replay value
+
+D) Ghana Urban Pidgin should bias toward:
+
+* cleaner Ghana-urban confidence
+* stylish local bounce
+* cool, conversational phrasing
+* urban realism with polish
+
+E) Afro-fusion Clean Pidgin should bias toward:
+
+* polished, cross-market lyrical phrasing
+* commercially clean pidgin usage
+* smoother crossover writing
+* artist-brand-ready language
+
+6. KEEP THE OUTPUT MUSICAL, NOT GIMMICKY
+   Do NOT turn these into caricatures.
+
+The output should still feel:
+
+* artist-usable
+* singable
+* commercially strong
+* emotionally believable
+
+Do NOT make the language too exaggerated or unreadable.
+
+7. KEEP ALL CURRENT STRUCTURE DISCIPLINE INTACT
+   Do NOT break the recent lyrics structure improvements.
+
+The following must still remain fully active:
+
+* intro anti-drift laws
+* verse / chorus / bridge line discipline
+* structure validation
+* controlled retry logic
+* section role control
+
+This is a language intelligence expansion, not a structure rewrite.
+
+8. KEEP V2 COMPATIBILITY
+   Ensure this new field remains compatible with:
+
+* send to Audio Studio
+* session restoration
+* future real engine prompt shaping
+* future personalization systems
+
+9. MAKE IT FEEL PREMIUM IN THE UI
+   The new control should feel like a premium AfroMuse songwriting intelligence option — not like a technical dropdown.
+
+Use the current design language and chip / selector style already present in the Lyrics Studio.
+
+10. FINAL GOAL
+    AfroMuse should now give users more precise control over lyrical voice and dialect behavior, producing more believable Jamaican and Pidgin songwriting styles while keeping the V1 experience clean and premium.
+
+IMPORTANT:
+This should improve authenticity and writing identity without cluttering or breaking the current product.

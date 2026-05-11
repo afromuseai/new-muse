@@ -1,0 +1,110 @@
+AfroMuse V2 currently contains several "Soon" buttons and placeholders that were originally used before live audio generation was implemented.
+
+Now that real instrumental generation and MP3 preview/download are working, these placeholders need to be upgraded into more accurate, premium, and intelligent availability states.
+
+IMPORTANT:
+Do NOT redesign the UI.
+Do NOT remove future-facing features.
+Do NOT break any current working workflows.
+Do NOT activate unfinished providers like vocals, mastering, or stems.
+
+GOAL:
+Replace all “Soon” placeholders with clear, honest, and premium availability states that reflect the current capabilities of AfroMuse.
+
+BUILD THE FOLLOWING:
+
+1. REMOVE GENERIC “SOON” LABELING
+   Find all buttons and UI elements currently labeled:
+
+* "Soon"
+* "Coming Soon"
+* similar placeholder language
+
+Replace them with more meaningful, state-aware labels.
+
+2. INTRODUCE SMART AVAILABILITY STATES
+   Each feature should now clearly communicate its real state.
+
+Examples:
+
+A) For features not yet implemented (e.g. stems, full mastering):
+
+* “Not Available Yet”
+* “Preparing Engine”
+* “Awaiting Audio Engine”
+* “In Development”
+
+B) For features partially supported:
+
+* “Preview Ready”
+* “MP3 Available”
+* “WAV Support Coming”
+* “Export Expanding”
+
+C) For features that are now live:
+
+* remove any “Soon” label entirely
+* treat them as normal working features
+
+3. EXPORT BUTTON LOGIC
+   Update export-related UI so it reflects reality:
+
+* If MP3 exists → show:
+  “Download Preview · MP3”
+
+* If WAV is not available yet:
+  show a subtle secondary label like:
+  “WAV export preparing”
+
+Do NOT fake WAV downloads.
+
+4. KEEP UX PREMIUM
+   All new labels should feel:
+
+* clean
+* minimal
+* honest
+* not technical or confusing
+
+Avoid:
+
+* harsh error language
+* overly technical backend wording
+* cluttered explanations
+
+5. ICON + VISUAL LANGUAGE UPDATE
+   Replace any lock icons or misleading indicators with:
+
+* subtle clock icon (for upcoming features)
+* soft muted state styling
+* or light status tags
+
+The UI should feel informative, not blocked.
+
+6. SESSION TRUST IMPROVEMENT
+   Make it very clear to users what is:
+
+* real generated audio
+* session preview / blueprint
+* upcoming capabilities
+
+This should improve trust and reduce confusion.
+
+7. DO NOT OVERBUILD
+   Do NOT add new sections or pages.
+   Do NOT clutter the UI.
+   This is a refinement pass, not a feature expansion.
+
+8. KEEP EVERYTHING ELSE STABLE
+   Do NOT break:
+
+* live instrumental generation
+* playback
+* project library
+* provider system
+* fallback logic
+* current layout
+
+IMPORTANT:
+AfroMuse should now feel more real, more honest, and more product-ready.
+This change should remove “fake feeling” placeholders and replace them with confident, transparent product states.

@@ -1,0 +1,99 @@
+AfroMuse V2 must now be DEBUGGED before any more feature upgrades.
+
+IMPORTANT:
+Do NOT add new features.
+Do NOT redesign the UI.
+Do NOT polish export states.
+Do NOT touch vocals, mastering, stems, or unrelated areas.
+
+GOAL:
+Find and fix why real generated instrumental audio is not visibly appearing and playable inside the Audio Studio, even though ElevenLabs integration was wired.
+
+PROBLEM TO SOLVE:
+I am not seeing the Instrumental Preview output properly, and I do not have a clear playable generated beat in the UI.
+
+DEBUG THE FULL LIVE AUDIO DISPLAY PIPELINE END-TO-END.
+
+CHECK AND FIX THE FOLLOWING:
+
+1. GENERATE BUTTON FLOW
+   Trace exactly what happens when the user clicks the Audio Studio generate button.
+   Confirm:
+
+* which function is called
+* which route is hit
+* which provider is triggered
+* whether instrumental live generation is actually being requested
+
+2. JOB COMPLETION FLOW
+   Verify that when the backend job completes:
+
+* the job status changes correctly
+* the polling layer receives the completed result
+* the frontend stores the returned payload
+* the UI state updates correctly
+
+3. AUDIO FIELD MAPPING
+   Confirm the exact field that contains the generated audio.
+
+Check whether the real ElevenLabs output is being returned as:
+
+* audioUrl
+* previewUrl
+* instrumentalPreview
+* normalizedResponse.audioUrl
+* outputRegistry.instrumentalPreview
+* or another field
+
+Then verify that the Instrumental Preview card is reading the correct field.
+
+If there is a mismatch, fix it.
+
+4. PLAYER RENDER LOGIC
+   Check why the Instrumental Preview player is not visibly showing or not playable.
+
+Verify:
+
+* the card is actually receiving the generated audio URL
+* the player only hides when it truly should
+* the UI is not incorrectly treating live audio as fallback/mock
+* the player supports data:audio/... URLs properly
+
+5. LIVE VS FALLBACK DETECTION
+   Confirm whether the UI is accidentally classifying a live generation as mock/fallback and therefore not rendering the real player state.
+
+6. CONSOLE + SERVER DEBUGGING
+   Add safe temporary debug logging to trace:
+
+* generation request payload
+* provider response
+* normalized response
+* frontend poll result
+* final player input source
+
+Use logs only as needed to isolate the break.
+Keep them clean and removable.
+
+7. FIX ONLY WHAT IS BROKEN
+   Do NOT refactor the whole app.
+   Do NOT redesign components.
+   Do NOT add extra polish.
+
+Only fix the actual broken path so that:
+
+* a user can generate
+* see the Instrumental Preview
+* click play
+* hear the beat
+* and download it if available
+
+8. FINAL VERIFICATION
+   At the end, confirm:
+
+* where the bug was
+* what exact file(s) were fixed
+* whether a real generated beat is now visibly playable in the Audio Studio
+
+IMPORTANT:
+This is a functional debug pass, not a feature pass.
+AfroMuse must be able to visibly generate and play one real instrumental before any more upgrades happen.

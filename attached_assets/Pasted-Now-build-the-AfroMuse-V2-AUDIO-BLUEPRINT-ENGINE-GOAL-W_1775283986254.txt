@@ -1,0 +1,147 @@
+Now build the AfroMuse V2 AUDIO BLUEPRINT ENGINE.
+
+GOAL:
+When users click the V2 Audio Studio buttons, the app should generate believable, structured, premium music-production output — even before a real audio engine is connected.
+
+This should feel like a real "AI audio planning engine", not dummy filler.
+
+==================================================
+1. BUILD STRUCTURED OUTPUT GENERATORS
+==================================================
+
+Create logic to generate structured result content for:
+
+A. Instrumental Preview
+B. Vocal Demo
+C. Full Audio Concept
+D. Audio Blueprint
+
+These should be based on:
+- lyrics content
+- genre
+- style reference
+- vocal gender
+- BPM
+- key
+- energy
+- section mode
+- hitmaker preference
+- arrangement / stems checkboxes
+
+==================================================
+2. INSTRUMENTAL PREVIEW OUTPUT
+==================================================
+
+Instrumental Preview should generate production-ready structured text like:
+
+- groove description
+- drum feel
+- bass movement
+- main melodic texture
+- chord feeling
+- drop behavior
+- chorus lift behavior
+- bridge strip-down behavior
+
+This must feel genre-accurate.
+
+Examples:
+Afrobeats should feel different from Dancehall.
+Amapiano should feel different from Gospel.
+
+==================================================
+3. VOCAL DEMO OUTPUT
+==================================================
+
+Vocal Demo should generate:
+- melody direction
+- vocal phrasing
+- register guidance
+- hook delivery
+- ad-lib behavior
+- verse tone
+- emotional intensity
+- section-specific vocal guidance
+
+This should adapt to:
+- male / female / mixed
+- romantic / sad / spiritual / uplifting tones
+- short vs full sections
+
+==================================================
+4. FULL AUDIO CONCEPT OUTPUT
+==================================================
+
+Full Audio Concept should combine:
+- instrumental concept
+- vocal concept
+- arrangement direction
+- section transitions
+- energy map
+- replay / hook notes
+
+This should feel like something a producer and artist could actually use.
+
+==================================================
+5. AUDIO BLUEPRINT PANEL
+==================================================
+
+The Audio Blueprint card should show polished structured metadata:
+
+- Genre
+- BPM
+- Key
+- Energy
+- Vocal Type
+- Groove Feel
+- Hook Priority
+- Chorus Lift
+- Verse Pocket
+- Bridge Energy
+- Producer Notes
+
+If arrangement notes are enabled, include:
+- intro suggestion
+- verse build
+- chorus expansion
+- bridge strip-down
+- outro behavior
+
+If stems breakdown is enabled, include:
+- drums
+- bass
+- melodic layer
+- support texture
+- FX layer
+- vocal doubles / harmonies if relevant
+
+==================================================
+6. MAKE IT FEEL SMART
+==================================================
+
+The blueprint should react intelligently to the user input.
+
+Examples:
+- Sad Afrobeats + Male + Omah Lay type should feel intimate and minimal
+- Dancehall + High Energy + Instrumental Only should feel percussive and aggressive
+- Spiritual Gospel + Female should feel open, warm, and emotionally lifted
+
+==================================================
+7. UX OUTPUT QUALITY
+==================================================
+
+Result cards should be readable and polished:
+- section headings
+- spacing
+- premium formatting
+- not giant ugly walls of text
+
+==================================================
+8. IMPORTANT
+==================================================
+
+Do NOT call it fake output.
+Do NOT label it placeholder.
+Present it like a real AfroMuse AI pre-production engine.
+
+Now implement this properly.

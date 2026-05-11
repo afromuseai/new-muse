@@ -1,0 +1,425 @@
+AFROMUSE AI — PREMIUM UI TIGHTENING PASS
+SAFE VISUAL POLISH / PRODUCT CLEANUP TASK
+DO NOT BREAK ANY WORKING LOGIC
+
+You are performing a PREMIUM UI TIGHTENING PASS on the EXISTING AfroMuse product.
+
+IMPORTANT:
+This is NOT a redesign from scratch.
+This is NOT a feature build.
+This is NOT a backend task.
+This is NOT a state-management rewrite.
+
+You are only improving:
+- visual hierarchy
+- spacing discipline
+- card rhythm
+- typography clarity
+- chip / badge restraint
+- premium product feel
+
+DO NOT break or remove:
+- Lyrics Studio
+- Hitmaker controls
+- Audio Studio
+- quick-send workflow
+- Beat / Vocal / Blueprint generation
+- Pro Tools grid
+- Session Readiness panel
+- CTA panel
+- any current working buttons
+- any current state logic
+- any current backend/API logic
+
+This is a clean premium product polish pass only.
+
+==================================================
+PRIMARY GOAL
+==================================================
+
+Make AfroMuse feel less like:
+“a lot of good UI pieces stacked together”
+
+and more like:
+“a deliberate, premium creative product with visual discipline”
+
+The app should feel:
+- calmer
+- cleaner
+- more expensive
+- easier to scan
+- more trustworthy
+- more launch-ready
+
+==================================================
+GLOBAL DESIGN RULES
+==================================================
+
+Apply these rules across the page:
+
+1. REDUCE VISUAL NOISE
+- Too many borders, highlights, glows, labels, or competing accents should be softened
+- Keep the product premium, not loud
+
+2. IMPROVE BREATHING ROOM
+- Major sections should have clearer spacing between them
+- Internal card spacing should feel balanced and intentional
+
+3. STRENGTHEN TYPOGRAPHY HIERARCHY
+The user should instantly understand:
+- what is primary
+- what is secondary
+- what is supportive
+- what is metadata
+
+4. KEEP PREMIUM DARK APP FEEL
+Do not flatten the product into something generic.
+Maintain the AfroMuse premium dark / creative / modern feel.
+
+==================================================
+TASK 1 — PAGE RHYTHM & SECTION SPACING
+==================================================
+
+Review the entire Studio page layout and improve spacing between major vertical sections.
+
+Main sections likely include:
+- Lyrics Studio
+- quick-send / bridge area
+- Audio Studio
+- Session Output / Your Session Build
+- Pro Tools
+- Readiness / CTA panels
+
+Your job:
+make the page feel intentionally paced.
+
+--------------------------------------------------
+RULES
+--------------------------------------------------
+
+- Increase separation between MAJOR sections
+- Tighten spacing INSIDE sections where things feel too loose
+- Avoid giant empty gaps
+- Avoid “everything touching everything”
+- Each section should feel like it has a clean beginning and end
+
+The page should scroll like a premium product, not like a dev dashboard.
+
+==================================================
+TASK 2 — TYPOGRAPHY HIERARCHY CLEANUP
+==================================================
+
+Audit all text sizes / weights / opacity levels across the Studio experience.
+
+--------------------------------------------------
+A. SECTION HEADINGS
+--------------------------------------------------
+
+Major headings should feel clearly premium and strong.
+Examples:
+- Lyrics Studio
+- Audio Studio
+- Your Session Build
+- Pro Tools / AfroMuse Pro Engine
+
+These should feel intentional, not just “bigger text”.
+
+--------------------------------------------------
+B. SUBTITLES
+--------------------------------------------------
+
+Subtitles should be softer and cleaner.
+They should support the heading without competing with it.
+
+--------------------------------------------------
+C. LABELS / FIELD TITLES
+--------------------------------------------------
+
+Form labels and mini block labels should feel:
+- clear
+- neat
+- slightly elevated
+but not overly bold or shouty.
+
+--------------------------------------------------
+D. HELPER TEXT
+--------------------------------------------------
+
+All helper text should be visually secondary.
+Reduce clutter by making helper copy less dominant.
+
+--------------------------------------------------
+E. METADATA / MINI INFO
+--------------------------------------------------
+
+Chips, notes, metadata rows, and supporting details should feel elegant and light.
+
+==================================================
+TASK 3 — CARD DENSITY & INTERNAL SPACING
+==================================================
+
+Audit all major cards and panels for visual density.
+
+Targets include:
+- Lyrics Studio cards
+- Audio Studio setup cards
+- Build Mode cards
+- Session Options rows
+- Instrumental Preview
+- Vocal Direction Preview
+- Arrangement Blueprint
+- Pro Tools feature cards
+- Session Readiness panel
+- CTA panel
+
+--------------------------------------------------
+GOAL
+--------------------------------------------------
+
+Every card should feel:
+- clean
+- readable
+- intentional
+- not cramped
+- not bloated
+
+--------------------------------------------------
+WHAT TO FIX
+--------------------------------------------------
+
+Look for:
+- too many stacked text layers
+- badges too close to titles
+- cards with weak top/bottom padding
+- buttons too close to content
+- mini panels packed too tightly
+- unnecessary visual heaviness
+
+Refine spacing so the cards feel more premium and less “UI crowded”.
+
+==================================================
+TASK 4 — CHIP / BADGE / TAG DISCIPLINE
+==================================================
+
+AfroMuse now has many:
+- chips
+- badges
+- state tags
+- status pills
+- mini labels
+
+This is good ONLY if visually disciplined.
+
+Audit all chips / badges across the page and improve restraint.
+
+--------------------------------------------------
+RULES
+--------------------------------------------------
+
+- Keep them useful, not noisy
+- Reduce visual dominance where necessary
+- Ensure they don’t overpower headings or main actions
+- Improve consistency in:
+  - padding
+  - font sizing
+  - opacity
+  - corner radius
+  - spacing between chips
+
+The app should feel curated, not overloaded.
+
+==================================================
+TASK 5 — BUTTON HIERARCHY CLEANUP
+==================================================
+
+Audit all visible buttons and action controls.
+
+Examples may include:
+- Generate / Write a Hit
+- quick-send buttons
+- Build Session / Build Full Session
+- preview generation buttons
+- download/export buttons
+- CTA buttons
+- pro tools CTA buttons
+
+--------------------------------------------------
+GOAL
+--------------------------------------------------
+
+The user should instantly understand:
+- primary action
+- secondary action
+- utility action
+- “coming soon” action
+
+--------------------------------------------------
+RULES
+--------------------------------------------------
+
+- Primary buttons should feel clearly primary
+- Secondary buttons should not compete too hard
+- Utility buttons should feel lighter
+- “Soon” / placeholder buttons should feel honest and clearly non-primary
+
+Do not change button logic.
+Do not break handlers.
+This is visual hierarchy only.
+
+==================================================
+TASK 6 — PREMIUM MODULE DIFFERENTIATION REFINEMENT
+==================================================
+
+You previously gave the output modules stronger identities.
+
+Now refine them so they feel distinct but NOT overdesigned.
+
+Modules:
+- Instrumental Preview
+- Vocal Direction Preview
+- Arrangement Blueprint
+
+--------------------------------------------------
+GOAL
+--------------------------------------------------
+
+Each should still feel like its own module,
+but with more visual elegance and less UI excess.
+
+--------------------------------------------------
+RULES
+--------------------------------------------------
+
+- Keep accent personality
+- Reduce unnecessary loudness
+- Make the cards feel premium and studio-grade
+- Improve visual consistency across the 3 cards
+
+Think:
+“high-end music product”
+not:
+“colorful dashboard”
+
+==================================================
+TASK 7 — PRO TOOLS SECTION CLEANUP
+==================================================
+
+Audit the Pro Tools expansion area:
+
+- feature grid
+- readiness panel
+- positioning strip
+- AfroMuse Pro Engine CTA
+
+--------------------------------------------------
+GOAL
+--------------------------------------------------
+
+This section should feel like:
+“future premium ecosystem”
+
+not:
+“too many promo blocks under the app”
+
+--------------------------------------------------
+FIX IF NEEDED
+--------------------------------------------------
+
+- Improve spacing between this section and the main workflow above
+- Reduce promo heaviness
+- Make sure the CTA panel feels premium, not salesy
+- Ensure the feature grid is visually balanced
+- Ensure readiness panel is readable and not crowded
+
+==================================================
+TASK 8 — EMPTY STATE REFINEMENT
+==================================================
+
+Audit all empty states across:
+- Audio Studio
+- Instrumental Preview
+- Vocal Direction Preview
+- Arrangement Blueprint
+- any premium cards or inactive areas
+
+--------------------------------------------------
+GOAL
+--------------------------------------------------
+
+Empty states should feel:
+- intentional
+- premium
+- useful
+- calm
+
+NOT:
+- robotic
+- dead
+- placeholder-like
+
+Keep them concise and elegant.
+
+==================================================
+TASK 9 — MICRO-ANIMATION / INTERACTION RESTRAINT
+==================================================
+
+If there are hover effects, glow effects, transitions, animated cards, or subtle motion:
+
+Refine them so they feel:
+- smoother
+- more premium
+- less twitchy / noisy
+
+--------------------------------------------------
+RULES
+--------------------------------------------------
+
+- Keep tasteful motion
+- Remove anything that feels too flashy
+- Avoid over-animating premium sections
+- Hover should feel “alive,” not distracting
+
+==================================================
+TASK 10 — FINAL PRODUCT FEEL TEST
+==================================================
+
+Before finishing, silently review the entire page and ask:
+
+1. Does this feel more premium than before?
+2. Does this feel calmer and more expensive?
+3. Does the page still feel easy to scan?
+4. Is there less visual competition?
+5. Does this feel more like a startup product and less like a stacked prototype?
+
+If any answer is NO:
+tighten further before finalizing.
+
+==================================================
+IMPORTANT SAFETY
+==================================================
+
+DO NOT:
+- break existing state
+- remove working features
+- rename critical internal variables unless safely required
+- alter backend requests
+- add fake functionality
+- overcomplicate the UI
+- create new bugs from unnecessary restructuring
+
+This should be a safe premium polish pass only.
+
+==================================================
+SUCCESS RESULT
+==================================================
+
+When complete, AfroMuse should feel:
+
+- cleaner
+- sharper
+- calmer
+- more premium
+- more launch-ready
+- more believable as a paid creative platform
+
+Build this with restraint, taste, and product discipline.

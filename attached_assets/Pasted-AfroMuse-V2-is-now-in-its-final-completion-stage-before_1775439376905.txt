@@ -1,0 +1,143 @@
+AfroMuse V2 is now in its final completion stage before real engine activation and then V3.
+
+Do NOT redesign the app.
+Do NOT add V3 systems yet.
+Do NOT activate voice cloning, persona systems, or vocal control yet.
+Do NOT break any current working flows.
+
+GOAL:
+Run the final V2 workflow lock pass so the entire Studio experience feels finished, coherent, premium, and ready for real engine activation.
+
+This is NOT a feature explosion.
+This is a final product completion pass.
+
+BUILD THE FOLLOWING:
+
+1. FULL WORKFLOW CONSISTENCY AUDIT
+   Audit the complete V2 Studio workflow from top to bottom and tighten any remaining inconsistencies between:
+
+* Lyrics Studio
+* Audio Studio
+* session generation flow
+* preview rendering
+* session output cards
+* Project Library save / resume flow
+
+The goal is that AfroMuse V2 feels like one connected premium product — not separate modules stitched together.
+
+2. MICROCOPY CLEANUP PASS
+   Review the remaining visible labels, helper text, button copy, empty states, and status language across the V2 Studio and tighten anything that still feels:
+
+* generic
+* repetitive
+* confusing
+* too technical
+* too placeholder-like
+* too “AI app” instead of “music studio”
+
+Keep all copy:
+
+* premium
+* concise
+* artist-friendly
+* producer-aware
+* honest
+
+Do NOT add marketing fluff.
+Do NOT over-explain.
+
+3. SESSION TRUST + CLARITY PASS
+   Make sure the user can always clearly understand the difference between:
+
+* session preview / blueprint mode
+* live generated audio
+* generated lyrics
+* vocal guidance / future outputs
+* available now vs not available yet
+
+This should reduce confusion and improve trust without cluttering the UI.
+
+4. OUTPUT CARD COHESION PASS
+   Tighten the relationship between the core V2 output modules so they feel like one connected session build system:
+
+* Instrumental Preview
+* Vocal Direction Preview
+* Arrangement Blueprint
+
+Make sure their:
+
+* visual rhythm
+* metadata behavior
+* empty states
+* helper notes
+* footer actions
+* status feel
+
+all feel intentional and consistent.
+
+Do NOT redesign them from scratch.
+Just tighten and mature them.
+
+5. PROJECT LIBRARY FINAL TIGHTENING
+   Review the Project Library so it feels fully aligned with the premium V2 Studio experience.
+
+Check and tighten:
+
+* saved session naming behavior
+* status clarity
+* hover actions
+* empty / loading / save states
+* session recognition trust
+* visual consistency with the rest of V2
+
+Do NOT redesign the panel.
+Do NOT add a new page.
+Do NOT overbuild.
+
+6. PREMIUM FLOW POLISH
+   Look for small friction points in the V2 workflow such as:
+
+* state confusion
+* duplicate actions
+* weak labels
+* awkward transitions
+* unclear save behavior
+* slightly broken hierarchy
+* inconsistent tone
+
+Fix only what improves the experience meaningfully.
+
+7. KEEP THE VERIFIED PREVIEW FLOW SAFE
+   Do NOT break:
+
+* preview generation
+* current playable preview flow
+* session preview rendering
+* fallback behavior
+* session restore
+* current working state logic
+
+8. NO FAKE FUTURE UX
+   Remove or tighten any remaining UI behavior that feels like:
+
+* fake capability
+* misleading future promise
+* unclear unavailable action
+* dead-end interaction
+
+AfroMuse should feel ambitious but honest.
+
+9. FINAL V2 PRODUCT FEEL
+   By the end of this pass, AfroMuse V2 should feel like:
+
+* a premium AI songwriting + session-building studio
+* a believable artist/producer workflow
+* a coherent creative product
+* something ready for real engine activation
+* something stable enough to hand off into V3 later
+
+IMPORTANT:
+This is the final V2 lock pass.
+Do NOT overbuild.
+Do NOT create feature sprawl.
+The mission is to make V2 feel complete, premium, and ready.

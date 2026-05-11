@@ -1,0 +1,245 @@
+I want to upgrade the **core AfroMuse song generation brain** so the first draft output is much stronger before Humanize / Harder / Catchier even run.
+
+Do NOT just make the AI “more creative.”
+I want a much more disciplined, artist-aware songwriting system prompt and generation behavior.
+
+The goal is for AfroMuse to generate songs that feel like:
+**real artist-ready rough drafts**
+—not motivational essays, not fake AI poetry, and not English sentences with random pidgin sprinkled on top.
+
+## Core generation upgrade goals
+
+The base generator should now produce songs that are:
+
+* more natural
+* more singable
+* more quotable
+* more emotionally believable
+* more hook-driven
+* more performance-aware
+* more native in dialect construction
+* less AI-sounding from the very first draft
+
+---
+
+## CRITICAL SONGWRITING RULES
+
+### 1) Write songs, not explanations
+
+The AI must stop over-explaining feelings or life situations.
+
+Bad style:
+
+* “I have been through many difficult experiences in life”
+* “I know that God has been helping me through all my struggles”
+
+Better style:
+
+* “Pain don tire me”
+* “Na God carry me”
+
+Every line should feel like something someone could actually sing or record — not something written in an essay.
+
+---
+
+### 2) Hooks must be shorter and stronger
+
+The generator should prioritize making choruses / hooks:
+
+* shorter
+* easier to remember
+* more repeatable
+* more chantable
+* more emotionally immediate
+
+The hook should usually contain the **keeper line** or a variation of it.
+
+If the chorus is too long, too wordy, or too “written,” it should be simplified.
+
+---
+
+### 3) Stop generating fake motivational filler
+
+The generator should avoid generic lines like:
+
+* “I know one day I will make it”
+* “I will continue to rise above”
+* “No matter what happens I will never give up”
+* “I am blessed and highly favored”
+
+These lines feel fake and generic unless the song truly earns them.
+
+Instead, use concrete, believable emotional or street-level phrasing.
+
+---
+
+### 4) Dialect must be built natively, not translated from English
+
+This is extremely important.
+
+If the user selects:
+
+* Ghana Urban Pidgin
+* Naija Pidgin
+* Jamaican Patois
+* street-pop / Afro-street style
+
+…the AI must not write full English sentences and then sprinkle in slang.
+
+Wrong:
+
+* “I am feeling so much pain in my heart, abi?”
+
+Better:
+
+* “My chest dey hot”
+* “Pain don choke me”
+* “Mi heart heavy tonight”
+
+The entire line construction should feel native to the dialect world.
+
+---
+
+### 5) Keep lines shorter and more musical
+
+Most lines should be easy to phrase over a beat.
+
+Avoid overly long lines with too many clauses.
+
+The AI should favor:
+
+* punchy short lines
+* strong line endings
+* natural pauses
+* breath-friendly writing
+* phrases artists can actually perform
+
+---
+
+### 6) Verses should move forward, not repeat the same pain 8 times
+
+Each verse should feel like it is progressing.
+
+A verse should ideally move through:
+
+* scene
+* feeling
+* reaction
+* consequence
+* realization
+
+Avoid saying the same emotional point repeatedly with slightly different wording.
+
+---
+
+### 7) Prioritize quotable lines
+
+The AI should aim to include lines that feel:
+
+* caption-worthy
+* memorable
+* screamable
+* emotionally sharp
+* artist-like
+
+Examples of stronger line energy:
+
+* “Dem laugh first, now dem dey watch”
+* “Body weak but the hunger no die”
+* “Silence loud when pain too much”
+* “God know wetin man no see”
+
+Do NOT copy these exactly unless naturally relevant — they are directional examples.
+
+---
+
+### 8) Match genre energy better
+
+The writing style should adapt better to genre.
+
+Examples:
+
+**Afrobeats (emotional / romantic / spiritual):**
+
+* smoother
+* melodic
+* intimate
+* hook-focused
+
+**Street-pop / Afro-street:**
+
+* harder
+* more direct
+* more quotable
+* more crowd-aware
+
+**Dancehall / Patois:**
+
+* rhythm-driven
+* chantable
+* naturally Jamaican in phrasing
+* not fake “Google patois”
+
+**Sad / heartbreak:**
+
+* simple
+* vulnerable
+* believable
+* not overly poetic
+
+---
+
+### 9) Bridge sections should matter
+
+The bridge should not feel like random filler.
+
+It should either:
+
+* reveal something more vulnerable
+* shift emotional perspective
+* strip the song down before the final chorus
+
+---
+
+### 10) Outro should feel intentional
+
+Do not end songs lazily.
+
+The outro should feel like:
+
+* a final emotional stamp
+* a memorable repeat
+* a closing thought worth leaving in the listener’s head
+
+---
+
+## Structural quality goals
+
+The AI should aim for:
+
+* stronger intro line
+* stronger chorus
+* less dead weight in verses
+* better line-to-line flow
+* more realistic emotional phrasing
+* better keeper line quality
+* less “AI neatness”
+* more artist realism
+
+---
+
+## IMPORTANT:
+
+Do NOT remove the existing production notes / export notes / arrangement outputs that AfroMuse already provides.
+
+I still want the full premium AfroMuse output format.
+
+But I want the **lyrics themselves** to become much better by default.
+
+---
+
+## After updating the prompt / generation behavior, tell me:
+
+1. what file or prompt block was changed
+2. what major generation rules were added
+3. what kinds of output should now improve most

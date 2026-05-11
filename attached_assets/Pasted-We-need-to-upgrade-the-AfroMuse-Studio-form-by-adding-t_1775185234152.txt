@@ -1,0 +1,182 @@
+We need to upgrade the AfroMuse Studio form by adding two important creative controls:
+
+1. Song Length
+2. Language / Flavor
+
+These should improve user control and make the product feel more premium, intentional, and artist-friendly.
+
+Please implement them carefully in both:
+- the frontend Studio form
+- and the backend /api/generate-song logic
+
+==================================================
+1. ADD SONG LENGTH CONTROL
+==================================================
+
+Please add a new form field called:
+
+Song Length
+
+Recommended options:
+- Short
+- Standard
+- Full
+
+This field should be easy to understand and visually consistent with the rest of the Studio form.
+
+Suggested behavior:
+
+SHORT:
+- quicker draft
+- lighter structure
+- useful for ideas / rough concepts
+
+STANDARD:
+- balanced full song draft
+- default recommended option
+
+FULL:
+- more complete and developed song draft
+- more lyrical depth / fuller sections
+
+==================================================
+2. SONG LENGTH BACKEND BEHAVIOR
+==================================================
+
+Please pass the selected Song Length value into the /api/generate-song prompt logic so the AI actually adapts the structure and output length.
+
+Recommended behavior:
+
+SHORT:
+- Intro: optional / short
+- Verse 1: around 4–6 lines
+- Chorus: around 4–6 lines
+- Verse 2: around 4–6 lines
+- Final chorus / outro
+- Keep it concise and idea-friendly
+
+STANDARD:
+- Intro: 2–4 lines
+- Verse 1: minimum 8 lines
+- Chorus: 4–8 lines
+- Verse 2: minimum 8 lines
+- Optional bridge
+- Final chorus / outro
+
+FULL:
+- More complete and developed version
+- Longer verses where appropriate
+- Stronger detail / fuller storytelling / more lyrical development
+- Can include intro, bridge, and fuller outro more often
+
+The AI should use Song Length as real generation guidance, not just ignore it.
+
+==================================================
+3. ADD LANGUAGE / FLAVOR CONTROL
+==================================================
+
+Please add a new form field called:
+
+Language / Flavor
+
+Recommended options:
+- Global English
+- English + Pidgin
+- English + Twi Flavor
+- Jamaican Patois
+- Street Urban
+- Clean International
+- Custom
+
+If Custom is selected, optionally allow a small text input such as:
+“Describe your language / flavor preference”
+
+This control should help users shape:
+- language style
+- phrasing style
+- slang level
+- cultural tone
+- accessibility vs authenticity
+
+==================================================
+4. LANGUAGE / FLAVOR BACKEND BEHAVIOR
+==================================================
+
+Please pass the selected Language / Flavor value into the /api/generate-song prompt logic and make sure the AI uses it intelligently.
+
+Recommended behavior:
+
+GLOBAL ENGLISH:
+- broadly accessible
+- modern
+- globally understandable
+- subtle flavor only where natural
+
+ENGLISH + PIDGIN:
+- mix natural English with light-to-moderate Pidgin flavor
+- keep it believable and musical
+- avoid over-forcing slang
+
+ENGLISH + TWI FLAVOR:
+- mainly English with natural Twi-inspired flavor or selected phrasing where it fits
+- do not overdo it or make it unreadable
+
+JAMAICAN PATOIS:
+- use natural light-to-moderate patois flavor
+- readable and musically believable
+- avoid fake exaggerated caricature patois unless the user specifically asks for heavy patois
+
+STREET URBAN:
+- more street-coded, punchy, raw, confident phrasing
+- modern urban music feel
+
+CLEAN INTERNATIONAL:
+- polished, clear, broadly global songwriting language
+- minimal slang / less localized phrasing
+
+CUSTOM:
+- use the user’s custom language/flavor direction as guidance if provided
+
+==================================================
+5. PRIORITY RULES
+==================================================
+
+Please make sure the AI follows this order of priority:
+
+1. Explicit language request in notes / custom flavor
+2. Language / Flavor selected in the form
+3. Genre-based language defaults
+4. Mood / style nuance
+
+This is important so the output feels controlled and intentional.
+
+==================================================
+6. UX / PRODUCT QUALITY
+==================================================
+
+Please make sure these new fields feel well integrated into the Studio form.
+
+Requirements:
+- clean visual layout
+- mobile responsive
+- not cluttered
+- easy to understand
+- clearly useful
+
+Suggested UX:
+- Standard should be the default Song Length
+- Global English should be the default Language / Flavor
+
+Optional but nice:
+- short helper text under the fields to explain what they do
+
+==================================================
+7. FINAL PRODUCT GOAL
+==================================================
+
+These two controls should make AfroMuse feel more like a premium creative songwriting tool and less like a one-click generic generator.
+
+Users should feel like:
+“I can shape the output to match my creative direction.”
+
+That is the desired product effect.

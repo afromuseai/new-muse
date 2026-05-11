@@ -1,0 +1,210 @@
+We need one final precision patch for AfroMuse.
+
+Current status:
+AfroMuse is now much better at:
+- structure
+- hooks
+- intros
+- emotional realism
+- Dancehall hardness
+- line cleanup
+- language / flavor behavior
+
+However, one final issue still appears in certain themes.
+
+==================================================
+FINAL REMAINING ISSUE
+==================================================
+
+When the topic becomes more abstract, symbolic, spiritual, or introspective,
+AfroMuse sometimes starts writing in a way that feels like:
+
+- motivational quote writing
+- sermon writing
+- symbolic filler
+- fake-deep AI poetry
+- generalized “light / darkness / pain / glory / destiny” language
+- inspirational lines that sound broad instead of lived
+
+This is now the final quality problem to solve.
+
+==================================================
+AFROMUSE V4.4 — ABSTRACT FILLER KILLER PATCH
+==================================================
+
+AfroMuse must now reject lines that feel emotionally broad but not personally real.
+
+==================================================
+NEW RULE: NO ABSTRACT FILLER
+==================================================
+
+Do NOT use lines just because they sound:
+- meaningful
+- spiritual
+- motivational
+- symbolic
+- deep
+
+If the line does not feel:
+- personal
+- believable
+- lived
+- artist-usable
+- emotionally grounded
+
+then rewrite it.
+
+==================================================
+NEW RULE: SPIRITUAL SONGS MUST FEEL HUMAN, NOT PREACHY
+==================================================
+
+For spiritual / faith / God-centered / purpose / destiny songs:
+
+Do NOT default to:
+- sermon lines
+- broad church phrases
+- generic “light vs darkness” writing
+- preachy declarations
+- over-symbolic faith language
+
+Instead, write from a personal human perspective.
+
+Prefer:
+- quiet struggle
+- private prayer
+- loneliness with God
+- fear, trust, surrender
+- personal spiritual tension
+- real-life detail
+- emotional honesty
+
+The song should feel like:
+- a person talking to God
+or
+- a person surviving through faith
+
+NOT like:
+- a poster
+- a sermon
+- a motivational caption
+
+==================================================
+NEW RULE: PAIN / GLORY / SUCCESS SONGS MUST STAY GROUNDED
+==================================================
+
+For themes like:
+- lonely success
+- pain behind winning
+- pressure
+- inner battle
+- suffering and growth
+
+Do NOT overuse:
+- crown
+- throne
+- glory
+- pain
+- gold
+- darkness
+- light
+- empire
+- destiny
+
+unless the line is unusually strong and natural.
+
+These themes should feel grounded in:
+- sleepless nights
+- distance from people
+- paranoia
+- sacrifice
+- private cost
+- emotional emptiness
+- survival
+- isolation
+- prayer
+- pressure
+
+Use more:
+- specific human detail
+- simple pain
+- real images
+- believable emotional weight
+
+==================================================
+NEW RULE: KILL SYMBOLIC LINES THAT AREN’T CLEAN
+==================================================
+
+Reject lines where:
+- the image sounds impressive but unclear
+- the metaphor is not natural enough to sing
+- the line sounds “deep” but not believable
+- the symbolism is too broad or too generic
+
+Examples of what to reject:
+- random moon / fire / stone / crown / darkness symbolism
+- unfinished “glory / pain / light / pressure” metaphors
+- fake-profound wording
+- abstract lines that don’t feel lived
+
+If a symbolic line is not very strong,
+replace it with something simpler and more personal.
+
+==================================================
+NEW RULE: USE LIVED DETAIL OVER GRAND LANGUAGE
+==================================================
+
+Whenever possible, prefer lines like:
+- late-night thoughts
+- silence in the room
+- unanswered calls
+- distance from friends
+- private prayer
+- sleeplessness
+- empty house / empty success
+- emotional tension
+- fear behind confidence
+
+over lines like:
+- “I stand in the glory of destiny”
+- “the darkness cannot hold the crown”
+- “my soul burns with purpose”
+- or similar generalized AI-deep writing
+
+==================================================
+NEW RULE: FORCE GROUNDING PASS
+==================================================
+
+Before final output, if the song theme is:
+- spiritual
+- lonely success
+- pain / glory
+- destiny
+- purpose
+- darkness / light
+- inner battle
+
+AfroMuse must do a grounding pass and ask:
+
+1. Does this feel like a real person’s private experience?
+2. Or does this feel like broad inspirational writing?
+3. Are there too many symbolic lines?
+4. Are there enough lived details?
+5. Would an artist actually keep this line?
+
+If it feels broad or sermon-like, rewrite it.
+
+==================================================
+FINAL V4.4 GOAL
+==================================================
+
+AfroMuse should now feel less like:
+- a very talented AI trying to sound deep
+
+and more like:
+- a real artist expressing something true
+
+especially in:
+- spiritual songs
+- pain songs
+- lonely success songs
+- introspective songs

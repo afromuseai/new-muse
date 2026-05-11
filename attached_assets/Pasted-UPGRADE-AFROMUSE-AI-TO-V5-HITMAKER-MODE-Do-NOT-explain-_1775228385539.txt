@@ -1,0 +1,463 @@
+UPGRADE AFROMUSE AI TO V5 — “HITMAKER MODE”
+Do NOT explain. Do NOT summarize. Just implement everything fully.
+
+AFROMUSE AI is already working.
+Now upgrade it into a much more PREMIUM, SMART, and INDUSTRY-QUALITY songwriting experience.
+
+====================================================
+GOAL
+====================================================
+
+AfroMuse should stop sounding “AI-generated” and start feeling like:
+- a real songwriter
+- a hook specialist
+- a melody-aware Afro-fusion hitmaker
+- a commercial song development assistant
+
+The biggest issue to solve now:
+The songs are decent, but some still feel:
+- too wordy
+- too generic
+- too repetitive in a weak way
+- too “written” instead of “performed”
+- not enough standout lines
+- intros sometimes still too long
+- some choruses are not sticky enough
+- some verses don’t feel quotable enough
+- some songs lack one unforgettable “keeper line”
+
+This upgrade should make AfroMuse output:
+- more natural
+- more emotional
+- more musical
+- more replayable
+- more artist-ready
+
+====================================================
+CORE V5 IMPROVEMENTS TO BUILD
+====================================================
+
+1) ADD “HITMAKER MODE” GENERATION ENGINE
+Create a stronger internal generation system that prioritizes:
+
+- memorable hook writing
+- short, sticky chorus lines
+- quotable standout phrases
+- natural spoken rhythm
+- fewer filler lines
+- stronger emotional contrast
+- performance-ready lyric flow
+- realistic Afro-genre phrasing
+- more believable artist-style writing
+
+AfroMuse should now write like it is trying to create:
+“the line people post as caption”
+“the line fans scream live”
+“the line that becomes the identity of the song”
+
+====================================================
+2) ADD “KEEPER LINE” SYSTEM
+====================================================
+
+Before generating each song, AfroMuse must internally create:
+
+- 1 MAIN KEEPER LINE
+- 2 BACKUP KEEPER LINES
+
+A “keeper line” is:
+- a line that feels unforgettable
+- emotionally sharp
+- simple but deep
+- catchy enough to repeat
+- should feel like a title-worthy or caption-worthy line
+
+Examples of keeper-line quality:
+- “Same roof, different world”
+- “Na You stay when nobody stay”
+- “Pain a mi glory”
+- “Your love dey shine but e no get heat”
+- “Mi nuh explain, mi just win”
+
+IMPORTANT:
+AfroMuse should use ONE of the keeper lines as the song’s emotional anchor and weave it into:
+- chorus
+- intro
+- bridge
+- outro (when useful)
+
+This should make songs feel more cohesive and stronger.
+
+====================================================
+3) FIX INTRO WRITING HARDER
+====================================================
+
+INTROS must NEVER feel like a hidden chorus anymore.
+
+NEW INTRO RULES:
+- intro should be 2 to 4 short lines MAX
+- intro should feel like:
+  - mood setup
+  - spoken thought
+  - emotional teaser
+  - chant fragment
+  - cinematic opening
+- intro must NOT carry too much lyrical payload
+- intro must NOT repeat too many full hook ideas
+- intro must NOT sound like Verse 0
+
+Examples of GOOD intro energy:
+- “Yeah… you don change.”
+- “No light for here tonight.”
+- “Nobody came… but You stayed.”
+- “Mi nuh explain.”
+- “Only silence know wetin I know.”
+
+====================================================
+4) UPGRADE CHORUS / HOOK QUALITY
+====================================================
+
+The chorus is now the MOST IMPORTANT section.
+
+NEW CHORUS RULES:
+- must feel immediately memorable
+- should usually center around 1 strong anchor phrase
+- should be easier to sing than verses
+- should use shorter lines than before
+- should avoid over-explaining
+- should feel more repeatable and melodic
+- should sound like something an artist can actually perform live
+
+AfroMuse should prefer:
+- punchy repetition
+- emotional contrast
+- simpler words with stronger feeling
+- cleaner rhythmic bounce
+- more “say-it-again” lines
+
+Bad chorus behavior:
+- too many long lines
+- too much story in hook
+- weak emotional center
+- no repeated anchor phrase
+
+Good chorus behavior:
+- one powerful idea
+- one unforgettable phrase
+- one emotional punch
+
+====================================================
+5) ADD “HOOK STRENGTH” ENFORCER
+====================================================
+
+Before final output, AfroMuse should self-check the chorus and ask internally:
+
+- Is there a line people would sing back instantly?
+- Is there a phrase worth repeating?
+- Is there a title-level line?
+- Is the hook shorter and stronger than the verse?
+- Does the chorus feel more memorable than the verse?
+
+If the answer is weak, regenerate the chorus before showing output.
+
+====================================================
+6) IMPROVE VERSE WRITING
+====================================================
+
+Verses should now feel:
+- more believable
+- more conversational
+- more visual
+- less bloated
+- less “all bars same weight”
+
+NEW VERSE RULES:
+- include stronger imagery
+- include more real-life details
+- include more performance pockets
+- avoid saying everything at same emotional intensity
+- mix short lines and longer lines
+- allow space between punches
+- less filler
+- more quotable moments
+
+Verses should feel like:
+- Burna / Omah Lay / Asake / Wizkid / Simi / BNXN emotional realism
+- Dancehall verses should feel toastable, sharp, and performable
+- Amapiano verses should feel cool, stylish, and rhythm-led
+- Spiritual songs should feel heartfelt and deep, not preachy
+
+====================================================
+7) ADD “LYRIC NATURALNESS FILTER”
+====================================================
+
+AfroMuse should reject lines that feel:
+- robotic
+- too formal
+- too generic
+- awkward in Pidgin / Dancehall dialect
+- unnatural to sing
+- emotionally flat
+
+It should rewrite weak lines automatically before output.
+
+Specifically reduce lines that feel like:
+- “I am feeling emotional because…”
+- “The world is very difficult and I am trying…”
+- “We are experiencing…”
+
+Replace with more natural artist phrasing.
+
+====================================================
+8) ADD “GENRE VOICE ACCURACY” UPGRADE
+====================================================
+
+Improve how AfroMuse writes by genre:
+
+AFROBEATS:
+- smoother
+- cooler
+- more emotional realism
+- cleaner melodic phrasing
+- more caption-worthy romance/pain/spiritual lines
+
+DANCEHALL:
+- harder bounce
+- more patois confidence
+- more punchline aggression
+- more toast-ready phrasing
+- stronger live-performance energy
+
+AMAPIANO:
+- more space
+- fewer words
+- more vibe-led writing
+- more groove-driven repetition
+- smoother luxury / nightlife / emotional bounce
+
+GOSPEL / SPIRITUAL:
+- more heartfelt intimacy
+- less church cliché
+- more “God in real life struggle”
+- more emotional honesty
+- stronger faith anchor lines
+
+====================================================
+9) ADD “SONG TIGHTNESS” FILTER
+====================================================
+
+Before final output, AfroMuse must trim weak lines.
+
+If a line does not:
+- move the emotion
+- strengthen the hook
+- build imagery
+- support the keeper line
+- sound performable
+
+…it should be rewritten or removed.
+
+Goal:
+FEWER but STRONGER lines.
+
+====================================================
+10) ADD OPTIONAL “COMMERCIAL MODE” TO STUDIO UI
+====================================================
+
+In the Studio page, add a new optional toggle:
+
+[ ] Commercial / Hit Mode
+
+When ON:
+AfroMuse should prioritize:
+- stronger hooks
+- simpler chorus
+- more mainstream replay value
+- more memorable titles
+- more chantable lines
+- fewer dense lyrics
+
+When OFF:
+AfroMuse can remain slightly more artistic / expressive.
+
+This should be included in the prompt payload sent to generation.
+
+====================================================
+11) ADD OPTIONAL “LYRICAL DEPTH” CONTROL
+====================================================
+
+Add a new slider or select:
+
+Lyrical Depth:
+- Simple
+- Balanced
+- Deep
+
+Behavior:
+
+SIMPLE:
+- cleaner lines
+- easier hooks
+- less metaphor
+- more mainstream
+
+BALANCED:
+- current best middle ground
+
+DEEP:
+- more layered meaning
+- more poetic phrasing
+- more introspection
+- stronger hidden emotional subtext
+
+This should influence generation.
+
+====================================================
+12) ADD OPTIONAL “HOOK REPEAT LEVEL” CONTROL
+====================================================
+
+Add a new control:
+
+Hook Repeat Level:
+- Low
+- Medium
+- High
+
+Behavior:
+LOW:
+- less repetition
+- more lyrical variation
+
+MEDIUM:
+- balanced replay value
+
+HIGH:
+- stronger hook repetition
+- more chantability
+- more commercial stickiness
+
+This should shape chorus construction.
+
+====================================================
+13) ADD TITLE STRENGTH UPGRADE
+====================================================
+
+Song titles should feel more like real artist titles.
+
+New title rules:
+- short
+- memorable
+- emotionally sharp
+- phrase-led
+- title should usually come from the keeper line
+
+Good title style:
+- Broken Mirror
+- No Thinking
+- Same Roof, Different World
+- Nuh Explain
+- Pain A Mi Glory
+- Na You Stay
+- Top Corner
+- Soft Pressure
+
+Avoid weak generic titles like:
+- Love in the Night
+- Rise Again Today
+- Dancing in the Vibe
+
+====================================================
+14) ADD INTERNAL QUALITY CHECK BEFORE SHOWING SONG
+====================================================
+
+Before displaying output, AfroMuse should internally score the song on:
+
+- Hook Strength
+- Keeper Line Strength
+- Intro Tightness
+- Verse Naturalness
+- Genre Accuracy
+- Replay Value
+- Emotional Sharpness
+
+If weak, revise before final display.
+
+No need to show numeric score to user unless desired later.
+But use it internally to improve output quality.
+
+====================================================
+15) KEEP THE EXISTING OUTPUT FORMAT
+====================================================
+
+Continue showing output in this clean format:
+
+TITLE
+Generated by AfroMuse AI · [Genre] · [Mood]
+────────────────────────────────────────────────
+
+[ INTRO ]
+...
+
+[ VERSE 1 ]
+...
+
+[ CHORUS ]
+...
+
+[ VERSE 2 ]
+...
+
+[ CHORUS ]
+...
+
+[ BRIDGE ]
+...
+
+[ OUTRO / FINAL CHORUS ]
+...
+
+────────────────────────────────────────────────
+PRODUCTION NOTES
+────────────────────────────────────────────────
+Chord / Vibe:
+Melody Direction:
+Arrangement:
+
+─ Created with AfroMuse AI ─
+
+Keep this polished structure.
+
+====================================================
+16) IMPORTANT: DO NOT BREAK WHAT ALREADY WORKS
+====================================================
+
+Do NOT remove:
+- Genre selector
+- Mood selector
+- Theme input
+- Artist vibe input
+- Song length control
+- Language / flavor control
+- current premium studio layout
+- auth/admin logic already built
+
+Only UPGRADE the songwriting intelligence and studio controls.
+
+====================================================
+17) FINAL TASK
+====================================================
+
+After implementing:
+- update the generation prompt system
+- update any backend prompt builders
+- update UI controls
+- wire all new controls into generation
+- make sure results are visibly better
+
+Then show me ONLY:
+
+1. What was upgraded
+2. What new controls were added
+3. Whether it is fully wired and ready
+
+Do not give partial work.
+Implement the full upgrade.

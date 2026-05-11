@@ -1,0 +1,137 @@
+AfroMuse AI V14 — GLOBAL HIT ENGINE
+🧠 CORE UPGRADE
+
+V13 focused on virality.
+
+V14 focuses on:
+👉 market performance
+👉 global adaptability
+👉 streaming algorithm success
+👉 platform-specific optimization
+
+Now every song is treated like a release campaign, not just a track.
+
+🚨 1. GLOBAL MARKET ADAPTER
+
+Every song is automatically reshaped for 4 major markets:
+
+🇬🇧 UK Drill Market
+heavier bounce
+darker tone allowed
+punchy slang rhythm
+minimal emotional “over-explaining”
+🇺🇸 US Streaming Market
+clearer hook repetition
+simpler wording
+stronger melodic chorus
+radio-friendly phrasing
+🌍 Afro / Global Afrobeats Market
+rhythmic warmth
+chant-heavy hooks
+spiritual/emotional blend
+danceable groove focus
+📱 TikTok / Short-form Market
+5–10 second hook segment
+extreme repetition
+instant recognizability
+loop-friendly structure
+🎯 2. PLATFORM OPTIMIZATION ENGINE
+
+Each song is scored per platform:
+
+📊 PLATFORM SCORES
+Spotify retention score
+TikTok loop strength
+YouTube replay value
+Radio friendliness index
+EXAMPLE OUTPUT:
+Spotify: 82% (Strong retention)
+TikTok: 94% (Viral potential)
+YouTube: 78% (Good replay)
+Radio: 65% (needs cleaner hook)
+🔁 3. DUAL VERSION GENERATOR
+
+Every song now generates:
+
+🎵 1. ARTIST VERSION
+full emotional structure
+deeper lyrics
+full verses
+⚡ 2. COMMERCIAL VERSION
+shorter hooks
+simplified lyrics
+maximum replay focus
+optimized for streaming growth
+🔥 4. STREAMING ALGORITHM ENGINE
+
+V14 now optimizes for:
+
+🎧 Spotify / Apple Music behavior:
+first 30 seconds retention
+skip-rate resistance
+hook arrival time (must hit early)
+replay loop probability
+RULE:
+
+👉 Hook must appear within 0:20–0:40 max
+
+If not:
+
+system auto-rewrites intro
+🧠 5. “HIT POSITIONING SYSTEM”
+
+Every song is classified:
+
+🟢 MAINSTREAM HIT
+global appeal
+simple hook
+high replay
+🟡 NICHE HIT
+strong in one market (e.g., Drill / Gospel / Afro)
+🟠 VIRAL ONLY
+TikTok strong, weak streaming
+🔴 NON-COMMERCIAL ART
+expressive but low market fit
+🎤 6. LANGUAGE GLOBALIZATION ENGINE
+
+Fixes your earlier issue (“translated feel”) by:
+
+RULE:
+reduces over-local repetition
+balances Twi + English naturally
+ensures rhythm-first phrasing
+removes “AI sentence stacking”
+
+👉 Output sounds like:
+
+real artist writing
+not translation engine
+🔥 7. HOOK GLOBALIZATION FIX
+
+Every hook is tested for:
+
+🌍 UNIVERSALITY CHECK
+Can non-local listeners understand feeling?
+Does it still hit without translation?
+Is rhythm stronger than language?
+RESULT:
+
+Hooks get slightly reworked if:
+
+too language-dependent
+too verbose
+too culturally locked
+📊 8. FINAL V14 OUTPUT SYSTEM
+
+Every song now ends with:
+
+🎵 GLOBAL RELEASE REPORT
+Global Score: /100
+UK Fit: High / Medium / Low
+US Fit: High / Medium / Low
+Afro Fit: High / Medium / Low
+TikTok Fit: High / Medium / Low
+💡 FINAL VERDICT:
+Global Hit Potential
+Regional Hit Only
+Needs Commercial Rewrite

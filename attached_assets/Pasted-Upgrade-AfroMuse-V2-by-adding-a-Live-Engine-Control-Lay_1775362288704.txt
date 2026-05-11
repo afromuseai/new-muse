@@ -1,0 +1,89 @@
+Upgrade AfroMuse V2 by adding a Live Engine Control Layer on top of the current engine/provider architecture.
+
+IMPORTANT:
+Do NOT redesign the current UI.
+Do NOT remove or replace any existing working sections.
+Do NOT break the current Audio Studio, Project Library, monetization logic, provider logic, routes, or output flow.
+This is an internal product operations upgrade only.
+
+GOAL:
+Prepare AfroMuse V2 to safely transition from mock providers to real live providers one module at a time, with clean operational control, provider toggles, fallback behavior, and environment readiness.
+
+BUILD THE FOLLOWING:
+
+1. PER-PROVIDER ENGINE MODE CONTROL
+Add a clean control structure so each provider category can independently run in one of these modes:
+- mock
+- live
+- disabled
+
+Support this for:
+- instrumental provider
+- vocal provider
+- mastering provider
+- stems provider
+
+This should be configurable without touching the UI.
+
+2. ENGINE ENVIRONMENT CONFIG
+Add a lightweight engine environment configuration layer for:
+- development
+- staging
+- production
+
+Allow each environment to define sensible defaults for provider modes and safety behavior.
+
+3. PROVIDER ACTIVATION / RESOLUTION LOGIC
+Create clean provider resolution logic that determines which provider implementation should run for a given request based on:
+- provider category
+- engine mode
+- environment config
+- provider availability
+
+This should be modular and future-safe.
+
+4. SAFE FALLBACK BEHAVIOR
+Add clean fallback structure so the system can gracefully handle future live-provider failures.
+
+Support patterns such as:
+- fail cleanly
+- optionally fall back to mock if configured
+- return normalized failure safely
+
+Do NOT aggressively surface fake failures in the UI yet — just prepare the architecture properly.
+
+5. PROVIDER CREDENTIAL / CONFIG READINESS
+Prepare clean provider config slots for future live APIs.
+
+Support internal placeholders for things like:
+- apiKey
+- endpoint
+- model
+- region
+- timeout
+
+Do NOT add real secrets.
+Do NOT integrate a real provider yet.
+Just prepare the structure cleanly.
+
+6. ENGINE DIAGNOSTICS / ADMIN READINESS
+Add a clean internal diagnostics structure or lightweight endpoint that can expose useful engine state such as:
+- current environment
+- active provider modes
+- provider statuses
+- capability summaries
+- whether fallback is enabled
+
+This is for internal/debug readiness only.
+
+7. PRODUCT / ARCHITECTURE RULES
+- Keep everything modular and easy to operate later
+- Do not over-engineer
+- Preserve the current stable system
+- Keep the architecture clean for one-by-one live provider activation later
+- This is the final control layer before actual live engine integration
+
+IMPORTANT:
+This is NOT a UI redesign.
+This is NOT full real API integration yet.
+This is a serious product operations layer that prepares AfroMuse V2 for safe real-engine activation later.

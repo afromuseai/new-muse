@@ -1,0 +1,136 @@
+Now wire the new AfroMuse Audio Studio (V2) into real app state and behavior.
+
+GOAL:
+Make the new V2 Audio Studio fully interactive and connected to the existing lyric workflow.
+
+==================================================
+1. STATE WIRING
+==================================================
+
+Create proper state for all V2 controls:
+
+- audioLyrics
+- audioGenre
+- audioStyleReference
+- vocalGender
+- generationMode
+- sectionMode
+- bpm
+- musicalKey
+- energyLevel
+- useGeneratedLyrics
+- generateOnlyInstrumental
+- includeArrangementNotes
+- includeStemsBreakdown
+- useHitmakerHookPriority
+
+These should all be fully controlled inputs.
+
+==================================================
+2. USE GENERATED LYRICS BUTTON
+==================================================
+
+Wire the button:
+
+### "Use Generated Lyrics"
+
+Behavior:
+- If the user already has generated lyrics from V1, clicking this should copy the lyrics into the V2 audio textarea.
+- If no lyrics exist yet, show a clean toast or message:
+  "Generate lyrics first or paste your own lyrics."
+
+==================================================
+3. AUTO-SYNC CHECKBOX
+==================================================
+
+If the checkbox:
+
+### "Use generated lyrics automatically"
+
+is enabled, then whenever the user generates a new song in V1, the V2 lyrics textarea should update automatically.
+
+If disabled, do not overwrite user-pasted custom lyrics.
+
+This is very important.
+
+==================================================
+4. INSTRUMENTAL ONLY LOGIC
+==================================================
+
+If:
+- Vocal Gender = Instrumental Only
+OR
+- Generate only instrumental checkbox = ON
+OR
+- Generation Mode = Instrumental Only
+
+Then the UI should intelligently:
+- visually de-emphasize vocal-related generation
+- prioritize instrumental output
+- reflect that in the result cards
+
+==================================================
+5. BUTTON BEHAVIOR
+==================================================
+
+Wire these buttons to proper handlers:
+
+- Generate Instrumental Preview
+- Generate Vocal Demo
+- Generate Full Audio Concept
+
+Each should:
+- validate input first
+- require lyrics unless instrumental-only mode makes lyrics optional
+- set loading states correctly
+- populate result cards with believable, structured output
+
+==================================================
+6. VALIDATION RULES
+==================================================
+
+Validation should feel professional:
+
+If lyrics box is empty:
+- allow instrumental generation only
+- block vocal demo / full concept if lyrics are required
+
+Show useful errors like:
+- "Paste lyrics or generate one first."
+- "Instrumental preview can run without lyrics."
+- "Choose a vocal type or switch to instrumental only."
+
+==================================================
+7. CLEAN UX
+==================================================
+
+Make the UX feel smooth:
+- disable buttons when necessary
+- loading indicators should be clear
+- no broken empty states
+- no ugly alerts
+- use nice inline feedback or toast style messages
+
+==================================================
+8. DO NOT USE FAKE RANDOMNESS
+==================================================
+
+Any preview metadata or generated blueprint values should be stable and deterministic based on:
+- genre
+- mood if available
+- selected energy
+- BPM / key if entered
+- lyric content if available
+
+Do not use random values every render.
+
+==================================================
+9. RULES
+==================================================
+
+- Keep code clean
+- Reuse patterns from the current AfroMuse app
+- Do not break V1
+- Fully connect V1 lyrics -> V2 audio flow
+
+Now implement this state wiring cleanly.

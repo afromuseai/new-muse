@@ -1,0 +1,129 @@
+I want to expand AfroMuse genre support and add a Custom Language input system.
+
+GOAL:
+Allow users to generate songs in multiple global genres AND in any language or dialect they specify.
+
+PART 1 — GENRE EXPANSION
+
+Add the following genres to the Genre selector:
+
+- Rap
+- UK Drill
+- Trap
+- Hip-Hop
+- Reggae
+- Dancehall-Drill
+- Hyperpop
+- Blues
+
+IMPORTANT:
+These are not labels only.
+Each genre must influence:
+- rhythm
+- structure
+- line length
+- tone
+- delivery style
+
+Example:
+- UK Drill → short, punchy, aggressive
+- Trap → melodic + rhythmic bounce
+- Blues → emotional, storytelling, slower pacing
+
+Ensure the genre is passed into the AI prompt and actively shapes output.
+
+---
+
+PART 2 — CUSTOM LANGUAGE / DIALECT INPUT
+
+Add a new input field:
+
+Label:
+"Custom Language / Dialect (Optional)"
+
+Behavior:
+- user can type any language or dialect
+- example inputs:
+  "Chinese"
+  "Jamaican Patois"
+  "Sheng"
+  "Arabic street"
+  "French slang"
+
+If this field is filled:
+- it OVERRIDES default language style selection
+- it becomes the PRIMARY writing language
+
+---
+
+PART 3 — AI PROMPT INTEGRATION
+
+Update generation prompt so that:
+
+1. The AI writes DIRECTLY in the selected language
+2. It does NOT:
+   - write in English first then translate
+   - mix inconsistent dialects
+3. It respects:
+   - dialect depth
+   - cultural phrasing
+   - native sentence construction
+
+Add instruction like:
+
+"Write the lyrics natively in the specified language/dialect. Do not translate from English. Think and construct sentences as a native speaker would."
+
+---
+
+PART 4 — QUALITY CONTROL
+
+Ensure:
+- hooks remain strong regardless of language
+- rhythm matches genre even in non-English output
+- lines stay singable
+
+---
+
+PART 5 — UI PLACEMENT
+
+Place the Custom Language field:
+- under Language Style
+- or inside Creative Controls
+
+Keep UI clean and not cluttered.
+
+---
+
+PART 6 — FALLBACK
+
+If user leaves it empty:
+- use existing Language Style system
+
+---
+
+PART 7 — TEST CASES
+
+Verify these work:
+
+1.
+Genre: Trap
+Language: Chinese
+→ Output: trap-style Chinese lyrics
+
+2.
+Genre: Reggae
+Language: Jamaican Patois
+→ Output: authentic patois reggae lyrics
+
+3.
+Genre: Rap
+Language: English
+→ Output: standard rap
+
+---
+
+After implementation:
+Tell me:
+- what files were updated
+- how the prompt was modified
+- how language override logic works

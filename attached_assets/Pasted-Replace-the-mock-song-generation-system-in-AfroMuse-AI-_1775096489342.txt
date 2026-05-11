@@ -1,0 +1,82 @@
+Replace the mock song generation system in AfroMuse AI with a real AI-powered song generation flow using the OpenAI API.
+
+Do not redesign the whole app.
+Keep the current AfroMuse AI premium UI and Studio layout.
+
+Goal:
+Make the “Generate Song” feature actually call a real AI model and return structured songwriting output based on the user’s Studio inputs.
+
+REQUIREMENTS:
+
+1) KEEP THE CURRENT STUDIO UI
+Use the existing Studio form fields if they already exist, such as:
+- Topic / Theme
+- Genre
+- Mood
+- Style / Inspiration
+- Extra Notes
+
+Do not break the current UI.
+
+2) REAL AI GENERATION
+When the user clicks “Generate Song”:
+- collect the Studio form inputs
+- send them to a secure backend/server route
+- call the OpenAI API
+- generate a structured song draft response
+
+3) USE SERVER-SIDE API CALL
+Do NOT expose the API key in frontend code.
+Create a backend/server/API route for generation.
+
+Use environment variables / secrets for the OpenAI API key.
+
+4) USE AFROMUSE SONG GENERATION LOGIC
+The AI should behave like a premium Afro-inspired songwriting assistant.
+
+Use a hidden prompt system that instructs the AI to:
+- prioritize the hook / chorus
+- match the selected genre
+- match the selected mood
+- keep lyrics recordable and artist-friendly
+- avoid generic filler
+- include creative direction
+
+5) OUTPUT FORMAT
+The AI response should always try to return clearly structured sections like:
+
+Song Title
+Hook / Chorus
+Verse 1
+Verse 2
+Bridge
+Vibe Notes
+Melody Direction
+Arrangement Suggestion
+
+6) DISPLAY THE RESULT CLEANLY
+Render the AI output inside the existing Studio result area or song draft area.
+Keep the current AfroMuse premium styling.
+
+7) LOADING / ERROR STATES
+Add a polished loading state while the AI is generating, such as:
+- “Generating your song...”
+
+Also handle errors gracefully:
+- if generation fails, show a clean message like:
+  “Something went wrong. Please try again.”
+
+8) KEEP EXISTING PRODUCT LOGIC
+Do not break:
+- auth gating
+- Free / Pro / Gold logic
+- My Projects
+- Save Project
+- mobile responsiveness
+
+9) USE A CLEAN MODEL INTEGRATION
+Keep the implementation clean and easy to improve later.
+Use a maintainable structure so the prompt logic can be refined later.
+
+FINAL GOAL:
+Make the AfroMuse AI “Generate Song” button produce real AI-generated songwriting drafts using the user’s Studio inputs.

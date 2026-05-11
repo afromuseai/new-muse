@@ -1,0 +1,62 @@
+Improve the Gemini song generation prompt logic inside AfroMuse AI so the outputs feel more premium, more AfroMuse-like, and less generic.
+
+Do not redesign the whole app.
+Do not break the current working Gemini integration.
+
+Goal:
+Upgrade the hidden AI prompt/instruction system behind the “Generate Song” feature so Gemini generates better, more structured, more genre-aware songwriting drafts.
+
+REQUIREMENTS:
+
+1) FIND THE CURRENT GEMINI PROMPT LOGIC
+Locate the backend/server/API route or function where the Gemini request is being built.
+
+2) UPGRADE THE HIDDEN AI INSTRUCTIONS
+Improve the prompt so Gemini behaves like AfroMuse AI, a premium Afro-inspired songwriting and creative direction assistant.
+
+The hidden instructions should guide Gemini to:
+- prioritize the hook / chorus
+- match the selected genre
+- match the selected mood
+- keep lyrics catchy, recordable, and artist-friendly
+- avoid generic filler and robotic writing
+- include creative direction, not just lyrics
+
+3) OUTPUT STRUCTURE
+The AI should consistently try to return these sections:
+
+- Song Title
+- Hook / Chorus
+- Verse 1
+- Verse 2
+- Bridge
+- Vibe Notes
+- Melody Direction
+- Arrangement Suggestion
+
+4) GENRE + MOOD AWARENESS
+Make the prompt more intelligent so the writing changes depending on the selected genre and mood.
+
+Examples:
+- Afrobeats = bounce, melodic repeatability, catchy groove
+- Amapiano = chant energy, repetition, spacious rhythm
+- Afro-fusion = smooth emotion, melodic warmth
+- Street / Dancehall energy = punch, confidence, attitude
+
+And moods like:
+- Romantic
+- Party
+- Heartbreak
+- Motivational
+- Spiritual
+- Street anthem
+
+5) KEEP THE IMPLEMENTATION CLEAN
+Do not break the current working Gemini API integration.
+Just improve the prompt logic and output quality.
+
+6) MAINTAIN THE CURRENT UI
+Do not redesign the Studio page or result display.
+
+FINAL GOAL:
+Make Gemini-generated song drafts feel much more like a real AfroMuse AI product instead of generic AI writing.

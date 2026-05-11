@@ -1,0 +1,81 @@
+Replace the current OpenAI-based song generation setup in AfroMuse AI with Google Gemini API integration instead.
+
+Do not redesign the whole app.
+Keep the current AfroMuse AI premium UI and Studio layout.
+
+Goal:
+Make the “Generate Song” feature use the Google Gemini API for real AI-powered songwriting output instead of OpenAI.
+
+REQUIREMENTS:
+
+1) KEEP THE CURRENT STUDIO UI
+Use the existing Studio form fields such as:
+- Topic / Theme
+- Genre
+- Mood
+- Style / Inspiration
+- Extra Notes
+
+Do not break the current UI.
+
+2) REPLACE OPENAI WITH GEMINI
+Find the current song generation logic and replace the OpenAI API call with a Google Gemini API call.
+
+3) USE SERVER-SIDE / BACKEND LOGIC
+Do NOT expose the Gemini API key in frontend code.
+Use a secure backend/server/API route for generation.
+
+4) USE ENVIRONMENT VARIABLES / SECRETS
+Store the Gemini API key securely using Replit Secrets / environment variables.
+
+Use a key name like:
+GEMINI_API_KEY
+
+5) AFROMUSE GENERATION BEHAVIOR
+Keep the AfroMuse songwriting logic so the AI behaves like a premium Afro-inspired songwriting assistant.
+
+The AI should be instructed to:
+- prioritize the hook / chorus
+- match the selected genre
+- match the selected mood
+- keep lyrics recordable and artist-friendly
+- avoid generic filler
+- include creative direction
+
+6) OUTPUT FORMAT
+The AI response should try to return clearly structured sections like:
+
+Song Title
+Hook / Chorus
+Verse 1
+Verse 2
+Bridge
+Vibe Notes
+Melody Direction
+Arrangement Suggestion
+
+7) DISPLAY THE RESULT CLEANLY
+Render the Gemini-generated output inside the existing Studio result area or song draft area.
+Keep the current AfroMuse premium styling.
+
+8) LOADING / ERROR STATES
+Keep or improve the loading state such as:
+- “Generating your song...”
+
+Also handle errors cleanly:
+- if generation fails, show a user-friendly message like:
+  “Something went wrong. Please try again.”
+
+9) KEEP EXISTING PRODUCT LOGIC
+Do not break:
+- auth gating
+- Free / Pro / Gold logic
+- My Projects
+- Save Project
+- mobile responsiveness
+
+10) CLEAN IMPLEMENTATION
+Keep the code organized and easy to improve later.
+
+FINAL GOAL:
+Make AfroMuse AI’s “Generate Song” button produce real AI-generated songwriting drafts using Google Gemini API instead of OpenAI.

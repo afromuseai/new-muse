@@ -1,0 +1,118 @@
+Voice Clone Demo is currently a shell with real capture + real AI brief generation, but NO actual audio synthesis.
+
+Now I want to make it REAL.
+
+GOAL:
+Connect AfroMuse Voice Clone Demo to a live voice generation provider so the user can record/upload their voice and receive an actual playable vocal demo audio output.
+
+PRIORITY:
+Use the easiest production-viable provider first.
+Preferred order:
+1. ElevenLabs
+2. PlayHT
+3. Resemble AI
+4. Musicfy
+
+IMPORTANT:
+Do not redesign the UI.
+Do not add more visual polish.
+Do not add placeholder states.
+Focus ONLY on making the current Voice Clone Demo return REAL AUDIO.
+
+IMPLEMENTATION TASKS:
+
+1. CONNECT LIVE PROVIDER
+Update:
+artifacts/api-server/src/engine/providers/vocal.ts
+
+Replace the current mock/text-only implementation inside:
+runVoiceCloneSing()
+
+Current behavior:
+- takes user voice sample
+- sends prompt to NVIDIA
+- returns text brief only
+
+New required behavior:
+- accept the recorded/uploaded user voice sample
+- send it to a real voice generation / cloning provider
+- generate an actual vocal performance output
+- return a real audio URL
+- return playable output for frontend preview
+
+2. KEEP EXISTING AI BRIEF
+Do NOT remove the current NVIDIA brief generation.
+Keep it as a "singing direction layer" to guide the voice output if useful.
+
+That means:
+- use the brief as internal synthesis direction
+- but the final response must include REAL AUDIO, not only text
+
+3. REQUIRED OUTPUT
+The final normalized response must include:
+- audioUrl
+- wavUrl (if available)
+- vocalPreviewUrl (if available)
+- provider name
+- job status
+
+At least one of these must contain a valid playable audio file.
+
+4. FILE / STORAGE HANDLING
+If provider returns raw audio:
+- store it properly
+- generate a temporary or persistent accessible URL
+- make sure frontend playback can use it
+
+If provider returns hosted audio:
+- pass through the URL safely
+
+5. KEEP CURRENT FLOW INTACT
+Do NOT break:
+- recording flow
+- upload fallback
+- polling flow
+- AudioPlayer
+- Save to Project
+- Regenerate
+
+Only replace the missing audio generation layer.
+
+6. SWITCH MOCK TO LIVE
+Update:
+- artifacts/api-server/src/engine/providers/registry.ts
+- artifacts/api-server/src/engine/engineConfig.ts
+
+So vocal becomes:
+- live-ready
+- isLive: true
+- mode: "live" when env key exists
+
+7. ENV SUPPORT
+Add support for the required provider API key(s) in env configuration.
+If ElevenLabs is used, wire it cleanly and document the required env variable(s).
+
+8. FINAL TEST
+After implementation, verify this exact flow works:
+- user records 30 seconds
+- clicks Generate Demo
+- backend generates a real audio vocal output
+- frontend receives a valid audio URL
+- AudioPlayer can actually play it
+
+9. IMPORTANT PRODUCT RULE
+This is NOT artist imitation.
+This is ONLY:
+"Sing this song in the user’s own voice."
+
+10. AFTER BUILD
+Give me a strict technical audit:
+- what provider was connected
+- what files changed
+- whether real audio now plays
+- whether voice cloning is actually working end-to-end
+- what limitations still exist
+
+Do not stop at UI completion.
+Do not return another shell.
+Make it FUNCTIONAL.

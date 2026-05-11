@@ -1,0 +1,70 @@
+Please upgrade the AfroMuse backend master prompt to include intelligent language / phrasing behavior.
+
+NEW REQUIREMENT:
+AfroMuse should not treat all genres as plain neutral English.
+
+The AI should intelligently adapt language, slang level, and phrasing style based on:
+- genre
+- mood
+- style
+- notes
+- and any explicit language request from the user
+
+IMPORTANT RULES:
+
+1. USER LANGUAGE REQUEST HAS HIGHEST PRIORITY
+If the user explicitly asks for a language or phrasing style (for example:
+- Jamaican patois
+- Pidgin
+- English + Twi
+- global English
+- African street slang
+- clean English
+etc.)
+the AI should follow that naturally.
+
+2. IF NO LANGUAGE IS SPECIFIED, USE SMART DEFAULTS
+
+Recommended defaults:
+
+- Dancehall:
+Use light-to-moderate Jamaican patois flavor by default where natural.
+Do not make it too heavy or unreadable unless explicitly requested.
+
+- Afrobeats:
+Use global-friendly English by default, but allow natural Afro-inspired phrasing, urban flavor, or subtle regional texture where it fits.
+Do not force one fixed language identity.
+
+- Amapiano:
+Use chanty, simple, vibe-driven language by default.
+Can be repetitive and movement-friendly, not necessarily tied to one specific language unless requested.
+
+- Afro-fusion:
+Use expressive, melodic, emotionally rich language with natural flexibility.
+
+- Street / Hustle anthem:
+Allow more street-coded phrasing and urban energy where appropriate, but keep it believable and artist-usable.
+
+- Spiritual / Inspirational:
+Use clear, warm, emotionally grounded language by default unless another phrasing style is requested.
+
+3. KEEP THE OUTPUT MUSICAL AND BELIEVABLE
+Language adaptation should improve authenticity, not make the lyrics feel fake, exaggerated, or caricature-like.
+
+Avoid:
+- over-forced slang
+- unnatural fake patois
+- awkward cultural imitation
+- unreadable over-stylization
+
+4. KEEP THE OUTPUT ARTIST-USABLE
+The goal is to make the lyrics feel more authentic and genre-aware while still being:
+- catchy
+- singable
+- believable
+- usable by a real artist
+
+5. IF STYLE OR NOTES SUGGEST A CULTURAL OR LANGUAGE DIRECTION
+Use that as soft guidance, but do not directly mimic or clone any real artist.
+
+This should make AfroMuse feel more culturally intelligent and musically natural across genres.

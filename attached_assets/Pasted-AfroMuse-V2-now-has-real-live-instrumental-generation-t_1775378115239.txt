@@ -1,0 +1,77 @@
+AfroMuse V2 now has real live instrumental generation through ElevenLabs.
+
+Do NOT redesign the app.
+Do NOT break any current working flows.
+Do NOT touch vocals, mastering, stems, Lyrics Studio, or Project Library logic unless needed for this exact task.
+
+GOAL:
+Upgrade the Audio Studio’s real instrumental output experience so it feels polished, premium, and trustworthy now that live music is working.
+
+BUILD THE FOLLOWING:
+
+1. REAL AUDIO SUCCESS STATE
+   When ElevenLabs instrumental generation succeeds, make the Instrumental Preview card feel like a true generated result:
+
+* clearly indicate that this is a real generated audio preview
+* show a stronger “Generated Successfully” state
+* visually distinguish live audio from mock fallback output
+
+2. PROVIDER BADGE / ENGINE LABEL
+   Inside the Instrumental Preview card, add a small tasteful metadata indicator showing:
+
+* Engine: ElevenLabs Music
+* Status: Live
+  Keep this subtle and premium, not noisy.
+
+3. REAL AUDIO INFO ROW
+   Improve the info row on successful instrumental generations to support:
+
+* BPM
+* Key
+* Duration
+* Build Mode
+* optional provider job ID (only if already safely available)
+  Keep this compact and premium.
+
+4. DOWNLOAD / EXPORT UX PREP
+   If the generated instrumental is a playable MP3 data URL:
+
+* add a safe “Download Preview” action to the Instrumental Preview card
+* do NOT overbuild file storage
+* do NOT create a fake WAV download unless a real WAV exists
+* label everything honestly
+
+5. FALLBACK TRANSPARENCY
+   If ElevenLabs fails and AfroMuse falls back to mock mode:
+
+* do NOT present the fallback result as if it is real generated audio
+* clearly but gracefully indicate that this is a fallback session preview / AI build note state
+* keep the UX premium and not scary
+
+6. PROJECT LIBRARY STATUS UPGRADE
+   Upgrade Project Library session intelligence so saved sessions can recognize real audio progress more accurately.
+   Allow sessions to reflect states like:
+
+* Draft
+* In Progress
+* Beat Ready
+* Live Audio Ready
+* Export Ready
+  Do not break existing saved session behavior.
+
+7. SESSION OUTPUT TRUST
+   Where relevant, improve copy so users can tell the difference between:
+
+* session intelligence / blueprint output
+* real generated audio output
+  The app should feel more trustworthy and less ambiguous.
+
+8. KEEP EVERYTHING ELSE STABLE
+   Do not redesign the layout.
+   Do not touch working generation flows.
+   Do not activate vocals, mastering, or stems yet.
+   Do not remove mock fallback protection.
+
+IMPORTANT:
+This is a premium trust / output polish pass for the first real AfroMuse live audio feature.
+Keep it elegant, clean, and product-ready.

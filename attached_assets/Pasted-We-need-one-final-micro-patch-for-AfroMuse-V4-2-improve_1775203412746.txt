@@ -1,0 +1,168 @@
+We need one final micro-patch for AfroMuse.
+
+V4.2 improved consistency a lot, but one issue still remains:
+
+The songs are now mostly strong, but sometimes 1–2 lines still appear that feel:
+- slightly awkward
+- too written
+- unnatural in the mouth
+- metaphorically confused
+- AI-clever instead of artist-true
+
+Examples of current remaining failure:
+- half-good metaphor lines
+- unnatural “deep” lines
+- clunky phrase endings
+- lines that sound almost strong, but not fully believable
+- lines a real artist likely would not naturally say out loud
+
+This patch should NOT change the current strengths.
+
+Do NOT weaken:
+- hooks
+- shorter intros
+- emotional realism
+- harder Dancehall energy
+- language / flavor behavior
+- song structure
+- current quality level
+
+This patch should only sharpen line-level authenticity.
+
+==================================================
+AFROMUSE V4.3 — LINE AUTHENTICITY PATCH
+==================================================
+
+AfroMuse must now reject lines that are:
+
+- too written
+- too clever
+- too decorative
+- metaphorically awkward
+- structurally unnatural
+- hard to say out loud
+- emotionally over-explained
+
+==================================================
+NEW RULE: “WOULD AN ARTIST ACTUALLY SAY THIS?”
+==================================================
+
+Before final output, every line must pass this test:
+
+Would a real artist naturally say this in a writing session,
+or does this feel like AI trying to sound poetic?
+
+If it feels like AI trying to sound poetic, rewrite it.
+
+==================================================
+NEW RULE: KILL HALF-GOOD METAPHORS
+==================================================
+
+AfroMuse should now reject lines that feel like:
+
+- the metaphor started strong but ended weak
+- the image sounds clever but unnatural
+- the line sounds “deep” but not believable
+- the comparison is not clean enough to sing
+
+Examples of what to reject:
+- awkward symbolic lines
+- mixed metaphors
+- unfinished metaphor logic
+- “almost deep” lines that feel artificial
+
+If a metaphor is not clean, natural, and artist-usable,
+replace it with something simpler and stronger.
+
+==================================================
+NEW RULE: FAVOR SIMPLE TRUTH OVER WRITTEN DEPTH
+==================================================
+
+When choosing between:
+
+A) a line that sounds poetic but slightly unnatural
+or
+B) a line that sounds simpler but more believable
+
+always choose B.
+
+AfroMuse should now prioritize:
+- truth
+- realism
+- sayability
+- clean emotional impact
+- quotable simplicity
+
+over:
+- fancy writing
+- decorative metaphor
+- forced cleverness
+
+==================================================
+NEW RULE: CLEAN OUT LOUD TEST
+==================================================
+
+Each line must pass this question:
+
+Would this sound clean if an artist said it in the studio out loud?
+
+If not, rewrite it.
+
+This is especially important for:
+- Dancehall
+- Afrobeats
+- heartbreak songs
+- pressure / hustle songs
+- hook support lines
+- bridge lines
+- final outro lines
+
+==================================================
+NEW RULE: DO NOT FORCE “DEEP” WRITING
+==================================================
+
+AfroMuse should stop trying to make every emotional line sound profound.
+
+Sometimes the strongest line is the simplest one.
+
+Example direction:
+Instead of:
+- symbolic but awkward pain
+
+Prefer:
+- direct emotional truth
+- visual realism
+- simple pain
+- simple confidence
+- simple flex
+- simple heartbreak
+
+==================================================
+NEW RULE: PROTECT THE LAST 20% OF THE SONG
+==================================================
+
+Pay special attention to:
+- Verse 2
+- Bridge
+- Outro
+- Final chorus variation
+
+These sections are where awkward lines still appear most often.
+
+Do a stronger cleanup pass there before output.
+
+==================================================
+FINAL V4.3 GOAL
+==================================================
+
+AfroMuse should now sound less like:
+- very good AI writing
+
+and more like:
+- believable artist writing
+
+with fewer:
+- awkward lines
+- confused metaphors
+- “almost good” lines
+- fake-clever moments

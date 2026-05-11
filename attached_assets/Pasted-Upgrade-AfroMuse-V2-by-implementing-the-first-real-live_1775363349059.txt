@@ -1,0 +1,79 @@
+Upgrade AfroMuse V2 by implementing the first real-live provider integration path for Instrumental Generation ONLY.
+
+IMPORTANT:
+Do NOT redesign the current UI.
+Do NOT remove or replace any existing working sections.
+Do NOT break the current Audio Studio, Project Library, monetization logic, engine layer, provider registry, diagnostics, routes, or output flow.
+Do NOT activate vocals, mastering, or stems yet.
+This is a focused first-live-provider implementation path.
+
+GOAL:
+Make AfroMuse V2 fully ready to support a real live instrumental-generation provider while preserving safe fallback behavior and keeping all other provider categories mocked.
+
+BUILD THE FOLLOWING:
+
+1. LIVE INSTRUMENTAL PROVIDER EXECUTION PATH
+Refactor the instrumental provider module so it cleanly supports both:
+- mock execution
+- live execution
+
+The provider should resolve its mode using the existing engine control / resolver system.
+
+2. LIVE REQUEST HANDLER SLOT
+Inside the instrumental provider, create a clearly isolated live request execution block or function.
+
+This should prepare for:
+- sending a provider-specific request payload
+- receiving a provider-specific raw response
+- mapping it into the existing RawInstrumentalResponse shape
+- passing it through the existing instrumental response adapter
+
+Do NOT integrate a real paid provider yet if not available.
+Instead, make the live path structurally complete and clearly marked for future drop-in API logic.
+
+3. LIVE PAYLOAD + RESPONSE FLOW
+Ensure the instrumental provider’s live path uses:
+- the existing payload translator
+- the existing response adapter
+- the existing normalized response format
+
+This should prove that the full live path is structurally correct even before a real provider is inserted.
+
+4. INSTRUMENTAL-SPECIFIC FAILURE + FALLBACK
+Wire the instrumental provider into the existing fallback system.
+
+Support:
+- clean live failure
+- optional fallback to mock
+- normalized failure response if fallback is disabled
+
+This should work only for the instrumental provider right now.
+
+5. REAL PREVIEW URL READINESS
+Ensure the instrumental provider’s live path is structurally ready to ingest a real audio preview URL and optional metadata such as:
+- preview audio URL
+- title / generation notes
+- sonic notes
+- optional duration
+- optional waveform-ready metadata
+
+Do not require all of these yet, but make the structure ready.
+
+6. DIAGNOSTIC VISIBILITY
+Extend diagnostics (if needed) so the instrumental provider clearly shows whether it is currently running:
+- mock
+- live
+- disabled
+and whether fallback is enabled.
+
+7. PRODUCT / SAFETY RULES
+- Keep all other providers mocked
+- Do not touch vocals, mastering, or stems execution logic
+- Preserve the stable V2 experience
+- Keep the architecture clean and isolated
+- This is the first real provider bridge, not a full engine rollout
+
+IMPORTANT:
+This is NOT full multi-provider live integration.
+This is NOT a redesign.
+This is the first controlled step from mock engine behavior to real generation capability, starting with instrumental only.

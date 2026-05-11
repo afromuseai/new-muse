@@ -1,0 +1,165 @@
+FINAL AFROMUSE V5 CLEANUP — COMPLETE THE MISSING PARTS
+
+Do NOT explain. Do NOT summarize. Just implement the missing parts fully.
+
+AfroMuse V5 is close, but the upgrade is NOT complete yet.
+
+You already upgraded:
+- HITMAKER MODE engine
+- Keeper Line system
+- Hook Strength checks
+- Tightness / naturalness filters
+- Genre voice accuracy
+- Internal quality scoring
+- Commercial Mode UI polish
+
+Now COMPLETE the missing required features below.
+
+====================================================
+MISSING REQUIRED FEATURES TO IMPLEMENT NOW
+====================================================
+
+1) ADD “LYRICAL DEPTH” CONTROL TO STUDIO UI
+Add a visible control in the Studio page:
+
+Lyrical Depth
+- Simple
+- Balanced
+- Deep
+
+Behavior:
+SIMPLE:
+- cleaner lines
+- less metaphor
+- easier hooks
+- more mainstream/commercial
+
+BALANCED:
+- best middle ground
+
+DEEP:
+- more layered meaning
+- more poetic phrasing
+- more introspection
+- stronger emotional subtext
+
+IMPORTANT:
+This must be:
+- visible in UI
+- saved in form state
+- sent in generation payload
+- used in backend prompt builder
+- fully wired end-to-end
+
+====================================================
+2) ADD “HOOK REPEAT LEVEL” CONTROL TO STUDIO UI
+====================================================
+
+Add a visible control in the Studio page:
+
+Hook Repeat Level
+- Low
+- Medium
+- High
+
+Behavior:
+LOW:
+- less repetition
+- more lyrical variation
+
+MEDIUM:
+- balanced replay value
+
+HIGH:
+- more repetition
+- more chantability
+- more commercial hook behavior
+
+IMPORTANT:
+This must be:
+- visible in UI
+- saved in form state
+- sent in generation payload
+- used in backend prompt builder
+- fully wired end-to-end
+
+====================================================
+3) ADD TITLE STRENGTH SYSTEM PROPERLY
+====================================================
+
+AfroMuse must now generate stronger titles automatically.
+
+TITLE RULES:
+- title should usually come from the Main Keeper Line
+- title should feel like a real artist title
+- short, memorable, emotionally sharp
+- no weak generic naming
+
+GOOD STYLE:
+- Broken Mirror
+- Same Roof, Different World
+- Na You Stay
+- Nuh Explain
+- Pain A Mi Glory
+- Soft Pressure
+- Top Corner
+
+BAD STYLE:
+- Love in the Night
+- Rise Again Today
+- Dancing in the Vibe
+- Feeling Emotional Tonight
+
+Add an internal title filter that rewrites weak titles before final output.
+
+====================================================
+4) CONFIRM INTRO FIX IS ACTUALLY ENFORCED
+====================================================
+
+You mentioned the intro was improved, but now HARD ENFORCE this rule in generation:
+
+INTRO RULES:
+- 2 to 4 short lines MAX
+- never a hidden chorus
+- never a full verse
+- never over-explains
+- should feel like:
+  - mood setup
+  - teaser
+  - spoken thought
+  - chant fragment
+  - cinematic opening
+
+If the intro exceeds this behavior, rewrite before output.
+
+====================================================
+5) UPDATE STUDIO UI CLEANLY
+====================================================
+
+Make the new controls feel premium and visually consistent with the current Studio page.
+
+Required visible controls now should include:
+- Genre
+- Mood
+- Theme / Idea
+- Artist Vibe
+- Song Length
+- Language / Flavor
+- Commercial / Hitmaker Mode
+- Lyrical Depth
+- Hook Repeat Level
+
+Make sure spacing and styling stay premium.
+
+====================================================
+6) FINAL REQUIREMENT
+====================================================
+
+After implementation, show me ONLY:
+
+1. What was newly added now
+2. Which missing controls are now fully wired
+3. Whether AfroMuse V5 is now fully complete
+
+No partial work.
+Implement fully.

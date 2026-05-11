@@ -1,0 +1,103 @@
+Upgrade AfroMuse V2 by adding an External Engine Connector Layer behind the existing Backend/API Readiness system.
+
+IMPORTANT:
+Do NOT redesign the current V2 UI.
+Do NOT remove or replace any current working sections.
+Do NOT break any existing Audio Studio functionality.
+This is an internal architecture upgrade only.
+
+GOAL:
+Prepare AfroMuse V2 to connect cleanly to real future audio-generation providers (instrumental, vocal, mastering, stems) without needing to rebuild the frontend later.
+
+BUILD THE FOLLOWING:
+
+1. PROVIDER-READY SERVICE LAYER
+Create a clean internal service layer for audio generation requests.
+
+Add modular request functions such as:
+- requestInstrumentalGeneration()
+- requestVocalGeneration()
+- requestBlueprintGeneration()
+- requestMasterExport()
+
+These should currently use mock data internally, but be clearly structured so their internal logic can later be swapped with real API calls.
+
+2. PROVIDER ABSTRACTION
+Create a lightweight provider abstraction structure so future engines can be plugged in later without changing the UI layer.
+
+Support future provider categories such as:
+- instrumental provider
+- vocal provider
+- mastering provider
+- stems/export provider
+
+Do not hard-code the UI directly to any single provider logic.
+
+3. POLLING-READY JOB FLOW
+Refactor the generation process so each generation request behaves like a real external job lifecycle.
+
+Support these statuses:
+- queued
+- processing
+- completed
+- failed
+
+Each request should return a mock job object containing fields like:
+- jobId
+- provider
+- type
+- status
+- createdAt
+
+Then simulate status progression internally.
+
+4. NORMALIZED RESPONSE FORMAT
+Create a clean normalized response format that all generation services return.
+
+Include fields such as:
+- status
+- jobId
+- provider
+- audioUrl
+- wavUrl
+- stemsUrl
+- blueprintData
+- notes
+- error
+
+This should be the internal contract between the generation engine and the UI/output registry.
+
+5. OUTPUT REGISTRY INTEGRATION
+Wire the normalized service responses into the existing V2 output registry.
+
+Map them into:
+- instrumentalPreview
+- vocalPreview
+- arrangementBlueprint
+- masteredMp3
+- masteredWav
+- stemsZip
+
+Use realistic mock placeholder values for now.
+
+6. ERROR / FAILURE STRUCTURE
+Add graceful internal failure support for future real APIs.
+
+Support:
+- missing response
+- failed generation
+- unsupported mode
+- timeout-ready structure
+
+Do not aggressively surface fake errors in the UI unless needed — just prepare the architecture cleanly.
+
+7. CODE QUALITY / PRODUCT RULES
+- Keep the architecture modular and easy to upgrade later
+- Do not over-engineer
+- Keep naming clean and product-grade
+- Preserve current V2 UX exactly as-is
+- The goal is to make AfroMuse V2 feel like a real generation platform under the hood
+
+IMPORTANT:
+This is NOT a visual redesign.
+This is a serious product infrastructure upgrade that prepares AfroMuse V2 for real audio API connection later.

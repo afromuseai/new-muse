@@ -1,0 +1,173 @@
+Add a new post-generation rewrite tool called **"Make It Catchier"** to AfroMuse Studio.
+
+This should work exactly like the existing:
+
+* Humanize Lyrics
+* Make It Harder
+
+…but with a different rewrite behavior focused on **hook strength, memorability, chant value, and replay value**.
+
+## UI / Placement
+
+Add a new button called:
+**Make It Catchier**
+
+Place it in the same results action bar as:
+
+* Regenerate
+* Humanize Lyrics
+* Make It Harder
+* Copy
+* Save
+
+It should only appear after a song has been successfully generated.
+
+Use a bright but premium visual style (for example gold, yellow, amber, or electric accent) so it feels like a “hit boost” button.
+
+---
+
+## Purpose
+
+This tool should rewrite the **existing generated lyrics** to make the song feel:
+
+* catchier
+* more memorable
+* more singable
+* more replayable
+* more hook-driven
+* more likely to stick in someone’s head
+
+It should NOT generate a new song from scratch.
+
+It should behave like a **hit songwriter / hook doctor** improving what already exists.
+
+---
+
+## Rewrite Rules
+
+The "Make It Catchier" AI pass should:
+
+1. Keep the **same song structure**
+
+   * Intro
+   * Verse(s)
+   * Chorus
+   * Bridge
+   * Outro
+
+2. Preserve the **core song idea and emotional meaning**
+
+3. Focus especially on improving:
+
+   * chorus / hook
+   * pre-hook if present
+   * repeated lines
+   * keeper line
+   * chantability
+   * melodic simplicity
+
+4. Strengthen weak hooks by making them:
+
+   * shorter
+   * easier to remember
+   * more repeatable
+   * more emotionally immediate
+   * more artist-performable
+
+5. Rewrite lines that feel:
+
+   * too wordy
+   * too complex
+   * too explainy
+   * too forgettable
+   * too “written” instead of “sung”
+
+6. Increase:
+
+   * repetition where helpful
+   * emotional stickiness
+   * bounce
+   * crowd sing-back potential
+   * quotable phrase density
+   * melodic phrasing friendliness
+
+7. Respect the selected dialect / language mode
+
+   * Ghana Urban Pidgin must still feel Ghanaian
+   * Naija Pidgin must still feel Nigerian
+   * Jamaican Patois must still feel Jamaican
+   * Do NOT flatten dialect for the sake of catchiness
+
+8. Keep it natural
+
+   * catchy does NOT mean childish
+   * catchy does NOT mean corny
+   * catchy does NOT mean repetitive nonsense
+   * it should feel like something a real artist would actually keep after a studio session
+
+9. Keep all:
+
+   * production notes
+   * arrangement notes
+   * keeper line section
+   * export notes
+     intact unless the keeper line itself is improved
+
+---
+
+## Example rewrite direction
+
+If a weak hook says:
+“You are always in my mind every day”
+
+Catchier version should feel more like:
+“Na you dey my mind, all night”
+
+If a line says:
+“God has been helping me through every struggle”
+
+Catchier version should feel more like:
+“God carry me, no lie”
+
+If a line says:
+“They didn’t believe in me before success”
+
+Catchier version should feel more like:
+“Dem laugh then — now dem sing am”
+
+The exact wording should vary naturally by genre and dialect.
+
+---
+
+## UX Behavior
+
+When clicked:
+
+* show a loading state such as:
+  **"Making it catchier..."**
+* rewrite the current song in place
+* replace the visible lyrics with the catchier version
+* show a toast when complete:
+  **"Hook upgraded."**
+
+---
+
+## Technical behavior
+
+Implement it the same way Humanize Lyrics and Make It Harder are implemented:
+
+* same architecture
+* same post-generation rewrite flow
+* different system prompt / rewrite instructions
+
+Please also ensure:
+
+* it uses the same currently selected song/draft
+* it does not wipe or regenerate unrelated metadata
+* it is safe to click multiple times, but each pass should still keep the song coherent
+
+After implementing, tell me:
+
+1. what frontend file was updated
+2. what backend route/function was added
+3. what exact prompt behavior was used

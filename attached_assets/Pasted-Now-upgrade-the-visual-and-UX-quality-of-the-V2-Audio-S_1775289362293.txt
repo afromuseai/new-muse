@@ -1,0 +1,94 @@
+Now upgrade the visual and UX quality of the V2 Audio Studio result area so it feels like a premium AI music creation product.
+
+GOAL:
+Make the Instrumental Preview, Vocal Demo, Audio Blueprint, and Studio Export Notes cards feel visually distinct, premium, and useful.
+
+==================================================
+1. EACH CARD SHOULD HAVE A CLEAR IDENTITY
+==================================================
+
+A. Instrumental Preview
+Should feel:
+- rhythmic
+- groove-focused
+- production-minded
+
+B. Vocal Demo
+Should feel:
+- expressive
+- performance-focused
+- artist-oriented
+
+C. Audio Blueprint
+Should feel:
+- structured
+- analytical
+- premium system output
+
+D. Studio Export Notes
+Should feel:
+- practical
+- collaboration-ready
+- session-usable
+
+==================================================
+2. IMPROVE VISUAL HIERARCHY
+==================================================
+
+Use:
+- stronger headings
+- subheadings
+- chips / tags / metadata pills where useful
+- clean separators
+- spacing rhythm
+- compact but premium formatting
+
+==================================================
+3. ADD SMALL STATUS LABELS
+==================================================
+
+Examples:
+- "Groove Ready"
+- "Vocal Direction"
+- "Blueprint Locked"
+- "Session Ready"
+
+These should feel productized and stylish.
+
+==================================================
+4. EMPTY STATES SHOULD FEEL EXCITING
+==================================================
+
+Before generation, each result card should have a premium empty state message like:
+
+- "Your groove concept will appear here."
+- "Vocal direction will take shape here."
+- "Your production blueprint will build here."
+- "Studio-ready notes will appear here."
+
+==================================================
+5. LOADING STATES SHOULD FEEL DIFFERENT
+==================================================
+
+Each card should have its own branded loading language.
+
+Examples:
+- Instrumental: "Building your pocket..."
+- Vocal: "Shaping vocal phrasing..."
+- Blueprint: "Mapping your sonic identity..."
+- Notes: "Preparing session notes..."
+
+==================================================
+6. SUCCESS STATES SHOULD FEEL REWARDING
+==================================================
+
+When content is generated, it should feel satisfying and polished — not dumped.
+
+==================================================
+7. IMPORTANT
+==================================================
+
+Do not overdesign.
+Keep AfroMuse clean, modern, dark, and premium.
+
+Now apply this UX upgrade.

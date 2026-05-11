@@ -1,0 +1,162 @@
+AfroMuse lyrics generation needs a dialect authenticity upgrade for Jamaican Patois and West African Pidgin.
+
+IMPORTANT:
+Do NOT redesign the UI.
+Do NOT break the current working V1 or V2 flow.
+Do NOT touch audio generation, session output, project library, or unrelated systems.
+
+GOAL:
+Upgrade the lyrics writing intelligence so Jamaican Patois and West African Pidgin outputs feel significantly more native, natural, emotionally believable, and musically authentic — not like plain English with slang sprinkled in.
+
+PROBLEM TO FIX:
+Current outputs can still feel too English underneath.
+Issues include:
+
+* too many plain English sentence constructions
+* not enough native phrasing
+* shallow slang usage
+* weak idiomatic realism
+* Jamaican Patois not feeling deep enough
+* Pidgin not sounding naturally spoken or sung
+* dialect flavor feeling “surface-level” instead of lived-in
+
+BUILD THE FOLLOWING:
+
+1. ADD A DIALECT AUTHENTICITY LAYER
+   Introduce a dedicated internal dialect intelligence layer for AfroMuse lyrics generation.
+
+This layer should improve:
+
+* native phrasing
+* sentence construction
+* idiomatic expression
+* emotional realism
+* musical flow in dialect
+* local language rhythm
+
+This must go deeper than vocabulary swapping.
+
+2. SEPARATE JAMAICAN PATOIS AND WEST AFRICAN PIDGIN AS DISTINCT WRITING MODES
+   Treat these as separate language behaviors, not one generic “broken English” style.
+
+A) Jamaican Patois mode should better reflect:
+
+* native sentence flow
+* authentic Jamaican phrasing
+* natural emotional expression
+* street / spiritual / romantic / struggle language patterns
+* stronger local expression choices
+
+B) West African Pidgin mode should better reflect:
+
+* Nigerian / Ghanaian / general Afro-urban lyrical flow where appropriate
+* natural spoken phrasing
+* emotional directness
+* native conversational rhythm
+* more believable hook and verse language
+
+Do NOT collapse them into the same style.
+
+3. IMPROVE DIALECT EXPRESSION, NOT JUST WORD SWAPS
+   Upgrade the prompt intelligence so the model writes with:
+
+* native-feeling phrase patterns
+* culturally believable emotional language
+* stronger local cadence
+* more realistic chorus and hook phrasing
+* less “formal English skeleton”
+
+Examples of what to improve:
+
+* how pain is expressed
+* how hunger / struggle is expressed
+* how romance is expressed
+* how prayer / faith is expressed
+* how flexing / confidence is expressed
+* how street survival is expressed
+
+The goal is to make the writing feel lived-in and natural.
+
+4. ADD SAFE AUTHENTICITY GUARDRAILS
+   Very important:
+   Do NOT overdo the dialect to the point where lyrics become:
+
+* unreadable
+* chaotic
+* gimmicky
+* forced
+* too slang-heavy to sing clearly
+
+AfroMuse should produce:
+
+* authentic
+* musical
+* singable
+* emotionally believable
+* commercially usable
+
+This is not parody or caricature writing.
+
+5. STRENGTHEN HOOK NATURALNESS
+   Hooks and chorus lines in Patois and Pidgin should feel especially natural.
+
+Right now, some choruses may still sound like English translated into slang.
+
+Improve:
+
+* chantability
+* replay feel
+* native phrasing
+* local emotional punch
+
+The chorus should feel like something a real artist could naturally sing or repeat.
+
+6. IMPROVE CONSISTENCY ACROSS THE WHOLE SONG
+   Make sure dialect authenticity stays more consistent across:
+
+* intro
+* verses
+* chorus
+* bridge
+* outro
+
+Avoid cases where:
+
+* the verse sounds native
+* but the chorus becomes too English
+  OR
+* the intro sounds local
+* but later sections flatten out
+
+7. KEEP THE STRUCTURE GUARDRAILS INTACT
+   Do NOT undo the recent lyrics structure upgrade.
+
+The following must remain compatible:
+
+* intro line limits
+* verse / chorus / bridge discipline
+* anti-drift laws
+* post-generation structure validation
+* controlled retry behavior
+
+This upgrade should improve language authenticity WITHOUT weakening song structure discipline.
+
+8. KEEP PRODUCTION NOTES / SESSION INTELLIGENCE CLEAN
+   Only improve the lyrical language authenticity where appropriate.
+   Do NOT make the production notes, arrangement notes, export notes, or technical output become messy or overly slang-heavy unless intentionally designed.
+
+Lyrics should feel authentic.
+Technical guidance should remain clear and useful.
+
+9. FINAL GOAL
+   AfroMuse should now write Jamaican Patois and West African Pidgin lyrics that feel:
+
+* more native
+* more believable
+* more culturally grounded
+* more emotionally real
+* more musically usable
+
+IMPORTANT:
+This is a language authenticity upgrade, not a UI rebuild.
+The output should feel more like real artist writing and less like English with slang decoration.

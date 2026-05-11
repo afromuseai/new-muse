@@ -1,0 +1,102 @@
+Now do a final UX and product polish pass on the AfroMuse V2 Hybrid Studio.
+
+GOAL:
+Make the whole lyrics-to-audio workflow feel launch-ready, premium, and emotionally exciting.
+
+==================================================
+1. POLISH THE NEW SECTION HEADERS
+==================================================
+
+Improve copy and hierarchy for:
+- Lyrics Studio
+- Audio Studio
+- Audio Blueprint
+- Result Cards
+- CTA areas
+
+Make them feel like a premium music creation product.
+
+==================================================
+2. IMPROVE MICROCOPY
+==================================================
+
+Refine labels, helper text, placeholders, and empty states across the V2 Audio Studio.
+
+Examples:
+- better placeholder text
+- better descriptions under toggles
+- more premium button wording
+- less robotic language
+
+==================================================
+3. LOADING EXPERIENCE
+==================================================
+
+Improve loading states so they feel branded and exciting.
+
+Examples:
+- "Building your groove..."
+- "Shaping vocal pocket..."
+- "Designing your audio blueprint..."
+- "Preparing your hook lift..."
+
+Make each loading state feel AfroMuse-branded.
+
+==================================================
+4. BETTER RESULT CARD VISUALS
+==================================================
+
+Make the Instrumental Preview, Vocal Demo, and Audio Blueprint cards feel:
+- premium
+- layered
+- clear
+- modern
+- visually distinct from each other
+
+==================================================
+5. MOBILE RESPONSIVENESS
+==================================================
+
+Ensure the whole V2 Audio Studio experience is clean on mobile:
+- stacked layout
+- no broken buttons
+- no cramped controls
+- textarea still usable
+- result cards readable
+
+==================================================
+6. EMPTY STATES
+==================================================
+
+Polish all empty states:
+- before lyrics exist
+- before audio is generated
+- before user selects a mode
+
+Make them feel helpful, not dead.
+
+==================================================
+7. FINAL AUDIT
+==================================================
+
+Do a full pass for:
+- duplicate UI
+- dead code
+- awkward spacing
+- mismatched styles
+- broken state behavior
+- inconsistent naming
+
+Clean all of it.
+
+==================================================
+8. IMPORTANT
+==================================================
+
+Do NOT rewrite the whole app.
+Do a focused launch polish on the new V2 Hybrid Studio workflow.
+
+Make it feel like a real product update:
+### "AfroMuse V2 Audio Studio"
+
+Now apply the polish.

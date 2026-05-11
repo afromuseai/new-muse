@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "AfroMuse AI"
+version = "1.0.0"
+id = "artifacts/afromuse-ai"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18544
+
+[services.development]
+run = "pnpm --filter @workspace/afromuse-ai run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/afromuse-ai", "run", "build" ]
+publicDir = "artifacts/afromuse-ai/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18544"
+BASE_PATH = "/"
