@@ -1,0 +1,80 @@
+Add plan-based premium feature logic and locked feature behavior across AfroMuse AI so the product feels like a real SaaS platform.
+
+Do not redesign the whole app.
+Keep the current premium AfroMuse AI UI and styling.
+
+Goal:
+Make the app feel like it has Free, Pro, and Gold access levels, even if real payment integration is not connected yet.
+
+Requirements:
+
+1) DEFINE 3 USER PLAN STATES
+Create simple app-level plan states for:
+- Free
+- Pro
+- Gold
+
+For now, this can be simulated locally (for example with local state, local storage, or a simple mock user plan setting).
+
+2) FREE PLAN EXPERIENCE
+Free users should be able to:
+- Generate songs
+- Save projects
+- Use core AfroMuse Studio features
+
+Free users should also SEE premium features, but those features should appear locked or limited.
+
+3) PREMIUM / LOCKED FEATURE CARDS
+Across the app, visually show locked premium features such as:
+- AI Audio Generation
+- Collaboration Mode
+- Upload Your Own Instrumental
+- Voice Clone
+- Downloadable Stems
+- Music Distribution Tools
+
+Behavior:
+- Free users should see these features as locked
+- Clicking them should show a clean upgrade prompt or premium modal
+- Do not make them actually functional yet
+
+4) PRO ACCESS FEEL
+For Pro users, visually unlock:
+- stronger creator tools
+- premium songwriting feel
+- more advanced access messaging
+
+Show Pro as a more capable creative workspace than Free.
+
+5) GOLD ACCESS FEEL
+For Gold users, visually unlock:
+- Collaboration Mode
+- Upload Your Own Instrumental
+- advanced creator workflow tools
+
+Gold should feel like the serious artist / team creator plan.
+
+6) UPGRADE UX
+Add clean upgrade prompts where appropriate:
+- “Upgrade to Pro”
+- “Upgrade to Gold”
+- “Unlock Premium”
+- “This feature is available on Gold”
+
+Keep these prompts premium and elegant, not spammy.
+
+7) OPTIONAL PLAN SWITCHER FOR DEMO
+If possible, add a simple hidden or demo-friendly plan switcher so the app can be tested in:
+- Free mode
+- Pro mode
+- Gold mode
+
+This is just for demo/testing purposes and should not look messy.
+
+8) KEEP IT POLISHED
+- Keep everything mobile responsive
+- Do not break the current layout
+- Maintain the AfroMuse AI dark luxury aesthetic
+
+Final goal:
+Make AfroMuse AI feel like a real subscription-based product with believable locked premium features and upgrade paths.

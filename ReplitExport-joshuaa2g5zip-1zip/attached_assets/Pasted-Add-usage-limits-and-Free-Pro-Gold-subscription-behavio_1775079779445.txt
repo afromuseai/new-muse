@@ -1,0 +1,80 @@
+Add usage limits and Free / Pro / Gold subscription behavior across AfroMuse AI so the product feels like a real monetized SaaS platform.
+
+Do not redesign the whole app.
+Keep the current AfroMuse AI premium UI and styling.
+
+Goal:
+Make the app behave differently depending on whether the user is on Free, Pro, or Gold.
+
+Requirements:
+
+1) DEFINE PLAN TYPES
+Use 3 plan states:
+- Free
+- Pro
+- Gold
+
+This can still be simulated locally for now using local state or local storage.
+
+2) FREE PLAN LIMITS
+For Free users:
+- Allow access to the Studio
+- Allow song generation
+- Allow saving projects
+
+But add believable limitations:
+- Limit the number of song generations (for example 5 or another clean demo-friendly number)
+- After reaching the limit, show a clean upgrade prompt
+
+Also visually show Free trial value:
+- 3 one-time audio generation trials
+- 1 one-time collaboration trial
+
+These do not need to be fully functional yet, but should be represented clearly in the product.
+
+3) PRO PLAN EXPERIENCE
+For Pro users:
+- Allow more song generations
+- Remove or greatly reduce Free-tier limitations
+- Make the product feel more powerful and less restricted
+- Show Pro access messaging where appropriate
+
+4) GOLD PLAN EXPERIENCE
+For Gold users:
+- Include everything in Pro
+- Visually unlock:
+  - Collaboration Mode
+  - Upload Your Own Instrumental
+  - advanced creator workflow tools
+- Show Gold as the highest access tier
+
+5) USAGE STATE / LIMIT FEEDBACK
+Add clear but elegant usage feedback such as:
+- “3 of 5 song generations used”
+- “Upgrade to Pro for more generations”
+- “Gold unlocks collaboration features”
+
+Keep this premium and non-spammy.
+
+6) UPGRADE PROMPTS
+When Free users hit limits or click locked features, show polished upgrade prompts or modals such as:
+- Upgrade to Pro
+- Upgrade to Gold
+- Unlock Premium Features
+
+7) OPTIONAL DEMO PLAN SWITCHER
+If possible, keep or add a simple hidden demo plan switcher for testing:
+- Free
+- Pro
+- Gold
+
+This should not make the UI messy.
+
+8) KEEP EVERYTHING WORKING
+- Do not break the Studio
+- Do not break My Projects
+- Keep mobile responsiveness
+- Maintain the AfroMuse AI dark luxury aesthetic
+
+Final goal:
+Make AfroMuse AI feel like a real subscription-based product with believable usage limits, plan differences, and upgrade behavior.

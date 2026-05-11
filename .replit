@@ -1,0 +1,137 @@
+modules = ["nodejs-24", "postgresql-16"]
+[nix]
+channel = "stable-25_05"
+
+[agent]
+expertMode = true
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start API Server"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Preview port bridge"
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "PORT=5000 BASE_PATH=/ pnpm --filter @workspace/afromuse-ai run dev"
+waitForPort = 5000
+
+[[workflows.workflow]]
+name = "Start API Server"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd /home/runner/workspace && PORT=8080 pnpm --filter @workspace/api-server run dev"
+waitForPort = 8080
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[[workflows.workflow]]
+name = "Preview port bridge"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "PORT=8083 BASE_PATH=/ pnpm --filter @workspace/afromuse-ai run dev"
+waitForPort = 8083
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[[ports]]
+localPort = 5000
+
+[[ports]]
+localPort = 5001
+
+[[ports]]
+localPort = 5002
+
+[[ports]]
+localPort = 5003
+externalPort = 8000
+
+[[ports]]
+localPort = 5004
+externalPort = 3003
+
+[[ports]]
+localPort = 5005
+externalPort = 6000
+
+[[ports]]
+localPort = 5006
+externalPort = 8099
+
+[[ports]]
+localPort = 5007
+externalPort = 9000
+
+[[ports]]
+localPort = 8080
+externalPort = 3000
+
+[[ports]]
+localPort = 8081
+externalPort = 8080
+
+[[ports]]
+localPort = 8082
+externalPort = 4200
+
+[[ports]]
+localPort = 8083
+externalPort = 5000
+
+[[ports]]
+localPort = 8084
+externalPort = 8008
+
+[[ports]]
+localPort = 18544
+externalPort = 8081
+
+[[ports]]
+localPort = 18545
+externalPort = 3001
+
+[[ports]]
+localPort = 18546
+externalPort = 5173
+
+[[ports]]
+localPort = 18547
+externalPort = 6800
+
+[userenv]
+
+[userenv.shared]
+PORT = "5000"
+BASE_PATH = "/"
+ELEVENLABS_MUSIC_ENABLED = "true"
+
+[deployment]
+deploymentTarget = "cloudrun"

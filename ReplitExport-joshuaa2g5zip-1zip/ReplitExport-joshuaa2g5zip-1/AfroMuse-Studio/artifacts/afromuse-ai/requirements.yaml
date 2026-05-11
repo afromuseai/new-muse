@@ -1,0 +1,11 @@
+packages:
+  "framer-motion": "For premium cinematic animations and page transitions"
+  "clsx": "For merging tailwind classes in UI components"
+  "tailwind-merge": "For merging tailwind classes in UI components"
+  "@hookform/resolvers": "For potential future form validation"
+  "zod": "For schema validation"
+
+notes:
+  - This is a frontend-only SPA with mock data as requested.
+  - Using Framer Motion for high-end feel.
+  - Relying on CSS custom properties for the dark luxury theme.

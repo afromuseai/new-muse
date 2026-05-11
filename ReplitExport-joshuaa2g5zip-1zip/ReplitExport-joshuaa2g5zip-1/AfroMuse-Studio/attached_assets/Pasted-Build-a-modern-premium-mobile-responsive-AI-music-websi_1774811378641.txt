@@ -1,0 +1,450 @@
+Build a modern, premium, mobile-responsive AI music website called “AfroMuse AI”.
+
+IMPORTANT:
+This is NOT just a landing page.
+This should feel like a real startup MVP product.
+
+The product is focused on helping users generate Afrobeat-inspired song ideas, lyrics, and songwriting structure using AI.
+
+The site should look polished, cinematic, premium, and startup-quality — similar to modern AI SaaS websites like music AI tools, but with a unique Afrobeat identity.
+
+==================================================
+BRAND IDENTITY
+==================================================
+
+Product Name:
+AfroMuse AI
+
+Tagline:
+Turn your song idea into something real.
+
+Brand Personality:
+- Creative
+- Premium
+- Futuristic
+- Afrobeat-inspired
+- Emotional
+- Modern startup feel
+
+Visual Mood:
+- Dark luxury UI
+- Afrobeat energy
+- Music-tech aesthetic
+- Soft glows
+- Elegant gradients
+- Cinematic hero section
+
+Color Palette:
+- Background: near-black / deep charcoal
+- Accent 1: gold / amber / orange
+- Accent 2: purple / violet
+- Accent 3: soft white
+- Accent glow effects: orange + purple
+
+Typography:
+Use modern bold sans-serif fonts with strong headings and clean readable body text.
+
+==================================================
+MAIN PRODUCT GOAL
+==================================================
+
+AfroMuse AI helps creators turn rough song ideas into structured Afrobeat-style songs.
+
+This is Version 1 (B1), so DO NOT build advanced AI audio generation or voice cloning yet.
+
+The focus of this version is:
+- Song idea generation
+- Hook generation
+- Verse generation
+- Song structure assistance
+- Saving projects
+- Premium product presentation
+
+==================================================
+PAGES TO BUILD
+==================================================
+
+Build these pages / routes:
+
+1. Landing Page (/)
+2. Studio Page (/studio)
+3. Pricing Page (/pricing)
+4. Login / Signup Page (/auth)
+5. Projects Page (/projects)
+
+Also include a shared navbar and footer.
+
+==================================================
+1) LANDING PAGE REQUIREMENTS
+==================================================
+
+The landing page should feel premium and convincing.
+
+Sections needed:
+
+A) HERO SECTION
+- Big bold headline:
+  “Create Afrobeat Songs with AI”
+- Subheadline:
+  “Generate catchy hooks, write powerful verses, and build complete song structures — powered by AI trained for creative music inspiration.”
+- CTA buttons:
+  1. Start Creating
+  2. Watch Demo
+- Include a beautiful hero preview card showing an example generated song called:
+  “Lagos Nights”
+- The preview card should show:
+  - genre: Afrobeats
+  - mood: Uplifting
+  - sample hook lines
+  - sample verse snippet
+  - mini fake audio player UI (visual only)
+
+B) TRUST / SOCIAL PROOF SECTION
+- Example text:
+  “Join 10,000+ creators shaping the next sound.”
+- Add small avatar circles or user count UI
+
+C) FEATURES SECTION
+Show 4 premium feature cards:
+1. AI Songwriter
+2. Hook Generator
+3. Verse Builder
+4. Song Structure Assistant
+
+Each card should have:
+- icon
+- short description
+- subtle hover animation
+
+D) HOW IT WORKS SECTION
+3-step flow:
+1. Describe your song idea
+2. Choose your vibe and style
+3. Generate your song draft
+
+E) SAMPLE OUTPUT SECTION
+Show a realistic example of generated lyrics and structure in a premium code/editor style card.
+
+F) FUTURE VISION SECTION
+Mention upcoming premium features:
+- AI audio generation
+- Instrumentals
+- Download stems
+- Voice cloning
+- Collaboration mode
+
+These should be marked as:
+“Coming in future versions”
+
+G) FINAL CTA SECTION
+- Strong CTA headline
+- Button:
+  “Start Building Your Song”
+
+==================================================
+2) STUDIO PAGE REQUIREMENTS
+==================================================
+
+This is the most important page.
+
+Build a premium AI song generation workspace.
+
+Layout:
+Two-column layout on desktop, stacked on mobile.
+
+LEFT SIDE = INPUT PANEL
+RIGHT SIDE = GENERATED OUTPUT PANEL
+
+--------------------------------------------------
+LEFT SIDE INPUT PANEL
+--------------------------------------------------
+
+Title:
+“AfroMuse Studio”
+
+Subtitle:
+“Turn your idea into a structured Afrobeat song draft.”
+
+Include these fields:
+
+1. Song Topic / Theme
+- text input
+- placeholder:
+  “e.g. love, hustle, heartbreak, celebration”
+
+2. Genre
+- dropdown
+Options:
+- Afrobeats
+- Afropop
+- Amapiano
+- Dancehall
+- R&B
+- Trap Soul
+
+3. Mood
+- dropdown
+Options:
+- Uplifting
+- Romantic
+- Sad
+- Energetic
+- Spiritual
+- Party
+
+4. Song Style / Inspiration
+- text input
+- placeholder:
+  “e.g. smooth Burna-style vibe, emotional Wizkid energy”
+
+5. Additional Notes
+- textarea
+- placeholder:
+  “Describe the sound, story, or feeling you want…”
+
+Buttons:
+- Generate Song
+- Clear Form
+
+Add nice loading state when generating.
+
+--------------------------------------------------
+RIGHT SIDE OUTPUT PANEL
+--------------------------------------------------
+
+Title:
+“Generated Song Draft”
+
+Show a premium styled output card containing:
+
+- Song Title
+- Hook
+- Verse 1
+- Verse 2
+- Bridge
+- Chord / vibe notes
+- Melody direction
+- Arrangement suggestion
+
+Use realistic dummy generated content if AI backend is not connected yet.
+
+Include buttons:
+- Regenerate
+- Copy Lyrics
+- Save Project
+
+Also include a “Pro Feature Preview” box below output:
+- Generate Audio (Coming Soon)
+- Create Instrumental (Coming Soon)
+- Download Stems (Coming Soon)
+
+==================================================
+3) PRICING PAGE REQUIREMENTS
+==================================================
+
+Create a beautiful pricing page with 2 plans:
+
+--------------------------------------------------
+FREE PLAN
+--------------------------------------------------
+Name:
+Free
+
+Features:
+- Limited song generations
+- Hook + lyrics generation
+- Save basic drafts
+- Basic studio access
+
+CTA:
+“Start Free”
+
+--------------------------------------------------
+PRO PLAN
+--------------------------------------------------
+Name:
+Pro
+
+Badge:
+“Best for serious artists”
+
+Features:
+- More generations
+- Better quality outputs
+- Advanced songwriting assistance
+- Priority future access
+- Audio generation (future)
+- Instrumentals (future)
+- Download stems (future)
+- Collaboration mode (future)
+
+CTA:
+“Upgrade to Pro”
+
+Add note:
+“Future premium features will unlock in later AfroMuse AI versions.”
+
+==================================================
+4) LOGIN / SIGNUP PAGE REQUIREMENTS
+==================================================
+
+Build a stylish auth page with:
+- Logo at top
+- Welcome headline
+- Email field
+- Password field
+- Login button
+- Signup button
+- Divider with “or continue with Google”
+- Google button UI (visual only is okay)
+
+Dark premium aesthetic.
+
+==================================================
+5) PROJECTS PAGE REQUIREMENTS
+==================================================
+
+Build a clean “My Projects” dashboard page.
+
+Show sample saved project cards such as:
+- Lagos Nights
+- No Wahala
+- Street Prayer
+- Fire in My Soul
+
+Each project card should show:
+- title
+- genre
+- date
+- short preview
+- action buttons:
+  - Open
+  - Duplicate
+  - Delete
+
+Also include:
+- Search bar
+- Filter dropdown
+- Empty state if no projects
+
+==================================================
+NAVBAR REQUIREMENTS
+==================================================
+
+Navbar should include:
+- AfroMuse AI logo
+- Links:
+  - Features
+  - Studio
+  - Pricing
+- CTA button:
+  “Start Creating”
+
+Sticky navbar with transparent / glass effect.
+
+==================================================
+FOOTER REQUIREMENTS
+==================================================
+
+Footer should include:
+- AfroMuse AI name
+- small mission statement
+- links:
+  - Studio
+  - Pricing
+  - Projects
+  - Terms
+  - Privacy
+- copyright line
+
+==================================================
+LOGO REQUIREMENTS
+==================================================
+
+Use a logo inspired by this direction:
+
+- Afro female side-profile silhouette
+- headphones
+- subtle soundwave
+- premium music-tech feel
+- Afrobeat identity
+- dark background friendly
+- gold / orange / purple accents
+
+If image embedding is difficult, create a clean text-based logo fallback:
+“AfroMuse AI”
+with premium styling and icon treatment.
+
+If possible:
+- place logo in navbar
+- place logo on auth page
+- place favicon-like square logo version in UI areas
+
+==================================================
+UI / UX REQUIREMENTS
+==================================================
+
+The website must feel:
+- modern
+- clean
+- expensive
+- exciting
+- startup quality
+- mobile responsive
+
+Use:
+- rounded cards
+- glow effects
+- gradients
+- subtle shadows
+- clean spacing
+- elegant hover animations
+- polished buttons
+- premium dashboard styling
+
+Avoid:
+- clutter
+- childish styling
+- overly bright cheap colors
+- generic templates
+
+==================================================
+TECH / BUILD REQUIREMENTS
+==================================================
+
+Use a clean frontend stack suitable for Replit.
+
+Preferred:
+- React
+- Tailwind CSS
+- modern component structure
+
+Make sure:
+- all routes/pages work
+- buttons and navigation feel real
+- mobile responsiveness is good
+- site looks polished on phone and desktop
+
+If backend is not connected yet:
+- use realistic mock data
+- keep architecture clean for future AI integration
+
+==================================================
+IMPORTANT PRODUCT DIRECTION
+==================================================
+
+This is NOT a general AI website.
+This is a focused AI songwriting startup for Afrobeat and related genres.
+
+The experience should make users feel:
+“I can actually create a real song from my idea.”
+
+That emotional feeling matters.
+
+Build it like a serious startup MVP, not just a design concept.
+
+==================================================
+FINAL GOAL
+==================================================
+
+Deliver a polished AfroMuse AI Version 1 website prototype that feels investor-ready, user-exciting, and ready for future expansion.
