@@ -69,7 +69,7 @@ router.post("/generate", async (req, res) => {
           title: title || "Untitled Track",
           model: safeModel,
 
-          callback_url: "https://new-muse--reposit.replit.app/api/music/callback",
+          callback_url: "https://new-muse--reposit.replit.app",
 
           make_instrumental: false,
           gender: vocalIdentity === "female" ? "female" : "male",
